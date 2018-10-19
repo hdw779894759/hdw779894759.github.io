@@ -802,20 +802,26 @@
 
 
 
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-   <script type="text/javascript">
-        var gitalk = new Gitalk({
-          clientID: '0e7d021fa7eb3b4fcc74',
-          clientSecret: 'f510f7c96419d9953332ca267671c9f266314e15',
-          repo: 'hdw779894759.github.io',
-          owner: 'hdw779894759',
-          admin: ['hdw779894759'],
-          id: page.date,
-          distractionFreeMode: 'true'
-        })
-        gitalk.render('gitalk-container')
-       </script>
+
+    //_config.yml文件若没有添加enable: true可删除该判断
+
+    
+      <link rel='stylesheet' href="https://yiyeti.cc/usr/themes/veryse/css/gitalk.css">
+      <script src="https://yiyeti.cc/usr/themes/veryse/css/gitalk.min.js"></script>
+      <script type="text/javascript">
+          var gitalk = new Gitalk({
+            clientID:  '',
+            clientSecret: '',
+            id: window.location.pathname,
+            repo: 'hdw779894759.github.io',
+            owner: 'hdw779894759',
+            admin: 'hdw779894759',
+            distractionFreeMode: 'true',
+          })
+          gitalk.render('gitalk-container')
+      </script>
+    
+  
 
 
 
