@@ -483,6 +483,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/17/My-New-Post/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/17/My-New-Post/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -649,8 +659,11 @@
           
 
   
-   <div id="gitalk-container"></div>
-
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -974,27 +987,47 @@
 
 
 
-
-
-
-
-  
+<!-- LOCAL: You can save these files to your site and update links -->
     
-      <link rel='stylesheet' href="https://yiyeti.cc/usr/themes/veryse/css/gitalk.css">
-      <script src="https://yiyeti.cc/usr/themes/veryse/css/gitalk.min.js"></script>
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
       <script type="text/javascript">
-          var gitalk = new Gitalk({
-            clientID:  '',
-            clientSecret: '',
+      function renderGitment(){
+        var gitment = new Gitmint({
             id: window.location.pathname,
-            repo: 'hdw779894759.github.io',
             owner: 'hdw779894759',
-            admin: 'hdw779894759',
-            distractionFreeMode: 'true',
-          })
-          gitalk.render('gitalk-container')
+            repo: '',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'f510f7c96419d9953332ca267671c9f266314e15',
+            
+                client_id: '0e7d021fa7eb3b4fcc74'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
       </script>
     
+
+
+
+
+
+
   
 
 
