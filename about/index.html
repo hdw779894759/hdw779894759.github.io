@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
 <meta property="og:description" content="网站诞生于2018.10.19 网站有些页面和功能还没完善，一直在优化中，如果有什么好的建议十分感谢能给予评论。好人一生平安～～～🙏">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-19T10:07:46.922Z">
+<meta property="og:updated_time" content="2018-10-19T10:08:14.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="网站诞生于2018.10.19 网站有些页面和功能还没完善，一直在优化中，如果有什么好的建议十分感谢能给予评论。好人一生平安～～～🙏">
@@ -473,6 +473,13 @@
 
           </div>
           
+
+  
+   <div id="gitalk-container"></div>
+
+
+  
+
 
         </div>
         
@@ -817,6 +824,21 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '0e7d021fa7eb3b4fcc74',
+          clientSecret: 'f510f7c96419d9953332ca267671c9f266314e15',
+          repo: 'hdw779894759.github.io',
+          owner: 'hdw779894759',
+          admin: ['hdw779894759'],
+          id: location.pathname.substring(0,50),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
