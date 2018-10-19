@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-19T04:00:43.605Z</updated>
+  <updated>2018-10-19T04:05:31.235Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gitalk测试3</title>
+    <link href="http://javahdw.top/2018/10/19/gitalk%E6%B5%8B%E8%AF%953/"/>
+    <id>http://javahdw.top/2018/10/19/gitalk测试3/</id>
+    <published>2018-10-19T04:05:00.000Z</published>
+    <updated>2018-10-19T04:05:31.235Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;测试2123&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="gitalk" scheme="http://javahdw.top/tags/gitalk/"/>
+    
+  </entry>
   
   <entry>
     <title>gitalk测试2</title>

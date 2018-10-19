@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[gitalk测试3]]></title>
+    <url>%2F2018%2F10%2F19%2Fgitalk%E6%B5%8B%E8%AF%953%2F</url>
+    <content type="text"><![CDATA[测试2123]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[gitalk测试2]]></title>
     <url>%2F2018%2F10%2F19%2Fgitalk%E6%B5%8B%E8%AF%952%2F</url>
     <content type="text"><![CDATA[测试test]]></content>
