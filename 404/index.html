@@ -473,14 +473,7 @@
           
 
   
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
+   <div id="gitalk-container"></div>
 
   
 
@@ -794,27 +787,8 @@
 
   
 
-  
-    <script id="dsq-count-scr" src="https://hdwblog.disqus.com/count.js" async></script>
-  
 
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'http://javahdw.top/404/index.html';
-        this.page.identifier = '404/index.html';
-        this.page.title = 'commonweal';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://hdwblog.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        loadComments();
-      
-    </script>
+
   
 
 
@@ -826,7 +800,20 @@
 
 
 
-
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '0e7d021fa7eb3b4fcc74',
+          clientSecret: 'f510f7c96419d9953332ca267671c9f266314e15',
+          repo: 'hdw779894759.github.io',
+          owner: 'hdw779894759',
+          admin: ['hdw779894759'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
