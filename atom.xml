@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-19T02:47:09.082Z</updated>
+  <updated>2018-10-19T03:56:35.000Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gitalk测试</title>
+    <link href="http://javahdw.top/2018/10/19/gitalk%E6%B5%8B%E8%AF%95/"/>
+    <id>http://javahdw.top/2018/10/19/gitalk测试/</id>
+    <published>2018-10-19T03:56:00.000Z</published>
+    <updated>2018-10-19T03:56:35.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;gitalk
+        
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="gitalk" scheme="http://javahdw.top/tags/gitalk/"/>
+    
+  </entry>
   
   <entry>
     <title>【next-blog】背景图片设置</title>
