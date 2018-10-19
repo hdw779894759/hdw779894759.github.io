@@ -5,7 +5,7 @@
     <url>%2F2018%2F10%2F18%2F%E3%80%90next-blog%E3%80%91%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[修改themes\next\source\css\ _custom\custom.styl 添加如下代码：body { background:url(https://source.unsplash.com/random/1600x900); background-repeat: no-repeat; background-attachment:fixed; background-position:50% 50%;}]]></content>
       <categories>
-        <category>tags</category>
+        <category>blog</category>
       </categories>
       <tags>
         <tag>blog</tag>
