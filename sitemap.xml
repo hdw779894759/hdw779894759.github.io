@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://javahdw.top/friend/index.html</loc>
+    
+    <lastmod>2018-10-19T09:21:53.893Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://javahdw.top/about/index.html</loc>
+    
+    <lastmod>2018-10-19T09:13:16.931Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://javahdw.top/2018/10/18/%E3%80%90next-blog%E3%80%91%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE/</loc>
     
     <lastmod>2018-10-19T08:45:25.642Z</lastmod>
@@ -75,13 +89,6 @@
     <loc>http://javahdw.top/archives/index.html</loc>
     
     <lastmod>2018-10-17T09:19:13.653Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://javahdw.top/about/index.html</loc>
-    
-    <lastmod>2018-10-17T09:19:13.651Z</lastmod>
     
   </url>
   
