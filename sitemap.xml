@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://javahdw.top/friend/index.html</loc>
+    <loc>http://javahdw.top/about/index.html</loc>
     
-    <lastmod>2018-10-19T09:33:23.542Z</lastmod>
+    <lastmod>2018-10-19T10:05:35.418Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://javahdw.top/about/index.html</loc>
+    <loc>http://javahdw.top/archives/index.html</loc>
     
-    <lastmod>2018-10-19T09:13:16.931Z</lastmod>
+    <lastmod>2018-10-19T09:53:12.751Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://javahdw.top/friend/index.html</loc>
+    
+    <lastmod>2018-10-19T09:33:23.542Z</lastmod>
     
   </url>
   
@@ -82,13 +89,6 @@
     <loc>http://javahdw.top/tags/index.html</loc>
     
     <lastmod>2018-10-17T09:19:13.657Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://javahdw.top/archives/index.html</loc>
-    
-    <lastmod>2018-10-17T09:19:13.653Z</lastmod>
     
   </url>
   
