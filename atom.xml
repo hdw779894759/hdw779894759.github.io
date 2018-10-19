@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>喜欢较真儿的平头哥</title>
+  
+  <subtitle>漫长岁月</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://javahdw.top/"/>
+  <updated>2018-10-19T02:47:09.082Z</updated>
+  <id>http://javahdw.top/</id>
+  
+  <author>
+    <name>喜欢较真儿的平头哥</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【next-blog】背景图片设置</title>
+    <link href="http://javahdw.top/2018/10/18/%E3%80%90next-blog%E3%80%91%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://javahdw.top/2018/10/18/【next-blog】背景图片设置/</id>
+    <published>2018-10-18T10:01:00.000Z</published>
+    <updated>2018-10-19T02:47:09.082Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;修改themes\next\source\css\ _custom\custom.styl&lt;/p&gt;
+&lt;p&gt;添加如下代码：&lt;br&gt;body {&lt;br&gt;   background:url(&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="blog" scheme="http://javahdw.top/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://javahdw.top/2018/10/18/hello-world/"/>
+    <id>http://javahdw.top/2018/10/18/hello-world/</id>
+    <published>2018-10-18T01:50:00.000Z</published>
+    <updated>2018-10-18T09:27:26.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;timg (1).jpeg&lt;img src=&quot;http://images.javahdw.top/15398548453235vrpilgk.png&quot; alt=&quot;paste image&quot;&gt;&lt;br&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="http://javahdw.top/2018/10/17/My-New-Post/"/>
+    <id>http://javahdw.top/2018/10/17/My-New-Post/</id>
+    <published>2018-10-17T12:45:53.000Z</published>
+    <updated>2018-10-18T04:18:19.923Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
