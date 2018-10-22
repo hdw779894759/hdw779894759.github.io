@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-19T04:05:31.235Z</updated>
+  <updated>2018-10-22T02:45:43.184Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【mac】hosts文件常用自定义链接映射</title>
+    <link href="http://javahdw.top/2018/10/22/%E3%80%90mac%E3%80%91hosts%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5%E6%98%A0%E5%B0%84/"/>
+    <id>http://javahdw.top/2018/10/22/【mac】hosts文件常用自定义链接映射/</id>
+    <published>2018-10-22T02:41:00.000Z</published>
+    <updated>2018-10-22T02:45:43.184Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。"><a href="#下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。" class="headerlink" title="下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。"></a>下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0 account.jetbrains.com  #idea激活服务</span><br><span class="line">218.11.0.86 gitee.com  #git网站加速</span><br><span class="line">127.0.0.1 xmind.net   #xmind破解</span><br><span class="line">127.0.0.1 www.xmind.net#xmind破解</span><br><span class="line">151.101.76.249 github.global.ssl.fastly.net#git网站加速</span><br><span class="line">192.30.253.112 github.com#git网站加速</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。&quot;&gt;&lt;a href=&quot;#下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。&quot; clas
+      
+    
+    </summary>
+    
+      <category term="mac" scheme="http://javahdw.top/categories/mac/"/>
+    
+    
+      <category term="mac" scheme="http://javahdw.top/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title>gitalk测试3</title>
