@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-22T02:45:43.184Z</updated>
+  <updated>2018-10-22T03:55:32.706Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【mac】edrawMax软件的破解安装</title>
+    <link href="http://javahdw.top/2018/10/22/%E3%80%90mac%E3%80%91edrawMac%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85/"/>
+    <id>http://javahdw.top/2018/10/22/【mac】edrawMac软件的破解安装/</id>
+    <published>2018-10-22T03:52:00.000Z</published>
+    <updated>2018-10-22T03:55:32.706Z</updated>
+    
+    <content type="html"><![CDATA[<p>请根据下面的链接进行安装即可。</p><p>注意下载安装包后断网</p><p><a href="https://www.zhinin.com/edraw_max-mac.html" target="_blank" rel="noopener">https://www.zhinin.com/edraw_max-mac.html</a></p><hr><p>【如果出现第三步打不开软件的情况，请执行下面的命令到命令窗即可（破解完之后记得改回来）】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;请根据下面的链接进行安装即可。&lt;/p&gt;
+&lt;p&gt;注意下载安装包后断网&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.zhinin.com/edraw_max-mac.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.z
+      
+    
+    </summary>
+    
+      <category term="mac" scheme="http://javahdw.top/categories/mac/"/>
+    
+    
+      <category term="mac" scheme="http://javahdw.top/tags/mac/"/>
+    
+      <category term="edrawMac" scheme="http://javahdw.top/tags/edrawMac/"/>
+    
+  </entry>
   
   <entry>
     <title>【mac】hosts文件常用自定义链接映射</title>
