@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【blog】关于网站收录]]></title>
+    <url>%2F2018%2F10%2F22%2F%E3%80%90blog%E3%80%91%E5%85%B3%E4%BA%8E%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[待解决的问题 由于新建博客，百度搜索和谷歌搜索发现都搜不到本网站，才发现需要配置两个搜索引擎的收录。 下面链接主要描述了百度搜索和谷歌搜索对网站的收录过程，跟着教程一步步走。 https://blog.csdn.net/qq_32454537/article/details/79482914]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【mac】edrawMax软件的破解安装]]></title>
     <url>%2F2018%2F10%2F22%2F%E3%80%90mac%E3%80%91edrawMac%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[请根据下面的链接进行安装即可。 注意下载安装包后断网 https://www.zhinin.com/edraw_max-mac.html 【如果出现第三步打不开软件的情况，请执行下面的命令到命令窗即可（破解完之后记得改回来）】1sudo spctl --master-disable]]></content>
