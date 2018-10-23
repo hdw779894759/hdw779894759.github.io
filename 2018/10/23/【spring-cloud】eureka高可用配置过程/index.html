@@ -138,21 +138,21 @@
 
 
 
-  <meta name="description" content="问题来源12单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到">
+  <meta name="description" content="问题来源   单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响">
 <meta name="keywords" content="SpringCloud,Eureka,高可用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【spring-cloud】eureka高可用配置过程">
 <meta property="og:url" content="http://javahdw.top/2018/10/23/【spring-cloud】eureka高可用配置过程/index.html">
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
-<meta property="og:description" content="问题来源12单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到">
+<meta property="og:description" content="问题来源   单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.javahdw.top/1540263837822mlth1ecv.png">
 <meta property="og:image" content="http://images.javahdw.top/15402647023289fmf5lrd.png">
 <meta property="og:image" content="http://images.javahdw.top/15402648012986mk8lmx6.png">
-<meta property="og:updated_time" content="2018-10-23T03:28:49.445Z">
+<meta property="og:updated_time" content="2018-10-23T03:30:41.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【spring-cloud】eureka高可用配置过程">
-<meta name="twitter:description" content="问题来源12单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到">
+<meta name="twitter:description" content="问题来源   单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响">
 <meta name="twitter:image" content="http://images.javahdw.top/1540263837822mlth1ecv.png">
 
 
@@ -464,7 +464,7 @@
                 
               
 
-              <time title="创建时间：2018-10-23 10:55:00 / 修改时间：11:28:49" itemprop="dateCreated datePublished" datetime="2018-10-23T10:55:00+08:00">2018-10-23</time>
+              <time title="创建时间：2018-10-23 10:55:00 / 修改时间：11:30:41" itemprop="dateCreated datePublished" datetime="2018-10-23T10:55:00+08:00">2018-10-23</time>
             
 
             
@@ -566,7 +566,8 @@
       
 
       
-        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。</span><br><span class="line">Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。</span><br></pre></td></tr></table></figure>
+        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><p>   单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。</p>
+<p>   Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。</p>
 <h2 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h2><h4 id="1-添加以下内容到服务器hosts文件"><a href="#1-添加以下内容到服务器hosts文件" class="headerlink" title="1.添加以下内容到服务器hosts文件"></a>1.添加以下内容到服务器hosts文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 peer1 peer2</span><br></pre></td></tr></table></figure>
 <h4 id="2-复制application-yml三份并如图修改名称"><a href="#2-复制application-yml三份并如图修改名称" class="headerlink" title="2.复制application.yml三份并如图修改名称"></a>2.复制application.yml三份并如图修改名称</h4><p><img src="http://images.javahdw.top/1540263837822mlth1ecv.png" alt="paste image"></p>
 <h4 id="3-设置每个节点的内容"><a href="#3-设置每个节点的内容" class="headerlink" title="3.设置每个节点的内容"></a>3.设置每个节点的内容</h4><p>application-peer1.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认地址即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8761</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer1</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer2:8762/eureka,http://peer3:8763/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p>
