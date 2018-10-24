@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【spring-cloud】客户端微服务注册到Eureka集群上]]></title>
+    <url>%2F%E3%80%90spring-cloud%E3%80%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%88%B0Eureka%E9%9B%86%E7%BE%A4%E4%B8%8A.html</url>
+    <content type="text"><![CDATA[问题来源 延续上个文章完成了Eureka的集群创建后，需要实现单个微服务注册到Eureka集群上的过程。 该注册过程只需修改default-Zone节点配置即可，配置成多个Eureka Server地址，就可以将其注册到Eureka集群上。 代码演示12345eureka: client: # 注册eureka上的地址 serviceUrl: defaultZone: http://192.168.2.237:8761/eureka,http://192.168.2.237:8762/eureka,http://192.168.2.237:8763/eureka 效果 配置完成后启动项目即可在eureka集群下的每个节点看到该服务的注册信息。 当然，微服务即使只配置Eureka Server集群中的某个节点上，也能正常注册到集群上，因为多个Eureka节点之间的数据会同步。 正常情况下，这种配置与配置多个节点的效果是一样的，不过为了适应某些极端场景，比如注册的Eureka出现问题而又无法及时同步给其他微服务，笔者建议在客户端配置多个Eureka节点 文献： SpringCloud与Docker微服务架构实战-周立]]></content>
+      <categories>
+        <category>SpringCloud</category>
+      </categories>
+      <tags>
+        <tag>Eureka client</tag>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【spring-cloud】eureka高可用配置过程]]></title>
     <url>%2F%E3%80%90spring-cloud%E3%80%91eureka%E9%AB%98%E5%8F%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B.html</url>
     <content type="text"><![CDATA[问题来源 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。 Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。 配置流程1.添加以下内容到服务器hosts文件1127.0.0.1 peer1 peer2 peer3 2.复制application.yml三份并如图修改名称 3.设置每个节点的内容application-peer1.yml123456789101112131415161718192021# eureka官方默认端口即为8761server: port: 8761eureka: # 设置服务名 instance: hostname: peer1 client: # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册 register-with-eureka: false # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。 fetch-registry: false # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址 service-url: defaultZone: http://peer2:8762/eureka,http://peer3:8763/eureka # 关闭自我保护 server: enable-self-preservation: false eviction-interval-timer-in-ms: 4000 application-peer2.yml123456789101112131415161718192021# eureka官方默认端口即为8761server: port: 8762eureka: # 设置服务名 instance: hostname: peer2 client: # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册 register-with-eureka: false # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。 fetch-registry: false # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址 service-url: defaultZone: http://peer1:8761/eureka,http://peer3:8763/eureka # 关闭自我保护 server: enable-self-preservation: false eviction-interval-timer-in-ms: 4000 application-peer3.yml123456789101112131415161718192021# eureka官方默认端口即为8761server: port: 8763eureka: # 设置服务名 instance: hostname: peer3 client: # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册 register-with-eureka: false # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。 fetch-registry: false # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址 service-url: defaultZone: http://peer2:8762/eureka,http://peer1:8761/eureka # 关闭自我保护 server: enable-self-preservation: false eviction-interval-timer-in-ms: 4000 4.在idea中完成启动配置 【注意：peer2与peer3文件修改雷同】配置完成后启动三个服务。 5.访问Eureka服务验证从而成功完成eureka服务器的高可用 后面的文章会向大家介绍客户端的高可用，包括zuul网关和其他业务服务的配置。]]></content>

@@ -1,3 +1,3 @@
+http://javahdw.top/【spring-cloud】客户端微服务注册到Eureka集群上.html
 http://javahdw.top/【spring-cloud】eureka高可用配置过程.html
 http://javahdw.top/【blog】关于网站收录.html
-http://javahdw.top/【mac】edrawMac软件的破解安装.html
