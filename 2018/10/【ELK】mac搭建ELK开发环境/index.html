@@ -199,23 +199,25 @@
 
 
 
-  <meta name="description" content="前言    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。  程序准备elasticsearchwget https://artifacts.elastic.co/downloads/elasticse">
+  <meta name="description" content="目标 前言    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。">
 <meta name="keywords" content="elk">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【ELK】mac搭建ELK开发环境">
 <meta property="og:url" content="http://javahdw.top/2018/10/【ELK】mac搭建ELK开发环境/index.html">
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
-<meta property="og:description" content="前言    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。  程序准备elasticsearchwget https://artifacts.elastic.co/downloads/elasticse">
+<meta property="og:description" content="目标 前言    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://images.javahdw.top/1540373853201ovcw3iws.png">
+<meta property="og:image" content="http://images.javahdw.top/1540373830112hw3blaam.png">
 <meta property="og:image" content="http://images.javahdw.top/15403688859024bw34nwe.png">
 <meta property="og:image" content="http://images.javahdw.top/15403711247333xqguwq4.png">
 <meta property="og:image" content="http://images.javahdw.top/1540372390483h9n66ako.png">
 <meta property="og:image" content="http://images.javahdw.top/15403725515989kt30xsp.png">
-<meta property="og:updated_time" content="2018-10-24T09:28:47.360Z">
+<meta property="og:updated_time" content="2018-10-24T09:40:52.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【ELK】mac搭建ELK开发环境">
-<meta name="twitter:description" content="前言    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。  程序准备elasticsearchwget https://artifacts.elastic.co/downloads/elasticse">
-<meta name="twitter:image" content="http://images.javahdw.top/15403688859024bw34nwe.png">
+<meta name="twitter:description" content="目标 前言    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。">
+<meta name="twitter:image" content="http://images.javahdw.top/1540373853201ovcw3iws.png">
 
 
 
@@ -548,7 +550,7 @@
                 
               
 
-              <time title="创建时间：2018-10-24 15:39:00 / 修改时间：17:28:47" itemprop="dateCreated datePublished" datetime="2018-10-24T15:39:00+08:00">2018-10-24</time>
+              <time title="创建时间：2018-10-24 15:39:00 / 修改时间：17:40:52" itemprop="dateCreated datePublished" datetime="2018-10-24T15:39:00+08:00">2018-10-24</time>
             
 
             
@@ -649,8 +651,10 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。</blockquote>
+        <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p><img src="http://images.javahdw.top/1540373853201ovcw3iws.png" alt="paste image"><br><img src="http://images.javahdw.top/1540373830112hw3blaam.png" alt="paste image"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。</blockquote>
 
+<a id="more"></a>
 <h1 id="程序准备"><a href="#程序准备" class="headerlink" title="程序准备"></a>程序准备</h1><p>elasticsearch<br>wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.11.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.11.tar.gz</a></p>
 <p>logstash<br>wget <a href="https://artifacts.elastic.co/downloads/logstash/logstash-5.6.11.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/logstash/logstash-5.6.11.tar.gz</a></p>
 <p>kibana-centos版本<br>wget <a href="https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-linux-x86_64.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-linux-x86_64.tar.gz</a></p>
@@ -1031,7 +1035,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序准备"><span class="nav-number">2.</span> <span class="nav-text">程序准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建过程"><span class="nav-number">3.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-logstash的搭建"><span class="nav-number">3.1.</span> <span class="nav-text">1.logstash的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1在logstash安装目录下新建conf文件夹，在里面新建配置文件java-log-stash-conf-表示收集的是java程序产生的日志，可随便起名-，内容如下"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1在logstash安装目录下新建conf文件夹，在里面新建配置文件java_log_stash.conf(表示收集的是java程序产生的日志，可随便起名)，内容如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2启动logstash并查看日志是否成功启动"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2启动logstash并查看日志是否成功启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ElasticSearch的搭建"><span class="nav-number">3.2.</span> <span class="nav-text">2.ElasticSearch的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1修改配置文件"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.1修改配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-config-elasticsearch-yml"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">vim config/elasticsearch.yml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2后台启动es"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.2后台启动es</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3两种方式验证es是否成功启动"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.3两种方式验证es是否成功启动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种：本地浏览器访问http-localhost-9200"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">第一种：本地浏览器访问http://localhost:9200/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种：查看es启动日志"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">第二种：查看es启动日志</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-kibana搭建"><span class="nav-number">3.3.</span> <span class="nav-text">3.kibana搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2验证kibana是否成功启动"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.2验证kibana是否成功启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3收集es信息展示到kibana上"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.3收集es信息展示到kibana上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4打开界面查看"><span class="nav-number">3.3.4.</span> <span class="nav-text">3.4打开界面查看</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序准备"><span class="nav-number">3.</span> <span class="nav-text">程序准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建过程"><span class="nav-number">4.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-logstash的搭建"><span class="nav-number">4.1.</span> <span class="nav-text">1.logstash的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1在logstash安装目录下新建conf文件夹，在里面新建配置文件java-log-stash-conf-表示收集的是java程序产生的日志，可随便起名-，内容如下"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.1在logstash安装目录下新建conf文件夹，在里面新建配置文件java_log_stash.conf(表示收集的是java程序产生的日志，可随便起名)，内容如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2启动logstash并查看日志是否成功启动"><span class="nav-number">4.1.2.</span> <span class="nav-text">1.2启动logstash并查看日志是否成功启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ElasticSearch的搭建"><span class="nav-number">4.2.</span> <span class="nav-text">2.ElasticSearch的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1修改配置文件"><span class="nav-number">4.2.1.</span> <span class="nav-text">2.1修改配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-config-elasticsearch-yml"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">vim config/elasticsearch.yml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2后台启动es"><span class="nav-number">4.2.2.</span> <span class="nav-text">2.2后台启动es</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3两种方式验证es是否成功启动"><span class="nav-number">4.2.3.</span> <span class="nav-text">2.3两种方式验证es是否成功启动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种：本地浏览器访问http-localhost-9200"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">第一种：本地浏览器访问http://localhost:9200/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种：查看es启动日志"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">第二种：查看es启动日志</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-kibana搭建"><span class="nav-number">4.3.</span> <span class="nav-text">3.kibana搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可"><span class="nav-number">4.3.1.</span> <span class="nav-text">3.1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2验证kibana是否成功启动"><span class="nav-number">4.3.2.</span> <span class="nav-text">3.2验证kibana是否成功启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3收集es信息展示到kibana上"><span class="nav-number">4.3.3.</span> <span class="nav-text">3.3收集es信息展示到kibana上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4打开界面查看"><span class="nav-number">4.3.4.</span> <span class="nav-text">3.4打开界面查看</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
