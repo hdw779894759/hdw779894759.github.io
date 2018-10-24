@@ -51,12 +51,13 @@
   <entry>
     <title><![CDATA[【mac】hosts文件常用自定义链接映射]]></title>
     <url>%2F2018%2F10%2F%E3%80%90mac%E3%80%91hosts%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5%E6%98%A0%E5%B0%84%2F</url>
-    <content type="text"><![CDATA[下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。12345670.0.0.0 account.jetbrains.com #idea激活服务218.11.0.86 gitee.com #git网站加速127.0.0.1 xmind.net #xmind破解127.0.0.1 www.xmind.net #xmind破解151.101.76.249 github.global.ssl.fastly.net #git网站加速192.30.253.112 github.com #git网站加速127.0.0.1 peer1 peer2 #eureka高可用配置]]></content>
+    <content type="text"><![CDATA[下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。12345670.0.0.0 account.jetbrains.com #idea激活服务218.11.0.86 gitee.com #git网站加速127.0.0.1 xmind.net #xmind破解127.0.0.1 www.xmind.net #xmind破解151.101.76.249 github.global.ssl.fastly.net #git网站加速192.30.253.112 github.com #git网站加速127.0.0.1 peer1 peer2 peer3 #eureka高可用配置]]></content>
       <categories>
         <category>mac</category>
       </categories>
       <tags>
         <tag>mac</tag>
+        <tag>hosts</tag>
       </tags>
   </entry>
   <entry>
