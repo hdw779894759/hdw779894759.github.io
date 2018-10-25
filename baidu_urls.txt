@@ -1,3 +1,3 @@
+http://javahdw.top/2018/10/【ELK】ElasticSearch的head插件的使用/
 http://javahdw.top/2018/10/【ELK】mac搭建ELK开发环境/
 http://javahdw.top/2018/10/【spring-cloud】客户端微服务注册到Eureka集群上/
-http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/
