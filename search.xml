@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【zuul】mock测试zuul接口的限制]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90zuul%E3%80%91mock%E6%B5%8B%E8%AF%95zuul%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%99%90%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[问题在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。]]></content>
+      <categories>
+        <category>springcloud</category>
+      </categories>
+      <tags>
+        <tag>zuul</tag>
+        <tag>mock</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【ELK】ElasticSearch的head插件的使用]]></title>
     <url>%2F2018%2F10%2F%E3%80%90ELK%E3%80%91ElasticSearch%E7%9A%84head%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[效果 前言为了集中查看elasticsearch收集到的所有数据以及查看各个参数配置情况，当我们不能保证通过kibana连接时，就可以先通过head插件查看elasticsearch的各个参数和系统状态，一步步检查问题所在。 插件准备1git clone https://github.com/mobz/elasticsearch-head.git es配置文件修改12345vim /Users/hdw/root/elasticsearch-5.6.11/config/elasticsearch.yml文件最后添加下面两行信息http.cors.enabled: true # elasticsearch中启用CORShttp.cors.allow-origin: &quot;*&quot; # 允许访问的IP地址段，* 为所有IP都 重启es实例后（省略）启动head插件123#进入head插件目录下运行npm installnpm run start 访问http://localhost:9100/地址栏输入http://localhost:9200/ 到此完成head插件的配置，通过该界面即可看到es收集到的信息是否是自己想要的。 参考文献Elasticsearch中Head插件的使用 https://www.cnblogs.com/aubin/p/8018081.html查看centos中的用户和用户组 https://www.cnblogs.com/apexchu/p/4193117.html]]></content>

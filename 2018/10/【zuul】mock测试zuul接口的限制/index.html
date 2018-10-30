@@ -197,22 +197,18 @@
 
 
 
-  <meta name="description" content="问题来源        单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用">
-<meta name="keywords" content="SpringCloud,Eureka,高可用">
+  <meta name="description" content="问题在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。">
+<meta name="keywords" content="zuul,mock">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【spring-cloud】eureka高可用配置过程">
-<meta property="og:url" content="http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/index.html">
+<meta property="og:title" content="【zuul】mock测试zuul接口的限制">
+<meta property="og:url" content="http://javahdw.top/2018/10/【zuul】mock测试zuul接口的限制/index.html">
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
-<meta property="og:description" content="问题来源        单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用">
+<meta property="og:description" content="问题在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://images.javahdw.top/1540263837822mlth1ecv.png">
-<meta property="og:image" content="http://images.javahdw.top/15402647023289fmf5lrd.png">
-<meta property="og:image" content="http://images.javahdw.top/15402648012986mk8lmx6.png">
-<meta property="og:updated_time" content="2018-10-23T10:30:05.779Z">
+<meta property="og:updated_time" content="2018-10-30T09:51:30.556Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【spring-cloud】eureka高可用配置过程">
-<meta name="twitter:description" content="问题来源        单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用">
-<meta name="twitter:image" content="http://images.javahdw.top/1540263837822mlth1ecv.png">
+<meta name="twitter:title" content="【zuul】mock测试zuul接口的限制">
+<meta name="twitter:description" content="问题在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。">
 
 
 
@@ -221,7 +217,7 @@
 
 
 
-  <link rel="canonical" href="http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/">
+  <link rel="canonical" href="http://javahdw.top/2018/10/【zuul】mock测试zuul接口的限制/">
 
 
 
@@ -231,7 +227,7 @@
   };
 </script>
 
-  <title>【spring-cloud】eureka高可用配置过程 | 喜欢较真儿的平头哥</title>
+  <title>【zuul】mock测试zuul接口的限制 | 喜欢较真儿的平头哥</title>
   
 
 
@@ -503,7 +499,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/">
+    <link itemprop="mainEntityOfPage" href="http://javahdw.top/2018/10/【zuul】mock测试zuul接口的限制/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="喜欢较真儿的平头哥">
@@ -520,7 +516,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【spring-cloud】eureka高可用配置过程
+          <h2 class="post-title" itemprop="name headline">【zuul】mock测试zuul接口的限制
               
             
           </h2>
@@ -545,7 +541,7 @@
                 
               
 
-              <time title="创建时间：2018-10-23 10:55:00 / 修改时间：18:30:05" itemprop="dateCreated datePublished" datetime="2018-10-23T10:55:00+08:00">2018-10-23</time>
+              <time title="创建时间：2018-10-30 17:45:00 / 修改时间：17:51:30" itemprop="dateCreated datePublished" datetime="2018-10-30T17:45:00+08:00">2018-10-30</time>
             
 
             
@@ -567,7 +563,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/SpringCloud/" itemprop="url" rel="index"><span itemprop="name">SpringCloud</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/springcloud/" itemprop="url" rel="index"><span itemprop="name">springcloud</span></a></span>
 
                 
                 
@@ -582,8 +578,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/【spring-cloud】eureka高可用配置过程/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/【spring-cloud】eureka高可用配置过程/" itemprop="commentCount"></span>
+                <a href="/2018/10/【zuul】mock测试zuul接口的限制/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/【zuul】mock测试zuul接口的限制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -612,7 +608,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.2k</span>
+                <span title="本文字数">153</span>
               
 
               
@@ -626,7 +622,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -646,19 +642,9 @@
       
 
       
-        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><blockquote><br>    <p>    单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。</p><br>    <p>    Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。</p><br></blockquote>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><blockquote>在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。</blockquote>
 
-
-<h2 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h2><h4 id="1-添加以下内容到服务器hosts文件"><a href="#1-添加以下内容到服务器hosts文件" class="headerlink" title="1.添加以下内容到服务器hosts文件"></a>1.添加以下内容到服务器hosts文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 peer1 peer2 peer3</span><br></pre></td></tr></table></figure>
-<h4 id="2-复制application-yml三份并如图修改名称"><a href="#2-复制application-yml三份并如图修改名称" class="headerlink" title="2.复制application.yml三份并如图修改名称"></a>2.复制application.yml三份并如图修改名称</h4><p><img src="http://images.javahdw.top/1540263837822mlth1ecv.png" alt="paste image"></p>
-<h4 id="3-设置每个节点的内容"><a href="#3-设置每个节点的内容" class="headerlink" title="3.设置每个节点的内容"></a>3.设置每个节点的内容</h4><p>application-peer1.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认端口即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8761</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer1</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer2:8762/eureka,http://peer3:8763/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p>
-<p>application-peer2.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认端口即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8762</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer2</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer1:8761/eureka,http://peer3:8763/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p>
-<p>application-peer3.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认端口即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8763</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer3</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer2:8762/eureka,http://peer1:8761/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-在idea中完成启动配置"><a href="#4-在idea中完成启动配置" class="headerlink" title="4.在idea中完成启动配置"></a>4.在idea中完成启动配置</h4><p><img src="http://images.javahdw.top/15402647023289fmf5lrd.png" alt="paste image"></p>
-<p>【注意：peer2与peer3文件修改雷同】<br>配置完成后启动三个服务。</p>
-<h4 id="5-访问Eureka服务验证"><a href="#5-访问Eureka服务验证" class="headerlink" title="5.访问Eureka服务验证"></a>5.访问Eureka服务验证</h4><p><img src="http://images.javahdw.top/15402648012986mk8lmx6.png" alt="paste image"><br>从而成功完成eureka服务器的高可用</p>
-<hr>
-<p>后面的文章会向大家介绍客户端的高可用，包括zuul网关和其他业务服务的配置。</p>
+<a id="more"></a>
 
       
     </div>
@@ -687,35 +673,6 @@
     <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/10/【spring-cloud】eureka高可用配置过程/">【spring-cloud】eureka高可用配置过程</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 喜欢较真儿的平头哥 的个人博客">喜欢较真儿的平头哥</a></p>
-  <p><span>发布时间:</span>2018年10月23日 - 10:10</p>
-  <p><span>最后更新:</span>2018年10月23日 - 18:10</p>
-  <p><span>原始链接:</span><a href="/2018/10/【spring-cloud】eureka高可用配置过程/" title="【spring-cloud】eureka高可用配置过程">http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/" aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 平头哥原创博文 - 有问题请到留言区留言 - 转载请保留原文链接及作者,万分感谢🙏</p>
-</div>
-<script>
-    var clipboard = new Clipboard('.fa-clipboard');
-    $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({
-          title: "",
-          text: '复制成功',
-          icon: "success",
-          showConfirmButton: true
-          });
-    });
-    });
-</script>
-
 
       
     </div>
@@ -767,11 +724,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringCloud/" rel="tag"><i class="fa fa-tag"></i> SpringCloud</a>
+            <a href="/tags/zuul/" rel="tag"><i class="fa fa-tag"></i> zuul</a>
           
-            <a href="/tags/Eureka/" rel="tag"><i class="fa fa-tag"></i> Eureka</a>
-          
-            <a href="/tags/高可用/" rel="tag"><i class="fa fa-tag"></i> 高可用</a>
+            <a href="/tags/mock/" rel="tag"><i class="fa fa-tag"></i> mock</a>
           
         </div>
       
@@ -823,8 +778,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/【blog】关于网站收录/" rel="next" title="【blog】关于网站收录">
-                <i class="fa fa-chevron-left"></i> 【blog】关于网站收录
+              <a href="/2018/10/【ELK】ElasticSearch的head插件的使用/" rel="next" title="【ELK】ElasticSearch的head插件的使用">
+                <i class="fa fa-chevron-left"></i> 【ELK】ElasticSearch的head插件的使用
               </a>
             
           </div>
@@ -832,10 +787,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/【spring-cloud】客户端微服务注册到Eureka集群上/" rel="prev" title="【spring-cloud】客户端微服务注册到Eureka集群上">
-                【spring-cloud】客户端微服务注册到Eureka集群上 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1063,7 +1014,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题来源"><span class="nav-number">1.</span> <span class="nav-text">问题来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置流程"><span class="nav-number">2.</span> <span class="nav-text">配置流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加以下内容到服务器hosts文件"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.添加以下内容到服务器hosts文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-复制application-yml三份并如图修改名称"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.复制application.yml三份并如图修改名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设置每个节点的内容"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.设置每个节点的内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在idea中完成启动配置"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.在idea中完成启动配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-访问Eureka服务验证"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.访问Eureka服务验证</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li></ol></div>
             
 
           </div>

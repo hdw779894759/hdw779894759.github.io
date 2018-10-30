@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-25T06:13:35.805Z</updated>
+  <updated>2018-10-30T09:51:30.556Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【zuul】mock测试zuul接口的限制</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90zuul%E3%80%91mock%E6%B5%8B%E8%AF%95zuul%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%99%90%E5%88%B6/"/>
+    <id>http://javahdw.top/2018/10/【zuul】mock测试zuul接口的限制/</id>
+    <published>2018-10-30T09:45:00.000Z</published>
+    <updated>2018-10-30T09:51:30.556Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><blockquote>在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。</blockquote><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;blockquote&gt;在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="springcloud" scheme="http://javahdw.top/categories/springcloud/"/>
+    
+    
+      <category term="zuul" scheme="http://javahdw.top/tags/zuul/"/>
+    
+      <category term="mock" scheme="http://javahdw.top/tags/mock/"/>
+    
+  </entry>
   
   <entry>
     <title>【ELK】ElasticSearch的head插件的使用</title>
