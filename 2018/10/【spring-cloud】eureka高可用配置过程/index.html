@@ -197,21 +197,21 @@
 
 
 
-  <meta name="description" content="问题来源        单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用">
+  <meta name="description" content="问题来源 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整">
 <meta name="keywords" content="SpringCloud,Eureka,高可用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【spring-cloud】eureka高可用配置过程">
 <meta property="og:url" content="http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/index.html">
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
-<meta property="og:description" content="问题来源        单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用">
+<meta property="og:description" content="问题来源 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.javahdw.top/1540263837822mlth1ecv.png">
 <meta property="og:image" content="http://images.javahdw.top/15402647023289fmf5lrd.png">
 <meta property="og:image" content="http://images.javahdw.top/15402648012986mk8lmx6.png">
-<meta property="og:updated_time" content="2018-10-23T10:30:05.779Z">
+<meta property="og:updated_time" content="2018-10-30T09:57:56.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【spring-cloud】eureka高可用配置过程">
-<meta name="twitter:description" content="问题来源        单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用">
+<meta name="twitter:description" content="问题来源 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整">
 <meta name="twitter:image" content="http://images.javahdw.top/1540263837822mlth1ecv.png">
 
 
@@ -545,12 +545,24 @@
                 
               
 
-              <time title="创建时间：2018-10-23 10:55:00 / 修改时间：18:30:05" itemprop="dateCreated datePublished" datetime="2018-10-23T10:55:00+08:00">2018-10-23</time>
+              <time title="创建时间：2018-10-23 10:55:00" itemprop="dateCreated datePublished" datetime="2018-10-23T10:55:00+08:00">2018-10-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-30 17:57:56" itemprop="dateModified" datetime="2018-10-30T17:57:56+08:00">2018-10-30</time>
               
             
           </span>
@@ -646,8 +658,7 @@
       
 
       
-        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><blockquote><br>    <p>    单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。</p><br>    <p>    Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。</p><br></blockquote>
-
+        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><blockquote><br> 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。<br> Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。<br></blockquote>
 
 <h2 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h2><h4 id="1-添加以下内容到服务器hosts文件"><a href="#1-添加以下内容到服务器hosts文件" class="headerlink" title="1.添加以下内容到服务器hosts文件"></a>1.添加以下内容到服务器hosts文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 peer1 peer2 peer3</span><br></pre></td></tr></table></figure>
 <h4 id="2-复制application-yml三份并如图修改名称"><a href="#2-复制application-yml三份并如图修改名称" class="headerlink" title="2.复制application.yml三份并如图修改名称"></a>2.复制application.yml三份并如图修改名称</h4><p><img src="http://images.javahdw.top/1540263837822mlth1ecv.png" alt="paste image"></p>
@@ -696,7 +707,7 @@
   <p><span>本文标题:</span><a href="/2018/10/【spring-cloud】eureka高可用配置过程/">【spring-cloud】eureka高可用配置过程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 喜欢较真儿的平头哥 的个人博客">喜欢较真儿的平头哥</a></p>
   <p><span>发布时间:</span>2018年10月23日 - 10:10</p>
-  <p><span>最后更新:</span>2018年10月23日 - 18:10</p>
+  <p><span>最后更新:</span>2018年10月30日 - 17:10</p>
   <p><span>原始链接:</span><a href="/2018/10/【spring-cloud】eureka高可用配置过程/" title="【spring-cloud】eureka高可用配置过程">http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/" aria-label="复制成功！"></i></span>
   </p>
@@ -1109,7 +1120,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
   
 </div>
 

@@ -39,7 +39,7 @@
   <entry>
     <title><![CDATA[【spring-cloud】客户端微服务注册到Eureka集群上]]></title>
     <url>%2F2018%2F10%2F%E3%80%90spring-cloud%E3%80%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%88%B0Eureka%E9%9B%86%E7%BE%A4%E4%B8%8A%2F</url>
-    <content type="text"><![CDATA[问题来源 延续上个文章完成了Eureka的集群创建后，需要实现单个微服务注册到Eureka集群上的过程。 该注册过程只需修改default-Zone节点配置即可，配置成多个Eureka Server地址，就可以将其注册到Eureka集群上。 代码演示12345eureka: client: # 注册eureka上的地址 serviceUrl: defaultZone: http://192.168.2.237:8761/eureka,http://192.168.2.237:8762/eureka,http://192.168.2.237:8763/eureka 效果 配置完成后启动项目即可在eureka集群下的每个节点看到该服务的注册信息。 当然，微服务即使只配置Eureka Server集群中的某个节点上，也能正常注册到集群上，因为多个Eureka节点之间的数据会同步。 正常情况下，这种配置与配置多个节点的效果是一样的，不过为了适应某些极端场景，比如注册的Eureka出现问题而又无法及时同步给其他微服务，笔者建议在客户端配置多个Eureka节点 后面会向大家介绍手动扩容微服务的过程，以及后期通过编排工具扩容微服务。文献： SpringCloud与Docker微服务架构实战-周立]]></content>
+    <content type="text"><![CDATA[问题来源 延续上个文章完成了Eureka的集群创建后，需要实现单个微服务注册到Eureka集群上的过程。 该注册过程只需修改default-Zone节点配置即可，配置成多个Eureka Server地址，就可以将其注册到Eureka集群上。 代码演示12345eureka: client: # 注册eureka上的地址 serviceUrl: defaultZone: http://192.168.2.237:8761/eureka,http://192.168.2.237:8762/eureka,http://192.168.2.237:8763/eureka 效果 配置完成后启动项目即可在eureka集群下的每个节点看到该服务的注册信息. 当然，微服务即使只配置Eureka Server集群中的某个节点上，也能正常注册到集群上，因为多个Eureka节点之间的数据会同步。 正常情况下，这种配置与配置多个节点的效果是一样的，不过为了适应某些极端场景，比如注册的Eureka出现问题而又无法及时同步给其他微服务，笔者建议在客户端配置多个Eureka节点 后面会向大家介绍手动扩容微服务的过程，以及后期通过编排工具扩容微服务。文献： SpringCloud与Docker微服务架构实战-周立]]></content>
       <categories>
         <category>SpringCloud</category>
       </categories>
@@ -64,7 +64,7 @@
   <entry>
     <title><![CDATA[【blog】关于网站收录]]></title>
     <url>%2F2018%2F10%2F%E3%80%90blog%E3%80%91%E5%85%B3%E4%BA%8E%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[待解决的问题 由于新建博客，百度搜索和谷歌搜索发现都搜不到本网站，才发现需要配置两个搜索引擎的收录。 下面链接主要描述了百度搜索和谷歌搜索对网站的收录过程，跟着教程一步步走。 https://blog.csdn.net/qq_32454537/article/details/79482914]]></content>
+    <content type="text"><![CDATA[待解决的问题由于新建博客，百度搜索和谷歌搜索发现都搜不到本网站，才发现需要配置两个搜索引擎的收录。下面链接主要描述了百度搜索和谷歌搜索对网站的收录过程，跟着教程一步步走。 https://blog.csdn.net/qq_32454537/article/details/79482914]]></content>
       <categories>
         <category>blog</category>
       </categories>
