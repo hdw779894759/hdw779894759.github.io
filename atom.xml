@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-30T09:51:30.556Z</updated>
+  <updated>2018-10-31T02:15:15.654Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【zuul】2.0版本下zuul配置的改变</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90zuul%E3%80%912-0%E7%89%88%E6%9C%AC%E4%B8%8Bzuul%E9%85%8D%E7%BD%AE%E7%9A%84%E6%94%B9%E5%8F%98/"/>
+    <id>http://javahdw.top/2018/10/【zuul】2-0版本下zuul配置的改变/</id>
+    <published>2018-10-31T02:05:00.000Z</published>
+    <updated>2018-10-31T02:15:15.654Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。</blockquote><h1 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h1><p><img src="http://images.javahdw.top/15409515734037krkuvsh.png" alt="paste image"></p><a id="more"></a><blockquote>以下这些改变是逐步和持续完善的，该博文不是一次性完成的，只能发现一个记录一个。</blockquote><h1 id="routes节点报404"><a href="#routes节点报404" class="headerlink" title="/routes节点报404"></a>/routes节点报404</h1><p>与之前版本的zuul相比，不再直接通过/routes便能查看路由信息了。如何查看修改后的暴露的节点信息，可通过配置包含所有的节点信息暴露出来展示出来。配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">management:</span><br><span class="line">  security:</span><br><span class="line">    enabled: false</span><br><span class="line">  endpoints:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: &quot;*&quot;</span><br></pre></td></tr></table></figure></p><p>其中include:”*”表示包含所有可暴露的节点信息，也许是版本升级更加注重安全这一方面，默认关闭掉了。通过该配置即可查看暴露的节点信息了。</p><p>效果如下：<br><img src="http://images.javahdw.top/15409520384226f1eyb74.png" alt="paste image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。&lt;/blockquote&gt;
+
+
+&lt;h1 id=&quot;版本信息&quot;&gt;&lt;a href=&quot;#版本信息&quot; class=&quot;headerlink&quot; title=&quot;版本信息&quot;&gt;&lt;/a&gt;版本信息&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15409515734037krkuvsh.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="springcloud" scheme="http://javahdw.top/categories/springcloud/"/>
+    
+    
+      <category term="zuul" scheme="http://javahdw.top/tags/zuul/"/>
+    
+      <category term="springcloud" scheme="http://javahdw.top/tags/springcloud/"/>
+    
+  </entry>
   
   <entry>
     <title>【zuul】mock测试zuul接口的限制</title>

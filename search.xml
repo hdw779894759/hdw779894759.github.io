@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【zuul】2.0版本下zuul配置的改变]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90zuul%E3%80%912-0%E7%89%88%E6%9C%AC%E4%B8%8Bzuul%E9%85%8D%E7%BD%AE%E7%9A%84%E6%94%B9%E5%8F%98%2F</url>
+    <content type="text"><![CDATA[前言在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。 版本信息 以下这些改变是逐步和持续完善的，该博文不是一次性完成的，只能发现一个记录一个。 /routes节点报404与之前版本的zuul相比，不再直接通过/routes便能查看路由信息了。如何查看修改后的暴露的节点信息，可通过配置包含所有的节点信息暴露出来展示出来。配置如下：1234567management: security: enabled: false endpoints: web: exposure: include: &quot;*&quot; 其中include:”*”表示包含所有可暴露的节点信息，也许是版本升级更加注重安全这一方面，默认关闭掉了。通过该配置即可查看暴露的节点信息了。 效果如下：]]></content>
+      <categories>
+        <category>springcloud</category>
+      </categories>
+      <tags>
+        <tag>zuul</tag>
+        <tag>springcloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【zuul】mock测试zuul接口的限制]]></title>
     <url>%2F2018%2F10%2F%E3%80%90zuul%E3%80%91mock%E6%B5%8B%E8%AF%95zuul%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%99%90%E5%88%B6%2F</url>
     <content type="text"><![CDATA[问题在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。]]></content>
