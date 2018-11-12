@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-10-31T02:15:15.654Z</updated>
+  <updated>2018-11-12T05:34:13.756Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【java内存模型学习之路】java内存区域与内存溢出异常</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/"/>
+    <id>http://javahdw.top/2018/11/【java内存模型学习之路】java内存区域与内存溢出异常/</id>
+    <published>2018-11-12T05:31:00.000Z</published>
+    <updated>2018-11-12T05:34:13.756Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>节选自《深入理解java虚拟机》第二章    java内存区域与内存溢出异常</blockquote><h1 id="对象的创建与内存分配"><a href="#对象的创建与内存分配" class="headerlink" title="对象的创建与内存分配"></a>对象的创建与内存分配</h1><p><img src="http://images.javahdw.top/15420007477343g9pxqam.png" alt="paste image"></p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;节选自《深入理解java虚拟机》第二章    java内存区域与内存溢出异常&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;对象的创建与内存分配&quot;&gt;&lt;a href=&quot;#对象的创建与内存分配&quot; class=&quot;headerlink&quot; title=&quot;对象的创建与内存分配&quot;&gt;&lt;/a&gt;对象的创建与内存分配&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15420007477343g9pxqam.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://javahdw.top/categories/java/"/>
+    
+    
+      <category term="内存模型" scheme="http://javahdw.top/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>【zuul】2.0版本下zuul配置的改变</title>

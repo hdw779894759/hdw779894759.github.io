@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【java内存模型学习之路】java内存区域与内存溢出异常]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%2F</url>
+    <content type="text"><![CDATA[节选自《深入理解java虚拟机》第二章 java内存区域与内存溢出异常 对象的创建与内存分配]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>内存模型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【zuul】2.0版本下zuul配置的改变]]></title>
     <url>%2F2018%2F10%2F%E3%80%90zuul%E3%80%912-0%E7%89%88%E6%9C%AC%E4%B8%8Bzuul%E9%85%8D%E7%BD%AE%E7%9A%84%E6%94%B9%E5%8F%98%2F</url>
     <content type="text"><![CDATA[前言在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。 版本信息 以下这些改变是逐步和持续完善的，该博文不是一次性完成的，只能发现一个记录一个。 /routes节点报404与之前版本的zuul相比，不再直接通过/routes便能查看路由信息了。如何查看修改后的暴露的节点信息，可通过配置包含所有的节点信息暴露出来展示出来。配置如下：1234567management: security: enabled: false endpoints: web: exposure: include: &quot;*&quot; 其中include:”*”表示包含所有可暴露的节点信息，也许是版本升级更加注重安全这一方面，默认关闭掉了。通过该配置即可查看暴露的节点信息了。 效果如下：]]></content>
