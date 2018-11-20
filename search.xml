@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【钢琴自学】8 - 猫王《love me tender》]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90%E9%92%A2%E7%90%B4%E8%87%AA%E5%AD%A6%E3%80%918-%E7%8C%AB%E7%8E%8B%E3%80%8Alove-me-tender%E3%80%8B%2F</url>
+    <content type="text"><![CDATA[弹错一个和弦，略尴尬]]></content>
+      <categories>
+        <category>钢琴</category>
+      </categories>
+      <tags>
+        <tag>钢琴</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【centos-jdk】centos安装jdk相关配置]]></title>
     <url>%2F2018%2F11%2F%E3%80%90centos-jdk%E3%80%91centos%E5%AE%89%E8%A3%85jdk%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[安装了很多遍jdk发现写在有道云笔记里寻找很麻烦，在这里记录一下centos中安装jdk的过程，通过全文搜索很方便。😝 卸载openjdk1234567rpm -qa | grep jdk# 可能使用的命令rpm -e --nodeps copy-jdk-configs-2.2-3.el7.noarchrpm -e --nodeps java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64rpm -e --nodeps java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64rpm -e --nodeps java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64 去oracle官网下载需要的jdk版本并通过scp复制到服务器12# 提前修改好名称scp -P 22 /Users/hdw/Transform/包名root@192.168.2.***:/root/Transform/包名 配置环境变量12345vim /etc/profile# 添加下面的参数 注意修改路径/usr/java/jdk1.7.67_10export JAVA_HOME=/usr/java/jdk1.7.67_10 export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar export PATH=$PATH:$JAVA_HOME/bin 刷新配置，使配置生效1source /etc/profile 验证是否配置成功12# 重开命令窗口验证java -version]]></content>
