@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-11-22T10:09:59.501Z</updated>
+  <updated>2018-11-23T03:58:25.554Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【mac-科学上网】lantern + ghelper</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90mac-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E3%80%91lantern-ghelper/"/>
+    <id>http://javahdw.top/2018/11/【mac-科学上网】lantern-ghelper/</id>
+    <published>2018-11-23T02:24:00.000Z</published>
+    <updated>2018-11-23T03:58:25.554Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://images.javahdw.top/1542939947662cq72w3qp.png" alt="paste image"></p><p><img src="http://images.javahdw.top/1542939961375sysfplca.png" alt="paste image"></p><blockquote>mac版科学上网的方法</blockquote><a id="more"></a><h1 id="下载蓝灯"><a href="#下载蓝灯" class="headerlink" title="下载蓝灯"></a>下载蓝灯</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接:https://pan.baidu.com/s/1E8Q8mKML--x8WwnHpjeeaA  密码:as8k</span><br></pre></td></tr></table></figure><blockquote> windows版本用户可以百度一下蓝灯的安装包，下面过程一样。</blockquote><h1 id="启用蓝灯-过程忽略"><a href="#启用蓝灯-过程忽略" class="headerlink" title="启用蓝灯(过程忽略)"></a>启用蓝灯(过程忽略)</h1><h1 id="谷歌商店启用helper"><a href="#谷歌商店启用helper" class="headerlink" title="谷歌商店启用helper"></a>谷歌商店启用helper</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 打开谷歌商店</span><br><span class="line">https://chrome.google.com/webstore/category/extensions?utm_source=chrome-ntp-icon</span><br><span class="line"></span><br><span class="line"># 搜索ghepler</span><br></pre></td></tr></table></figure><p><img src="http://images.javahdw.top/154294011322833stq1ie.png" alt="paste image"></p><p><img src="http://images.javahdw.top/1542940139678vlbqphwf.png" alt="paste image"></p><p>点击注册新用户，激活后重新打开即可使用</p><blockquote>之所以两个并用，是因为蓝灯流量限制造成的，两个一起用速度可能更快一些吧！</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/1542939947662cq72w3qp.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/1542939961375sysfplca.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;mac版科学上网的方法&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="mac" scheme="http://javahdw.top/categories/mac/"/>
+    
+    
+      <category term="mac" scheme="http://javahdw.top/tags/mac/"/>
+    
+      <category term="lantern" scheme="http://javahdw.top/tags/lantern/"/>
+    
+      <category term="ghelper" scheme="http://javahdw.top/tags/ghelper/"/>
+    
+  </entry>
   
   <entry>
     <title>【钢琴自学】8 - 猫王《love me tender》</title>
