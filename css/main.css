@@ -771,14 +771,14 @@ pre .javascript .function {
 .page-post-detail .post-type-quote blockquote::before {
   top: -20px;
   background-image: url("../images/quote-l.svg");
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ff2a2a;
 }
 .blockquote-center::after,
 .page-home .post-type-quote blockquote::after,
 .page-post-detail .post-type-quote blockquote::after {
   bottom: -20px;
   background-image: url("../images/quote-r.svg");
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ff2a2a;
   background-position: 100% 8px;
 }
 .blockquote-center p,
@@ -788,6 +788,14 @@ pre .javascript .function {
 .page-home .post-type-quote blockquote div,
 .page-post-detail .post-type-quote blockquote div {
   text-align: center;
+}
+.my_blockquote {
+  margin-bottom: 10px;
+  padding: 15px;
+  line-height: 22px;
+  border-left: 5px solid #009688;
+  border-radius: 0 2px 2px 0;
+  background-color: #eee;
 }
 .post .post-body .group-picture img {
   box-sizing: border-box;
@@ -2262,7 +2270,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ecfff4;
+  background: #ad14ff;
 }
 .links-of-blogroll {
   font-size: 13px;

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-11-23T03:58:25.554Z</updated>
+  <updated>2018-11-27T09:09:13.523Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【多线程】集合类与多线程</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90%E5%A4%9A%E7%BA%BF%E7%A8%8B%E3%80%91%E9%9B%86%E5%90%88%E7%B1%BB%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://javahdw.top/2018/11/【多线程】集合类与多线程/</id>
+    <published>2018-11-27T08:25:00.000Z</published>
+    <updated>2018-11-27T09:09:13.523Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote class="my_blockquote">ArrayList,Collections.synchronizedList,CopyOnWriteArrayList的适用情况</blockquote><br><a id="more"></a></p><h1 id="java-util-ArrayList"><a href="#java-util-ArrayList" class="headerlink" title="java.util.ArrayList"></a>java.util.ArrayList</h1><ul><li>非线程安全</li><li>单线程情况下可用</li></ul><h1 id="Collections-synchronizedList"><a href="#Collections-synchronizedList" class="headerlink" title="Collections.synchronizedList"></a>Collections.synchronizedList</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = Collections.synchronizedList(new ArrayList&lt;&gt;());</span><br></pre></td></tr></table></figure><ul><li><p>显式调用迭代器:通过list对象操作集合,无需考虑同步问题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list.add(i);</span><br><span class="line">list.remove();</span><br></pre></td></tr></table></figure></li><li><p>隐式调用迭代器:通过获取内部元素直接操作,需要考虑同步问题（synchronized）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">synchronized(this)&#123;</span><br><span class="line">  for(int n:list)&#123;</span><br><span class="line">    System.out.println(n);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>多线程情况下读少写多时适用</p></li></ul><h1 id="CopyOnWriteArrayList"><a href="#CopyOnWriteArrayList" class="headerlink" title="CopyOnWriteArrayList"></a>CopyOnWriteArrayList</h1><ul><li>适用copy-on-write时，每次执行“写”操作都会执行复制。如果频繁复制，比较耗时，当写操作比较少而读非常高时，适用该方法非常棒。</li></ul><h1 id="综上"><a href="#综上" class="headerlink" title="综上"></a>综上</h1><ul><li>java.util.ArrayList:单线程</li><li>Collections.synchronizedList:写多读少</li><li>CopyOnWriteArrayList:写少读多</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;my_blockquote&quot;&gt;ArrayList,Collections.synchronizedList,CopyOnWriteArrayList的适用情况&lt;/blockquote&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="多线程" scheme="http://javahdw.top/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="集合" scheme="http://javahdw.top/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E9%9B%86%E5%90%88/"/>
+    
+    
+      <category term="Collection" scheme="http://javahdw.top/tags/Collection/"/>
+    
+      <category term="集合" scheme="http://javahdw.top/tags/%E9%9B%86%E5%90%88/"/>
+    
+      <category term="多线程" scheme="http://javahdw.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>【mac-科学上网】lantern + ghelper</title>
@@ -498,20 +526,6 @@
       
         &lt;p&gt;timg (1).jpeg&lt;img src=&quot;http://images.javahdw.top/15398548453235vrpilgk.png&quot; alt=&quot;paste image&quot;&gt;&lt;br&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; r
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>My New Post</title>
-    <link href="http://javahdw.top/2018/10/My-New-Post/"/>
-    <id>http://javahdw.top/2018/10/My-New-Post/</id>
-    <published>2018-10-17T12:45:53.000Z</published>
-    <updated>2018-10-18T04:18:19.923Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
