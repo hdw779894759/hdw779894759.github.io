@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【mac常用命令大全】]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90mac%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8%E3%80%91%2F</url>
+    <content type="text"><![CDATA[mac常用命令大全收集 端口相关查看端口号占用情况，与centos不同12# 查看8080端口占用的pid：lsof -i:8080]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【多线程】集合类与多线程]]></title>
     <url>%2F2018%2F11%2F%E3%80%90%E5%A4%9A%E7%BA%BF%E7%A8%8B%E3%80%91%E9%9B%86%E5%90%88%E7%B1%BB%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[ArrayList,Collections.synchronizedList,CopyOnWriteArrayList的适用情况 java.util.ArrayList 非线程安全 单线程情况下可用 Collections.synchronizedList1List&lt;Integer&gt; list = Collections.synchronizedList(new ArrayList&lt;&gt;()); 显式调用迭代器:通过list对象操作集合,无需考虑同步问题 12list.add(i);list.remove(); 隐式调用迭代器:通过获取内部元素直接操作,需要考虑同步问题（synchronized） 12345synchronized(this)&#123; for(int n:list)&#123; System.out.println(n); &#125; &#125; 多线程情况下读少写多时适用 CopyOnWriteArrayList 适用copy-on-write时，每次执行“写”操作都会执行复制。如果频繁复制，比较耗时，当写操作比较少而读非常高时，适用该方法非常棒。 综上 java.util.ArrayList:单线程 Collections.synchronizedList:写多读少 CopyOnWriteArrayList:写少读多]]></content>
