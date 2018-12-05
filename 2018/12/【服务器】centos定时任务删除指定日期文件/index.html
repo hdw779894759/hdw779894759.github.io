@@ -206,7 +206,7 @@
 <meta property="og:description" content="crontabs服务设置centos系统定时执行任务，此处执行的是定期删除指定日期之前的文件">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.javahdw.top/1544000785933ycgt5cjy.png">
-<meta property="og:updated_time" content="2018-12-05T09:13:20.358Z">
+<meta property="og:updated_time" content="2018-12-05T09:15:34.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【服务器】centos定时任务删除指定日期文件">
 <meta name="twitter:description" content="crontabs服务设置centos系统定时执行任务，此处执行的是定期删除指定日期之前的文件">
@@ -543,7 +543,7 @@
                 
               
 
-              <time title="创建时间：2018-12-05 17:03:00 / 修改时间：17:13:20" itemprop="dateCreated datePublished" datetime="2018-12-05T17:03:00+08:00">2018-12-05</time>
+              <time title="创建时间：2018-12-05 17:03:00 / 修改时间：17:15:34" itemprop="dateCreated datePublished" datetime="2018-12-05T17:03:00+08:00">2018-12-05</time>
             
 
             
@@ -610,7 +610,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">718</span>
+                <span title="本文字数">708</span>
               
 
               
@@ -657,7 +657,7 @@
 <h1 id="查看任务"><a href="#查看任务" class="headerlink" title="查看任务"></a>查看任务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
 <blockquote class="my_blockquote">在执行的过程中可能会系统给系统发送邮件，可以通过vim进行查看执行结果。</blockquote>
 
-<h1 id="案例-查找并删除指定日期之前的文件"><a href="#案例-查找并删除指定日期之前的文件" class="headerlink" title="案例-查找并删除指定日期之前的文件"></a>案例-查找并删除指定日期之前的文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">#   /root/bxlt/pic/   目录	</span><br><span class="line">#	-mtime +1  设置时间为1天前</span><br><span class="line">#	-type f    要查找的文件类型  f 表示文件</span><br><span class="line">#   -name *    要查找的文件名称  * 代表所有</span><br><span class="line">#   -exec rm -rf  查找完毕后执行删除操作</span><br><span class="line">find /root/bxlt/pic/* -mtime +5 -type d  -name \*  -exec rm -rf &#123;&#125; \;</span><br><span class="line">echo &apos;删除照片-执行完毕&apos;;</span><br></pre></td></tr></table></figure>
+<h1 id="案例-查找并删除指定日期之前的文件"><a href="#案例-查找并删除指定日期之前的文件" class="headerlink" title="案例-查找并删除指定日期之前的文件"></a>案例-查找并删除指定日期之前的文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#   /root/bxlt/pic/   目录	</span></span><br><span class="line"><span class="comment">#	-mtime +1  设置时间为1天前</span></span><br><span class="line"><span class="comment">#	-type f    要查找的文件类型  f 表示文件</span></span><br><span class="line"><span class="comment">#   -name *    要查找的文件名称  * 代表所有</span></span><br><span class="line"><span class="comment">#   -exec rm -rf  查找完毕后执行删除操作</span></span><br><span class="line">find /root/bxlt/pic/* -mtime +5 -<span class="built_in">type</span> d  -name \*  -<span class="built_in">exec</span> rm -rf &#123;&#125; \;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'删除照片-执行完毕'</span>;</span><br></pre></td></tr></table></figure>
       
     </div>
 
