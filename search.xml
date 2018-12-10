@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【docker学习之路】docker从入门到实战]]></title>
+    <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91docker%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98%2F</url>
+    <content type="text"><![CDATA[docker从入门到实战系列教程随练笔记集合 docker总有一天会被大多数公司使用，为了适应新的挑战环境，在此开始集中对docker的学习过程进行总结。虽然笔者自己也接触docker大概一年时间，但是都比较零碎，一直想致力于公司私有容器仓库创建，以及通过dockerfile文件来构建微服务镜像，并通过微服务编排技术来实现公司微服务项目的水平扩展。 我相信将来的某一天终究会来到！！！ 以下是我持续总结并更新的教程文档,如果大家在学习的过程中欢迎提问，我们一起学习，一起研究。 环境准备【docker学习之路】1-通过vagrant安装centos7http://javahdw.top/2018/12/【docker学习之路】1-通过vagrant安装centos7/ 【docker学习之路】2-centos中安装docker环境http://javahdw.top/2018/12/【docker学习之路】2-centos中安装docker环境/ 初试docker【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像http://javahdw.top/2018/12/【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像 【docker学习之路】4-更改容器内容并提交生成新镜像http://javahdw.top/2018/12/【docker学习之路】4-更改容器内容并提交生成新镜像/]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【docker学习之路】4.更改容器内容并提交生成新镜像]]></title>
     <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%914-%E6%9B%B4%E6%94%B9%E5%AE%B9%E5%99%A8%E5%86%85%E5%AE%B9%E5%B9%B6%E6%8F%90%E4%BA%A4%E7%94%9F%E6%88%90%E6%96%B0%E9%95%9C%E5%83%8F%2F</url>
     <content type="text"><![CDATA[介绍docker commit命令的使用 1234567891011121314151617181920212223# 先启动一个容器等待修改docker run -it centos# 一个新的centos有vi但没有vim，安装一个vimyum install -y vim # -y表示yes# 退出exit# 查看容器状态docker container ls -a# 形成新的imagedocker commit zen_mcclintock hdw_bxlt/centos-vim# 查看当前的镜像内容docker image ls# 查看两个镜像的history观察不同docker history [image id]# 删除之前创建的镜像docker image rm cedf6ec02ae1]]></content>
@@ -31,8 +42,8 @@
         <category>docker</category>
       </categories>
       <tags>
-        <tag>docker</tag>
         <tag>centos</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>

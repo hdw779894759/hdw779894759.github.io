@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-12-10T05:25:23.583Z</updated>
+  <updated>2018-12-10T11:14:10.969Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【docker学习之路】docker从入门到实战</title>
+    <link href="http://javahdw.top/2018/12/%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91docker%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"/>
+    <id>http://javahdw.top/2018/12/【docker学习之路】docker从入门到实战/</id>
+    <published>2018-12-10T11:01:00.000Z</published>
+    <updated>2018-12-10T11:14:10.969Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote>docker从入门到实战系列教程随练笔记集合</blockquote><br><img src="http://images.javahdw.top/1544439746851zltziyap.png" alt="paste image"><br><a id="more"></a></p><p>    docker总有一天会被大多数公司使用，为了适应新的挑战环境，在此开始集中对docker的学习过程进行总结。虽然笔者自己也接触docker大概一年时间，但是都比较零碎，一直想致力于公司私有容器仓库创建，以及通过dockerfile文件来构建微服务镜像，并通过微服务编排技术来实现公司微服务项目的水平扩展。</p><br><p>    我相信将来的某一天终究会来到！！！</p><p>    以下是我持续总结并更新的教程文档,如果大家在学习的过程中欢迎提问，我们一起学习，一起研究。</p><h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="【docker学习之路】1-通过vagrant安装centos7"><a href="#【docker学习之路】1-通过vagrant安装centos7" class="headerlink" title="【docker学习之路】1-通过vagrant安装centos7"></a>【docker学习之路】1-通过vagrant安装centos7</h2><p><a href="http://javahdw.top/2018/12/【docker学习之路】1-通过vagrant安装centos7/">http://javahdw.top/2018/12/【docker学习之路】1-通过vagrant安装centos7/</a></p><h2 id="【docker学习之路】2-centos中安装docker环境"><a href="#【docker学习之路】2-centos中安装docker环境" class="headerlink" title="【docker学习之路】2-centos中安装docker环境"></a>【docker学习之路】2-centos中安装docker环境</h2><p><a href="http://javahdw.top/2018/12/【docker学习之路】2-centos中安装docker环境/">http://javahdw.top/2018/12/【docker学习之路】2-centos中安装docker环境/</a></p><h1 id="初试docker"><a href="#初试docker" class="headerlink" title="初试docker"></a>初试docker</h1><h2 id="【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像"><a href="#【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像" class="headerlink" title="【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像"></a>【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像</h2><p><a href="http://javahdw.top/2018/12/【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像">http://javahdw.top/2018/12/【docker学习之路】3-通过一个简单的Dockerfile文件快速构建镜像</a></p><h2 id="【docker学习之路】4-更改容器内容并提交生成新镜像"><a href="#【docker学习之路】4-更改容器内容并提交生成新镜像" class="headerlink" title="【docker学习之路】4-更改容器内容并提交生成新镜像"></a>【docker学习之路】4-更改容器内容并提交生成新镜像</h2><p><a href="http://javahdw.top/2018/12/【docker学习之路】4-更改容器内容并提交生成新镜像/">http://javahdw.top/2018/12/【docker学习之路】4-更改容器内容并提交生成新镜像/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote&gt;docker从入门到实战系列教程随练笔记集合&lt;/blockquote&gt;&lt;br&gt;&lt;img src=&quot;http://images.javahdw.top/1544439746851zltziyap.png&quot; alt=&quot;paste image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="http://javahdw.top/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【docker学习之路】4.更改容器内容并提交生成新镜像</title>
     <link href="http://javahdw.top/2018/12/%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%914-%E6%9B%B4%E6%94%B9%E5%AE%B9%E5%99%A8%E5%86%85%E5%AE%B9%E5%B9%B6%E6%8F%90%E4%BA%A4%E7%94%9F%E6%88%90%E6%96%B0%E9%95%9C%E5%83%8F/"/>
     <id>http://javahdw.top/2018/12/【docker学习之路】4-更改容器内容并提交生成新镜像/</id>
     <published>2018-12-10T05:23:00.000Z</published>
-    <updated>2018-12-10T05:25:23.583Z</updated>
+    <updated>2018-12-10T08:37:31.290Z</updated>
     
     <content type="html"><![CDATA[<blockquote>介绍docker commit命令的使用</blockquote><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先启动一个容器等待修改</span></span><br><span class="line">docker run -it centos</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一个新的centos有vi但没有vim，安装一个vim</span></span><br><span class="line">yum install -y vim    <span class="comment"># -y表示yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器状态</span></span><br><span class="line">docker container ls -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 形成新的image</span></span><br><span class="line">docker commit zen_mcclintock hdw_bxlt/centos-vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前的镜像内容</span></span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看两个镜像的history观察不同</span></span><br><span class="line">docker <span class="built_in">history</span> [image id]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除之前创建的镜像</span></span><br><span class="line">docker image rm cedf6ec02ae1</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -80,9 +102,9 @@
       <category term="docker" scheme="http://javahdw.top/categories/centos/docker/"/>
     
     
-      <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
-    
       <category term="centos" scheme="http://javahdw.top/tags/centos/"/>
+    
+      <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
     
   </entry>
   
@@ -494,35 +516,6 @@
     
     
       <category term="blog" scheme="http://javahdw.top/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【mac】edrawMax软件的破解安装</title>
-    <link href="http://javahdw.top/2018/10/%E3%80%90mac%E3%80%91edrawMac%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85/"/>
-    <id>http://javahdw.top/2018/10/【mac】edrawMac软件的破解安装/</id>
-    <published>2018-10-22T03:52:00.000Z</published>
-    <updated>2018-10-22T03:55:32.706Z</updated>
-    
-    <content type="html"><![CDATA[<p>请根据下面的链接进行安装即可。</p><p>注意下载安装包后断网</p><p><a href="https://www.zhinin.com/edraw_max-mac.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.zhinin.com/edraw_max-mac.html</a></p><hr><p>【如果出现第三步打不开软件的情况，请执行下面的命令到命令窗即可（破解完之后记得改回来）】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;请根据下面的链接进行安装即可。&lt;/p&gt;
-&lt;p&gt;注意下载安装包后断网&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.zhinin.com/edraw_max-mac.html&quot; rel=&quot;external nofollow noopener noreferrer&quot; 
-      
-    
-    </summary>
-    
-      <category term="mac" scheme="http://javahdw.top/categories/mac/"/>
-    
-    
-      <category term="mac" scheme="http://javahdw.top/tags/mac/"/>
-    
-      <category term="edrawMac" scheme="http://javahdw.top/tags/edrawMac/"/>
     
   </entry>
   

@@ -205,7 +205,7 @@
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
 <meta property="og:description" content="介绍docker commit命令的使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-10T05:25:23.583Z">
+<meta property="og:updated_time" content="2018-12-10T08:37:31.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【docker学习之路】4.更改容器内容并提交生成新镜像">
 <meta name="twitter:description" content="介绍docker commit命令的使用">
@@ -395,7 +395,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">27</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">28</span></a>
   </li>
         
         
@@ -541,7 +541,7 @@
                 
               
 
-              <time title="创建时间：2018-12-10 13:23:00 / 修改时间：13:25:23" itemprop="dateCreated datePublished" datetime="2018-12-10T13:23:00+08:00">2018-12-10</time>
+              <time title="创建时间：2018-12-10 13:23:00 / 修改时间：16:37:31" itemprop="dateCreated datePublished" datetime="2018-12-10T13:23:00+08:00">2018-12-10</time>
             
 
             
@@ -608,7 +608,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">361</span>
+                <span title="本文字数">362</span>
               
 
               
@@ -646,6 +646,7 @@
 
 <a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先启动一个容器等待修改</span></span><br><span class="line">docker run -it centos</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一个新的centos有vi但没有vim，安装一个vim</span></span><br><span class="line">yum install -y vim    <span class="comment"># -y表示yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器状态</span></span><br><span class="line">docker container ls -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 形成新的image</span></span><br><span class="line">docker commit zen_mcclintock hdw_bxlt/centos-vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前的镜像内容</span></span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看两个镜像的history观察不同</span></span><br><span class="line">docker <span class="built_in">history</span> [image id]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除之前创建的镜像</span></span><br><span class="line">docker image rm cedf6ec02ae1</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -786,6 +787,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/12/【docker学习之路】docker从入门到实战/" rel="prev" title="【docker学习之路】docker从入门到实战">
+                【docker学习之路】docker从入门到实战 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -853,7 +858,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1020,7 +1025,7 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://javahdw.top/tags/" title="标签" target="_blank">标签</a>
+                    <a href="http://localhost:4000/2018/12/【docker学习之路】docker从入门到实战/" title="docker学习之路" target="_blank" rel="external nofollow noopener noreferrer">docker学习之路</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
@@ -1083,7 +1088,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
   
 </div>
 
