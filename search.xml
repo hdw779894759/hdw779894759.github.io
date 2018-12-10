@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【docker学习之路】4.更改容器内容并提交生成新镜像]]></title>
+    <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%914-%E6%9B%B4%E6%94%B9%E5%AE%B9%E5%99%A8%E5%86%85%E5%AE%B9%E5%B9%B6%E6%8F%90%E4%BA%A4%E7%94%9F%E6%88%90%E6%96%B0%E9%95%9C%E5%83%8F%2F</url>
+    <content type="text"><![CDATA[介绍docker commit命令的使用 1234567891011121314151617181920212223# 先启动一个容器等待修改docker run -it centos# 一个新的centos有vi但没有vim，安装一个vimyum install -y vim # -y表示yes# 退出exit# 查看容器状态docker container ls -a# 形成新的imagedocker commit zen_mcclintock hdw_bxlt/centos-vim# 查看当前的镜像内容docker image ls# 查看两个镜像的history观察不同docker history [image id]# 删除之前创建的镜像docker image rm cedf6ec02ae1]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【docker学习之路】3.通过一个简单的Dockerfile文件快速构建镜像]]></title>
+    <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%913-%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Dockerfile%E6%96%87%E4%BB%B6%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F%2F</url>
+    <content type="text"><![CDATA[通过一个简单的Dockerfile文件快速构建镜像 12345678# 进入仅含有Dockerfile文件的文件夹内# cd .....# 在当前目录下执行构建镜像命令docker build -t hdw_bxlt/centos-vim-new .# 查看构建的镜像过程docker history [image id] dockerfile文件内容12345# 设置基础镜像FROM centos# 安装vimRUN yum install -y vim]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【docker学习之路】2.centos中安装docker环境]]></title>
     <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%912-centos%E4%B8%AD%E5%AE%89%E8%A3%85docker%E7%8E%AF%E5%A2%83%2F</url>
-    <content type="text"><![CDATA[快速在centos中安装docker环境 12345678# 安装docker环境yum install docker# 启动dockersystemctl start docker# 验证docker成功安装docker info]]></content>
+    <content type="text"><![CDATA[快速在centos中安装docker环境 1234567891011# 安装docker环境yum install docker# 启动dockersystemctl start docker# 验证docker成功安装docker info# 启动hello-world再次验证docker run hello-world]]></content>
       <categories>
         <category>centos</category>
         <category>docker</category>
