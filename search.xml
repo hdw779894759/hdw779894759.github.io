@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【docker学习之路】2.centos中安装docker环境]]></title>
+    <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%912-centos%E4%B8%AD%E5%AE%89%E8%A3%85docker%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[快速在centos中安装docker环境 12345678# 安装docker环境yum install docker# 启动dockersystemctl start docker# 验证docker成功安装docker info]]></content>
+      <categories>
+        <category>centos</category>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>centos</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【docker学习之路】1.通过vagrant安装centos7]]></title>
     <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%911-%E9%80%9A%E8%BF%87vagrant%E5%AE%89%E8%A3%85centos7%2F</url>
     <content type="text"><![CDATA[通过使用vagrant工具快速创建虚拟机，避免寻找下载虚拟机镜像！# 下载并安装vagrant官网：https://www.vagrantup.com/根据自己环境下载所需版本的vagrant完成vagrant的安装# 验证安装的vagrant12345vagrant --version# 在当前路径下创建vagrantFile文件(centos7为例)vagrant init centos/7# 查看生成的文件内容more Vagrantfile# 根据Vagrantfile创建虚拟机1vagrant up说明vagrant需要与第三方虚拟机软件配合而使用，建议使用VirtualBox。下载好VirtualBox继续上面的命令。 之后是漫长的下载等待过程，只能等待。最后在VirtualBox上发现出现了一个新的centos虚拟机。]]></content>

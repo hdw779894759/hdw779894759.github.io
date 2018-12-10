@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2018-12-10T03:14:38.471Z</updated>
+  <updated>2018-12-10T03:21:24.824Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【docker学习之路】2.centos中安装docker环境</title>
+    <link href="http://javahdw.top/2018/12/%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%912-centos%E4%B8%AD%E5%AE%89%E8%A3%85docker%E7%8E%AF%E5%A2%83/"/>
+    <id>http://javahdw.top/2018/12/【docker学习之路】2-centos中安装docker环境/</id>
+    <published>2018-12-10T03:19:00.000Z</published>
+    <updated>2018-12-10T03:21:24.824Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>快速在centos中安装docker环境</blockquote><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装docker环境</span><br><span class="line">yum install docker</span><br><span class="line"></span><br><span class="line"># 启动docker</span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line"># 验证docker成功安装</span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;快速在centos中安装docker环境&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="centos" scheme="http://javahdw.top/categories/centos/"/>
+    
+      <category term="docker" scheme="http://javahdw.top/categories/centos/docker/"/>
+    
+    
+      <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
+    
+      <category term="centos" scheme="http://javahdw.top/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>【docker学习之路】1.通过vagrant安装centos7</title>
@@ -497,32 +523,6 @@
       
       
         &lt;p&gt;测试2123&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
-    
-    
-      <category term="gitalk" scheme="http://javahdw.top/tags/gitalk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gitalk测试2</title>
-    <link href="http://javahdw.top/2018/10/gitalk%E6%B5%8B%E8%AF%952/"/>
-    <id>http://javahdw.top/2018/10/gitalk测试2/</id>
-    <published>2018-10-19T04:00:00.000Z</published>
-    <updated>2018-10-19T04:00:43.605Z</updated>
-    
-    <content type="html"><![CDATA[<p>测试test</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;测试test&lt;/p&gt;
 
       
     
