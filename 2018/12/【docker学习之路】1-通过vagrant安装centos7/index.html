@@ -207,7 +207,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.javahdw.top/1544410721860hr4ce8st.png">
 <meta property="og:image" content="http://images.javahdw.top/1544411177608rb4bazdx.png">
-<meta property="og:updated_time" content="2018-12-10T03:14:38.471Z">
+<meta property="og:updated_time" content="2018-12-11T01:51:57.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【docker学习之路】1.通过vagrant安装centos7">
 <meta name="twitter:description" content="通过使用vagrant工具快速创建虚拟机，避免寻找下载虚拟机镜像！">
@@ -544,12 +544,24 @@
                 
               
 
-              <time title="创建时间：2018-12-10 10:57:00 / 修改时间：11:14:38" itemprop="dateCreated datePublished" datetime="2018-12-10T10:57:00+08:00">2018-12-10</time>
+              <time title="创建时间：2018-12-10 10:57:00" itemprop="dateCreated datePublished" datetime="2018-12-10T10:57:00+08:00">2018-12-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-11 09:51:57" itemprop="dateModified" datetime="2018-12-11T09:51:57+08:00">2018-12-11</time>
               
             
           </span>
@@ -618,7 +630,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">374</span>
+                <span title="本文字数">625</span>
               
 
               
@@ -653,10 +665,20 @@
 
       
         <p><img src="http://images.javahdw.top/1544410721860hr4ce8st.png" alt="paste image"></p>
-<blockquote class="my_blockquote"><br>通过使用vagrant工具快速创建虚拟机，避免寻找下载虚拟机镜像！<br></blockquote><br><a id="more"></a><br><br><br># 下载并安装vagrant<br><br><p>官网：<a href="https://www.vagrantup.com/" rel="external nofollow noopener noreferrer" target="_blank">https://www.vagrantup.com/</a></p><br><p>根据自己环境下载所需版本的vagrant</p><br><p>完成vagrant的安装</p><br><br># 验证安装的vagrant<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vagrant --version</span><br><span class="line"><span class="comment"># 在当前路径下创建vagrantFile文件(centos7为例)</span></span><br><span class="line">vagrant init centos/7</span><br><span class="line"><span class="comment"># 查看生成的文件内容</span></span><br><span class="line">more Vagrantfile</span><br></pre></td></tr></table></figure><br><br># 根据Vagrantfile创建虚拟机<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant up</span><br></pre></td></tr></table></figure><br><br><img src="http://images.javahdw.top/1544411177608rb4bazdx.png" alt="paste image"><br><blockquote>说明vagrant需要与第三方虚拟机软件配合而使用，建议使用VirtualBox。下载好VirtualBox继续上面的命令。</blockquote>
+<blockquote class="my_blockquote"><br>通过使用vagrant工具快速创建虚拟机，避免寻找下载虚拟机镜像！<br></blockquote>
 
-<p>之后是漫长的下载等待过程，只能等待。<br>最后在VirtualBox上发现出现了一个新的centos虚拟机。</p>
+<a id="more"></a>
+<h1 id="下载并安装vagrant"><a href="#下载并安装vagrant" class="headerlink" title="下载并安装vagrant"></a>下载并安装vagrant</h1><p>官网：<a href="https://www.vagrantup.com/" rel="external nofollow noopener noreferrer" target="_blank">https://www.vagrantup.com/</a><br>根据自己环境下载所需版本的vagrant<br>完成vagrant的安装</p>
+<h1 id="验证安装的vagrant"><a href="#验证安装的vagrant" class="headerlink" title="验证安装的vagrant"></a>验证安装的vagrant</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vagrant --version</span><br><span class="line"><span class="comment"># 在当前路径下创建vagrantFile文件(centos7为例)</span></span><br><span class="line">vagrant init centos/7</span><br><span class="line"><span class="comment"># 查看生成的文件内容</span></span><br><span class="line">more Vagrantfile</span><br></pre></td></tr></table></figure>
+<h1 id="根据Vagrantfile创建虚拟机"><a href="#根据Vagrantfile创建虚拟机" class="headerlink" title="根据Vagrantfile创建虚拟机"></a>根据Vagrantfile创建虚拟机</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据Vagrantfile创建虚拟机</span></span><br><span class="line">vagrant up</span><br></pre></td></tr></table></figure>
+<p><img src="http://images.javahdw.top/1544411177608rb4bazdx.png" alt="paste image"></p>
+<blockquote>说明vagrant需要与第三方虚拟机软件配合而使用，建议使用VirtualBox。下载好VirtualBox继续上面的命令。</blockquote>
 
+<p>之后是漫长的下载等待过程，只能等待。<br>最后在VirtualBox上发现出现了一个新的centos虚拟机。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入虚拟机</span></span><br><span class="line">vagrant ssh</span><br></pre></td></tr></table></figure></p>
+<blockquote class="my_blockquote"><br>首次进入vagrant虚拟机有些命令可能无权操作，默认用户名密码都是vagrant，默认没有root密码，需要更改，下面介绍更改root密码操作。<br></blockquote>
+
+
+<h1 id="vagrant常用命令"><a href="#vagrant常用命令" class="headerlink" title="vagrant常用命令"></a>vagrant常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更改root账号密码</span></span><br><span class="line">sudo passwd</span><br><span class="line"><span class="comment"># 切换到root登录</span></span><br><span class="line">su root</span><br><span class="line"><span class="comment"># 查看虚拟机状态</span></span><br><span class="line">vagrant status</span><br><span class="line"><span class="comment"># 关闭虚拟机</span></span><br><span class="line">vagrant halt</span><br><span class="line"><span class="comment"># 删除虚拟机(完全删除)</span></span><br><span class="line">vagrant destroy</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -850,8 +872,17 @@
 
       
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1061,6 +1092,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载并安装vagrant"><span class="nav-number">1.</span> <span class="nav-text">下载并安装vagrant</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证安装的vagrant"><span class="nav-number">2.</span> <span class="nav-text">验证安装的vagrant</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据Vagrantfile创建虚拟机"><span class="nav-number">3.</span> <span class="nav-text">根据Vagrantfile创建虚拟机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vagrant常用命令"><span class="nav-number">4.</span> <span class="nav-text">vagrant常用命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
     </div>
@@ -1091,7 +1138,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">21k</span>
   
 
   
