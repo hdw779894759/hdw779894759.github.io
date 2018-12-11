@@ -1146,32 +1146,22 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  
-  
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'mh10GiMaRzrDlF43Totad12f-gzGzoHsz',
-        appKey: 'lXWIvgJVfLPh1egD8o2sws7v',
-        placeholder: 'Just go go',
-        avatar:'mm',
-        meta:guest,
-        pageSize:'10' || 10,
-        visitor: false
-    });
-  </script>
 
 
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '5520bea0d7e4d50f776d',
+          clientSecret: 'dee50f2bb10b71733106f27cd2b77219f30ad898',
+          repo: 'hdw779894759.github.io',
+          owner: 'hdw779894759',
+          admin: ['hdw779894759'],
+          id: location.pathname.substring(0,50),
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
