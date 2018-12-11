@@ -1255,8 +1255,8 @@
           repo: 'hdw779894759.github.io',
           owner: 'hdw779894759',
           admin: ['hdw779894759'],
-          id: location.pathname.substring(0,50),
-          distractionFreeMode: 'false'
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
         })
         gitalk.render('gitalk-container')
        </script>
