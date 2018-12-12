@@ -1784,7 +1784,7 @@ pre .javascript .function {
   border: 0;
 }
 #QR img {
-  width: 180px;
+  width: 165px;
   max-width: 100%;
   display: inline-block;
   margin: 0.8em 2em 0 2em;
@@ -2265,7 +2265,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a300ff;
+  background: #ff9dc9;
 }
 .links-of-blogroll {
   font-size: 13px;
