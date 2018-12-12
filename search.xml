@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【docker学习之路】6.docker持久化存储和数据共享体验之volume]]></title>
+    <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%916-docker%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB%E4%BD%93%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[在刚接触docker之前，因为不熟悉docker在存储方面的内容，所以有时候创建的容器，如果操作不当，会删掉容器重新创建，这样会把之前容器中产生的数据一并被删除。如果是数据存储容器，比如mysql容器，那将是我们都不愿意看到的。这里介绍一下关于docker持久化存储和数据共享方面的内容。 先贴几张图简单了解一下关于持久化的内容 volume体验-以mysql为例12345# 创建一个mysql容器，-e后面表示环境变量docker run -d --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql# 查看该容器设置的环境变量(也就是执行该容器的env命令)docker exec 1fc5a5f00315 env 从中我们能查看到我们设置的环境变量：MYSQL_ALLOW_EMPTY_PASSWORD=true 1234567891011121314151617181920212223242526272829303132# 查看容器创建的volume挂载点（挂载点我俗称的，表示容器内部将文件挂载到容器外部）docker volume lsDRIVER VOLUME NAMElocal 059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b# 查看volume详细信息 docker volume inspect 059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b [ &#123; "CreatedAt": "2018-12-12T02:03:55Z", "Driver": "local", "Labels": null, "Mountpoint": "/var/lib/docker/volumes/059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b/_data", "Name": "059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b", "Options": null, "Scope": "local" &#125;]# 再新建一个MySQL2容器docker run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql# 通过volume可以查看到多了一个volumedocker volume ls# 停止并删除容器docker stop mysql1 mysql2docker rm mysql1 mysql2# 再次通过volume命令查看挂载信息依然存在docker volume ls 说明容器在不增加volume参数启动的情况下会自己默认增加volume挂载信息，我们可以通过volume的命令来查看其详细信息。 volume名称改善通过上面的体验，我们看到默认的volume产生一串很长的值，不方便我们查看，我们可以对其进行优化。12345# 先删除之前的两个volumedocker volume rm *** ***# 创建新的改善volume内容的容器 docker run -d -v mysql:/var/lib/mysql --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql参数介绍：-d表示后台运行,-v表示volume挂载配置mysql为volume名称，/var/lib/mysql为挂载到容器外的目录,–name设置容器的名称为mysql1,-e添加系统环境变量参数 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# 查看volume信息docker volume lsDRIVER VOLUME NAMElocal mysql# 为了验证mysql容器volume设置，我们进入容器中创建数据库来验证# 以交互式方式执行mysql容器/bin/bashdocker exec -it mysql1 /bin/bash# 此时已经进入容器内部# 连接mysql服务,之前创建已经无需密码，所以可以直接进入，不需要密码mysql -u root# 查看数据库show databases;# 创建数据库，命名为dockercreate database docker;# 退出mysql并退出容器;exitexit# 下面进入验证环节# 强制停止正在运行的mysql1容器并删除容器docker rm -f mysql1# 查看volume挂载信息，可以发现mysql的volume依然存在docker volume ls# 重新创建一个mysql2并使用这个volumedocker run -d -v mysql:/var/lib/mysql --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql# 进入mysql2容器查看数据库信息docker exec -it mysql2 /bin/bash# 进入mysql服务mysql -uroot# 查看数据库信息show databases;mysql&gt; show databases;+--------------------+| Database |+--------------------+| docker || information_schema || mysql || performance_schema || sys |+--------------------+5 rows in set (0.01 sec)# 到此成功验证！ 下一篇会介绍第二种挂载方式，更利于开发人员进行使用！]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>volume</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【docker学习之路】5.了解网络基础概念]]></title>
     <url>%2F2018%2F12%2F%E3%80%90docker%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%915.%E4%BA%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%2F</url>
     <content type="text"><![CDATA[为了日后学习docker网络相关的命令，我们必须清楚网络的一些基本知识贴几张图辅助理解这个过程，具体内容还是翻看网络工程相关书籍来学习。ping和telnet是验证服务器和端口是否开放的重要工具，一定要会！]]></content>

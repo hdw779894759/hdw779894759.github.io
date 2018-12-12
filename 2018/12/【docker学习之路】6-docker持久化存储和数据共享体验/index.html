@@ -197,17 +197,23 @@
 
 
 
-  <meta name="description" content="用代码改变世界">
-<meta name="keywords" content="平头哥,java,代码">
-<meta property="og:type" content="website">
-<meta property="og:title" content="喜欢较真儿的平头哥">
-<meta property="og:url" content="http://javahdw.top/tags/blog/index.html">
+  <meta name="description" content="在刚接触docker之前，因为不熟悉docker在存储方面的内容，所以有时候创建的容器，如果操作不当，会删掉容器重新创建，这样会把之前容器中产生的数据一并被删除。如果是数据存储容器，比如mysql容器，那将是我们都不愿意看到的。这里介绍一下关于docker持久化存储和数据共享方面的内容。">
+<meta name="keywords" content="docker,volume">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【docker学习之路】6.docker持久化存储和数据共享体验之volume">
+<meta property="og:url" content="http://javahdw.top/2018/12/【docker学习之路】6-docker持久化存储和数据共享体验/index.html">
 <meta property="og:site_name" content="喜欢较真儿的平头哥">
-<meta property="og:description" content="用代码改变世界">
+<meta property="og:description" content="在刚接触docker之前，因为不熟悉docker在存储方面的内容，所以有时候创建的容器，如果操作不当，会删掉容器重新创建，这样会把之前容器中产生的数据一并被删除。如果是数据存储容器，比如mysql容器，那将是我们都不愿意看到的。这里介绍一下关于docker持久化存储和数据共享方面的内容。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://images.javahdw.top/1544579552258kubu7c98.png">
+<meta property="og:image" content="http://images.javahdw.top/1544579528177n8qlhhd4.png">
+<meta property="og:image" content="http://images.javahdw.top/15445796258470fon5z13.png">
+<meta property="og:image" content="http://images.javahdw.top/1544579881227zr7yvzx0.png">
+<meta property="og:updated_time" content="2018-12-12T02:30:24.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="喜欢较真儿的平头哥">
-<meta name="twitter:description" content="用代码改变世界">
+<meta name="twitter:title" content="【docker学习之路】6.docker持久化存储和数据共享体验之volume">
+<meta name="twitter:description" content="在刚接触docker之前，因为不熟悉docker在存储方面的内容，所以有时候创建的容器，如果操作不当，会删掉容器重新创建，这样会把之前容器中产生的数据一并被删除。如果是数据存储容器，比如mysql容器，那将是我们都不愿意看到的。这里介绍一下关于docker持久化存储和数据共享方面的内容。">
+<meta name="twitter:image" content="http://images.javahdw.top/1544579552258kubu7c98.png">
 
 
 
@@ -216,7 +222,7 @@
 
 
 
-  <link rel="canonical" href="http://javahdw.top/tags/blog/">
+  <link rel="canonical" href="http://javahdw.top/2018/12/【docker学习之路】6-docker持久化存储和数据共享体验/">
 
 
 
@@ -226,7 +232,7 @@
   };
 </script>
 
-  <title>标签: blog | 喜欢较真儿的平头哥</title>
+  <title>【docker学习之路】6.docker持久化存储和数据共享体验之volume | 喜欢较真儿的平头哥</title>
   
 
 
@@ -295,7 +301,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <!--github-start
     <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
@@ -350,7 +356,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">30</span></a>
   </li>
@@ -452,114 +458,343 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>blog<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://javahdw.top/2018/12/【docker学习之路】6-docker持久化存储和数据共享体验/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="喜欢较真儿的平头哥">
+      <meta itemprop="description" content="用代码改变世界">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="喜欢较真儿的平头哥">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/【blog】关于网站收录/" itemprop="url">
-              
-                <span itemprop="name">【blog】关于网站收录</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">【docker学习之路】6.docker持久化存储和数据共享体验之volume
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-22T17:00:00+08:00" content="2018-10-22">
-          10-22
-        </time>
-      </div>
+        <div class="post-meta">
+            
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-12 09:45:00 / 修改时间：10:30:24" itemprop="dateCreated datePublished" datetime="2018-12-12T09:45:00+08:00">2018-12-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <blockquote class="my_blockquote">在刚接触docker之前，因为不熟悉docker在存储方面的内容，所以有时候创建的容器，如果操作不当，会删掉容器重新创建，这样会把之前容器中产生的数据一并被删除。如果是数据存储容器，比如mysql容器，那将是我们都不愿意看到的。这里介绍一下关于docker持久化存储和数据共享方面的内容。</blockquote>
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/【next-blog】背景图片设置/" itemprop="url">
-              
-                <span itemprop="name">【next-blog】背景图片设置</span>
-              
-            </a>
-        
-      </h3>
+<p><img src="http://images.javahdw.top/1544579552258kubu7c98.png" alt="paste image"></p>
+<a id="more"></a>
+<h1 id="先贴几张图简单了解一下关于持久化的内容"><a href="#先贴几张图简单了解一下关于持久化的内容" class="headerlink" title="先贴几张图简单了解一下关于持久化的内容"></a>先贴几张图简单了解一下关于持久化的内容</h1><p><img src="http://images.javahdw.top/1544579528177n8qlhhd4.png" alt="paste image"></p>
+<p><img src="http://images.javahdw.top/15445796258470fon5z13.png" alt="paste image"></p>
+<h1 id="volume体验-以mysql为例"><a href="#volume体验-以mysql为例" class="headerlink" title="volume体验-以mysql为例"></a>volume体验-以mysql为例</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个mysql容器，-e后面表示环境变量</span></span><br><span class="line">docker run -d --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看该容器设置的环境变量(也就是执行该容器的env命令)</span></span><br><span class="line">docker <span class="built_in">exec</span> 1fc5a5f00315 env</span><br></pre></td></tr></table></figure>
+<p><img src="http://images.javahdw.top/1544579881227zr7yvzx0.png" alt="paste image"></p>
+<blockquote>从中我们能查看到我们设置的环境变量：MYSQL_ALLOW_EMPTY_PASSWORD=true</blockquote>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-18T18:01:00+08:00" content="2018-10-18">
-          10-18
-        </time>
-      </div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看容器创建的volume挂载点（挂载点我俗称的，表示容器内部将文件挂载到容器外部）</span></span><br><span class="line">docker volume ls</span><br><span class="line">DRIVER              VOLUME NAME</span><br><span class="line"><span class="built_in">local</span>               059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看volume详细信息</span></span><br><span class="line"> docker volume inspect 059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b</span><br><span class="line"> </span><br><span class="line"> [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"CreatedAt"</span>: <span class="string">"2018-12-12T02:03:55Z"</span>,</span><br><span class="line">        <span class="string">"Driver"</span>: <span class="string">"local"</span>,</span><br><span class="line">        <span class="string">"Labels"</span>: null,</span><br><span class="line">        <span class="string">"Mountpoint"</span>: <span class="string">"/var/lib/docker/volumes/059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b/_data"</span>,</span><br><span class="line">        <span class="string">"Name"</span>: <span class="string">"059d816fea54bba972ae7d4e2c1511091bd1b8fe93484580ac3c7a19f449352b"</span>,</span><br><span class="line">        <span class="string">"Options"</span>: null,</span><br><span class="line">        <span class="string">"Scope"</span>: <span class="string">"local"</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再新建一个MySQL2容器</span></span><br><span class="line">docker run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过volume可以查看到多了一个volume</span></span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止并删除容器</span></span><br><span class="line">docker stop mysql1 mysql2</span><br><span class="line">docker rm mysql1 mysql2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再次通过volume命令查看挂载信息依然存在</span></span><br><span class="line">docker volume ls</span><br></pre></td></tr></table></figure>
+<blockquote>说明容器在不增加volume参数启动的情况下会自己默认增加volume挂载信息，我们可以通过volume的命令来查看其详细信息。</blockquote>
 
-    </header>
-  </article>
+<h1 id="volume名称改善"><a href="#volume名称改善" class="headerlink" title="volume名称改善"></a>volume名称改善</h1><blockquote>通过上面的体验，我们看到默认的volume产生一串很长的值，不方便我们查看，我们可以对其进行优化。</blockquote><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先删除之前的两个volume</span></span><br><span class="line">docker volume rm *** ***</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新的改善volume内容的容器</span></span><br><span class="line"> docker run -d -v mysql:/var/lib/mysql --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> mysql</span><br></pre></td></tr></table></figure><br><br><blockquote>参数介绍：-d表示后台运行,-v表示volume挂载配置mysql为volume名称，/var/lib/mysql为挂载到容器外的目录,–name设置容器的名称为mysql1,-e添加系统环境变量参数</blockquote>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看volume信息</span></span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line">DRIVER              VOLUME NAME</span><br><span class="line"><span class="built_in">local</span>               mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为了验证mysql容器volume设置，我们进入容器中创建数据库来验证</span></span><br><span class="line"><span class="comment"># 以交互式方式执行mysql容器/bin/bash</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql1 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 此时已经进入容器内部</span></span><br><span class="line"><span class="comment"># 连接mysql服务,之前创建已经无需密码，所以可以直接进入，不需要密码</span></span><br><span class="line">mysql -u root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看数据库</span></span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建数据库，命名为docker</span></span><br><span class="line">create database docker;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出mysql并退出容器;</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下面进入验证环节</span></span><br><span class="line"><span class="comment"># 强制停止正在运行的mysql1容器并删除容器</span></span><br><span class="line">docker rm -f mysql1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看volume挂载信息，可以发现mysql的volume依然存在</span></span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新创建一个mysql2并使用这个volume</span></span><br><span class="line">docker run -d -v mysql:/var/lib/mysql --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入mysql2容器查看数据库信息</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql2 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入mysql服务</span></span><br><span class="line">mysql -uroot</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看数据库信息</span></span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line">mysql&gt; show databases;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| docker             |</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.01 sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 到此成功验证！</span></span><br></pre></td></tr></table></figure>
+<blockquote class="my_blockquote">下一篇会介绍第二种挂载方式，更利于开发人员进行使用！</blockquote>
+
 
 
       
     </div>
 
+    
+      
+
+
+    
+
+    
+    
+    
+
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="喜欢较真儿的平头哥 wechat" style="width: 200px; max-width: 100%;">
+    <div>微信扫一扫，没事常联系  [请注明博客添加]</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，支持开源，感谢打赏，不懈努力！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="喜欢较真儿的平头哥 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="喜欢较真儿的平头哥 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+    
+          <div id="alihongbao" style="display: inline-block">
+            <img id="alihongbao_qr" src="/images/aliHongBao.PNG" alt="喜欢较真儿的平头哥 支付宝红包">
+            <p>支付宝红包</p>
+          </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+          
+            <a href="/tags/volume/" rel="tag"><i class="fa fa-tag"></i> volume</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+          
+            <span class="post-meta-divider">|</span>
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/【docker学习之路】5.了解网络基础概念/" rel="next" title="【docker学习之路】5.了解网络基础概念">
+                <i class="fa fa-chevron-left"></i> 【docker学习之路】5.了解网络基础概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+   <div id="gitalk-container"></div>
+
+
+
+  
+
 
         </div>
         
@@ -580,8 +815,17 @@
 
       
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -793,6 +1037,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先贴几张图简单了解一下关于持久化的内容"><span class="nav-number">1.</span> <span class="nav-text">先贴几张图简单了解一下关于持久化的内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volume体验-以mysql为例"><span class="nav-number">2.</span> <span class="nav-text">volume体验-以mysql为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volume名称改善"><span class="nav-number">3.</span> <span class="nav-text">volume名称改善</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
     </div>
@@ -976,6 +1236,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 
@@ -998,6 +1262,22 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'f43a0192dcbfaf895b6e',
+          clientSecret: '2c3f52c6e678014069e8cfb687599d683a110d32',
+          repo: 'hdw779894759.github.io',
+          owner: 'hdw779894759',
+          admin: ['hdw779894759'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
@@ -1392,6 +1672,23 @@
   </script>
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 14591,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
