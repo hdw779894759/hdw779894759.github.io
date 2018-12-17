@@ -200,9 +200,9 @@
       <category term="docker" scheme="http://javahdw.top/categories/centos/docker/"/>
     
     
-      <category term="centos" scheme="http://javahdw.top/tags/centos/"/>
-    
       <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
+    
+      <category term="centos" scheme="http://javahdw.top/tags/centos/"/>
     
   </entry>
   
