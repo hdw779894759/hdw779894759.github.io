@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【玩转大数据】1.Hadoop伪分布式安装并启动hdfs]]></title>
+    <url>%2F2019%2F01%2F%E3%80%90%E7%8E%A9%E8%BD%AC%E5%A4%A7%E6%95%B0%E6%8D%AE%E3%80%91Hadoop%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hadoop伪分布式搭建流程详解 jdk安装123456789# 解压：tar -xzvf jdk-7u79-linux-x64.tar.gz -C ~/app# 添加到系统环境变量：export JAVA_HOME=/home/hadoop/app/jdk1.7.0_79export PATH=$JAVA_HOME/bin:$PATH# 环境变量生效:source ~/.bash_profile# 验证java是否配置成功：java -version 安装ssh123456sudo yum install sshssh-keygen -t rsacp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keysssh localhostssh hadoop000ssh hadoop000 下载并解压hadoop123# 下载：直接去cdh网站下载# 解压tar -xzvf hadoop-2.6.0-cdh5.7.0.tar.gz -C ~/app hadoop配置文件的修改(hadoop_home/etc/hadoop)123456789101112131415161718192021222324# hadoop-env.shexport JAVA_HOME=/root/jdk1.6# etc/hadoop/core-site.xml:&lt;configuration&gt; &lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://localhost:8020&lt;/value&gt; &lt;/property&gt;&lt;property&gt; &lt;name&gt;hadoop.tmp.dir&lt;/name&gt; &lt;value&gt;/root/app/tmp&lt;/value&gt; &lt;/property&gt;&lt;/configuration&gt;# etc/hadoop/hdfs-site.xml:&lt;configuration&gt; &lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;1&lt;/value&gt; &lt;/property&gt;&lt;/configuration&gt; 启动hdfs1234567# 格式化文件系统（仅第一次执行即可，不要重复执行）：bin/hdfs namenode -format # 启动hdfs：sbin/start-dfs.sh# 验证是否启动成功： jps# 浏览器访问方式：http://虚拟机ip:50070 停止hdfs1sbin/stop-dfs.sh]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[【钢琴自学】10 - 许美静《城里的月光》]]></title>
     <url>%2F2018%2F12%2F%E3%80%90%E9%92%A2%E7%90%B4%E8%87%AA%E5%AD%A6%E3%80%9110-%E8%AE%B8%E7%BE%8E%E9%9D%99%E3%80%8A%E5%9F%8E%E9%87%8C%E7%9A%84%E6%9C%88%E5%85%89%E3%80%8B%2F</url>
     <content type="text"><![CDATA[练了两周，终于达到中间不卡断的境界了！！！]]></content>
