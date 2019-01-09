@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2019-01-08T08:55:39.135Z</updated>
+  <updated>2019-01-09T02:42:20.176Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【HADOOP学习之路】3.YARN环境的搭建及基本配置</title>
+    <link href="http://javahdw.top/2019/01/%E3%80%90HADOOP%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%913-YARN%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+    <id>http://javahdw.top/2019/01/【HADOOP学习之路】3-YARN环境的搭建及基本配置/</id>
+    <published>2019-01-09T02:26:00.000Z</published>
+    <updated>2019-01-09T02:42:20.176Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="my_blockquote">下面介绍HADOOP的资源管理调度工具YARN</blockquote><p><img src="http://images.javahdw.top/1547000865206lmbw1ede.png" alt="paste image"><br><a id="more"></a></p><h1 id="浅谈YARN组成及其分工"><a href="#浅谈YARN组成及其分工" class="headerlink" title="浅谈YARN组成及其分工"></a>浅谈YARN组成及其分工</h1><blockquote class="my_blockquote"><br>ResourceManager：RM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整个集群同一时间提供服务的RM只有一个；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;负责集群资源的统一管理和调度处理客户端的请求：提交一个作业、杀死一个作业；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;监控我们的NM，一旦某个NM挂了，那么该NM上运行的任务需要告诉我们的AM来如何进行处理。<br><br>NodeManager：NM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整个集群中有多个，负责自己本身节点资源管理和使用；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定时向RM汇报本节点的资源使用情况;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接受并处理来自RM的各种命令：启动Container;处理来自AM的命令;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单个节点的资源管理。<br><br>ApplicationMaster：AM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个应用程序对应一个：MR、Spark，负责应用程序的管理;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为应用程序向RM申请资源（core、memory），分配给内部task;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要与NM通信：启动/停止task，task是运行在Container里面，AM也是运行在Container里面。<br><br>Container<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;封装了CPU、Memory等资源的一个容器;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是一个任务运行环境的抽象。<br><br>Client<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提交作业;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查询作业的运行进度;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;杀死作业。<br></blockquote><h1 id="YARN执行流程"><a href="#YARN执行流程" class="headerlink" title="YARN执行流程"></a>YARN执行流程</h1><p><img src="http://images.javahdw.top/1547001140978cwkezp0h.png" alt="paste image"></p><h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="etc-hadoop-mapred-site-xml"><a href="#etc-hadoop-mapred-site-xml" class="headerlink" title="etc/hadoop/mapred-site.xml:"></a>etc/hadoop/mapred-site.xml:</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="etc-hadoop-yarn-site-xml"><a href="#etc-hadoop-yarn-site-xml" class="headerlink" title="etc/hadoop/yarn-site.xml:"></a>etc/hadoop/yarn-site.xml:</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="启动YARN相关的进程"><a href="#启动YARN相关的进程" class="headerlink" title="启动YARN相关的进程"></a>启动YARN相关的进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-yarn.sh</span><br></pre></td></tr></table></figure><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># jps</span></span><br><span class="line"><span class="comment"># 访问http://ip:8088 出现封面图</span></span><br></pre></td></tr></table></figure><h2 id="停止YARN相关的进程"><a href="#停止YARN相关的进程" class="headerlink" title="停止YARN相关的进程"></a>停止YARN相关的进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/stop-yarn.sh</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;my_blockquote&quot;&gt;下面介绍HADOOP的资源管理调度工具YARN&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/1547000865206lmbw1ede.png&quot; alt=&quot;paste image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hadoop" scheme="http://javahdw.top/categories/hadoop/"/>
+    
+      <category term="yarn" scheme="http://javahdw.top/categories/hadoop/yarn/"/>
+    
+    
+      <category term="hadoop" scheme="http://javahdw.top/tags/hadoop/"/>
+    
+      <category term="yarn" scheme="http://javahdw.top/tags/yarn/"/>
+    
+  </entry>
   
   <entry>
     <title>【HADOOP学习之路】2.java操作HDFS的API</title>
@@ -485,33 +513,6 @@
     
     
       <category term="内存模型" scheme="http://javahdw.top/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【zuul】2.0版本下zuul配置的改变</title>
-    <link href="http://javahdw.top/2018/10/%E3%80%90zuul%E3%80%912-0%E7%89%88%E6%9C%AC%E4%B8%8Bzuul%E9%85%8D%E7%BD%AE%E7%9A%84%E6%94%B9%E5%8F%98/"/>
-    <id>http://javahdw.top/2018/10/【zuul】2-0版本下zuul配置的改变/</id>
-    <published>2018-10-31T02:05:00.000Z</published>
-    <updated>2018-10-31T02:15:15.654Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。</blockquote><h1 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h1><p><img src="http://images.javahdw.top/15409515734037krkuvsh.png" alt="paste image"></p><a id="more"></a><blockquote>以下这些改变是逐步和持续完善的，该博文不是一次性完成的，只能发现一个记录一个。</blockquote><h1 id="routes节点报404"><a href="#routes节点报404" class="headerlink" title="/routes节点报404"></a>/routes节点报404</h1><p>与之前版本的zuul相比，不再直接通过/routes便能查看路由信息了。如何查看修改后的暴露的节点信息，可通过配置包含所有的节点信息暴露出来展示出来。配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">management:</span><br><span class="line">  security:</span><br><span class="line">    enabled: false</span><br><span class="line">  endpoints:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: &quot;*&quot;</span><br></pre></td></tr></table></figure></p><p>其中include:”*”表示包含所有可暴露的节点信息，也许是版本升级更加注重安全这一方面，默认关闭掉了。通过该配置即可查看暴露的节点信息了。</p><p>效果如下：<br><img src="http://images.javahdw.top/15409520384226f1eyb74.png" alt="paste image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。&lt;/blockquote&gt;
-
-
-&lt;h1 id=&quot;版本信息&quot;&gt;&lt;a href=&quot;#版本信息&quot; class=&quot;headerlink&quot; title=&quot;版本信息&quot;&gt;&lt;/a&gt;版本信息&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15409515734037krkuvsh.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="springcloud" scheme="http://javahdw.top/categories/springcloud/"/>
-    
-    
-      <category term="zuul" scheme="http://javahdw.top/tags/zuul/"/>
-    
-      <category term="springcloud" scheme="http://javahdw.top/tags/springcloud/"/>
     
   </entry>
   
