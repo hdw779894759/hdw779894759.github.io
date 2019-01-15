@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://javahdw.top/"/>
-  <updated>2019-01-09T03:18:20.146Z</updated>
+  <updated>2019-01-15T03:38:37.293Z</updated>
   <id>http://javahdw.top/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【玩转大数据】4.HDFS常用命令集合</title>
+    <link href="http://javahdw.top/2019/01/%E3%80%90%E7%8E%A9%E8%BD%AC%E5%A4%A7%E6%95%B0%E6%8D%AE%E3%80%914-HDFS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88/"/>
+    <id>http://javahdw.top/2019/01/【玩转大数据】4-HDFS常用命令集合/</id>
+    <published>2019-01-15T03:16:53.000Z</published>
+    <updated>2019-01-15T03:38:37.293Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="my_blockquote">下面记录hadoop常用命令，并持续更新</blockquote><a id="more"></a><h1 id="展示目录结构"><a href="#展示目录结构" class="headerlink" title="展示目录结构"></a>展示目录结构</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 展示根目录结构</span></span><br><span class="line">hadoop fs -ls /</span><br></pre></td></tr></table></figure><p><img src="http://images.javahdw.top/1547522299709fp9qd6ag.png" alt="paste image"></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 展示/browserout目录结构</span></span><br><span class="line">hadoop fs -ls /browserout</span><br></pre></td></tr></table></figure><p><img src="http://images.javahdw.top/1547523381900lbwgi5yx.png" alt="paste image"></p><h1 id="查看内容"><a href="#查看内容" class="headerlink" title="查看内容"></a>查看内容</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看/browserout/part-r-00000内容</span><br><span class="line">hadoop fs -text /browserout/part-r-00000</span><br></pre></td></tr></table></figure><p><img src="http://images.javahdw.top/154752342714372y784lr.png" alt="paste image"></p><h1 id="上传文件到hdfs文件系统"><a href="#上传文件到hdfs文件系统" class="headerlink" title="上传文件到hdfs文件系统"></a>上传文件到hdfs文件系统</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 上传本地10000_access.log文件到hdfs根目录</span></span><br><span class="line">hadoop fs -put 10000_access.log /</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;my_blockquote&quot;&gt;下面记录hadoop常用命令，并持续更新&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【玩转大数据】3.YARN环境的搭建及基本配置</title>
@@ -489,30 +507,6 @@
     
     
       <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【java内存模型学习之路】java内存区域与内存溢出异常</title>
-    <link href="http://javahdw.top/2018/11/%E3%80%90java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/"/>
-    <id>http://javahdw.top/2018/11/【java内存模型学习之路】java内存区域与内存溢出异常/</id>
-    <published>2018-11-12T05:31:00.000Z</published>
-    <updated>2018-11-12T05:34:13.756Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>节选自《深入理解java虚拟机》第二章    java内存区域与内存溢出异常</blockquote><h1 id="对象的创建与内存分配"><a href="#对象的创建与内存分配" class="headerlink" title="对象的创建与内存分配"></a>对象的创建与内存分配</h1><p><img src="http://images.javahdw.top/15420007477343g9pxqam.png" alt="paste image"></p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;节选自《深入理解java虚拟机》第二章    java内存区域与内存溢出异常&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;对象的创建与内存分配&quot;&gt;&lt;a href=&quot;#对象的创建与内存分配&quot; class=&quot;headerlink&quot; title=&quot;对象的创建与内存分配&quot;&gt;&lt;/a&gt;对象的创建与内存分配&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15420007477343g9pxqam.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="java" scheme="http://javahdw.top/categories/java/"/>
-    
-    
-      <category term="内存模型" scheme="http://javahdw.top/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
