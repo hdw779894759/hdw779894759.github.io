@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【玩转大数据】5.hadoop集群环境的搭建]]></title>
+    <url>%2F2019%2F01%2F%E3%80%90%E7%8E%A9%E8%BD%AC%E5%A4%A7%E6%95%B0%E6%8D%AE%E3%80%915-hadoop%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[下面通过三台虚拟机完成hadoop分布式环境的搭建 首先我们可以借助之前的虚拟机关机情况下通过虚拟机管理工具克隆出另外两台虚拟机出来，准备机器，等待下面一步步执行 实现目标宿主机可通过hadoop000,hadoop001,hadoop002来实现对虚拟机的访问及服务的请求 各节点角色分配:hadoop000:NameNode ResourceManagerhadoop001:DataNode NodeManagerhadoop002:DataNode NodeManager 宿主机的修改由于虚拟机只是提供服务，而访问服务都是通过宿主机来完成，为了高效的访问虚拟机，我们可以通过对宿主机简单的修改一些参数来完成。12345678# 宿主机hosts文件的修改# 提前进入root权限下vim /etc/hosts# 添加下面三行,其中的ip地址的最后三位可以自行根据情况修改，记住就行。hadoop000:192.168.199.102hadoop001:192.168.199.247hadoop002:192.168.199.138# 保存好就ok 虚拟机的修改操作1234567891011121314151617181920# 1.hosts文件的修改vim /etc/hosts# 是哪一台就添加哪一台的记录127.0.0.1 hadoop000#127.0.0.1 hadoop001#127.0.0.1 hadoop002# 2.静态ip地址的修改# 通过ifconfig命令查看当前网络使用节点名称，以ens33为例vim /etc/sysconfig/network-scripts/ifcfg-ens33# 修改其中IPADDR的记录为上面记录的ip# 重启网络service network restart# 3.hostname和ip地址的设置vim /etc/sysconfig/networkNETWORKING=yesHOSTNAME=hadoop000# HOSTNAME=hadoop001# HOSTNAME=hadoop002 到此环境的基本配置就完成了，后面有需要回来再继续完善。]]></content>
+      <categories>
+        <category>hadoop集群</category>
+      </categories>
+      <tags>
+        <tag>dadoop</tag>
+        <tag>hadoop集群</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【玩转大数据】4.HDFS常用命令集合]]></title>
     <url>%2F2019%2F01%2F%E3%80%90%E7%8E%A9%E8%BD%AC%E5%A4%A7%E6%95%B0%E6%8D%AE%E3%80%914-HDFS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[下面记录hadoop常用命令，并持续更新 展示目录结构12# 展示根目录结构hadoop fs -ls / 12# 展示/browserout目录结构hadoop fs -ls /browserout 查看内容12# 查看/browserout/part-r-00000内容hadoop fs -text /browserout/part-r-00000 上传文件到hdfs文件系统12# 上传本地10000_access.log文件到hdfs根目录hadoop fs -put 10000_access.log /]]></content>
