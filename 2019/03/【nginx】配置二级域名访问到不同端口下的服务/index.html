@@ -198,11 +198,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="【nginx】配置二级域名访问到不同端口下的服务">
 <meta property="og:url" content="http://javahdw.top/2019/03/【nginx】配置二级域名访问到不同端口下的服务/index.html">
-<meta property="og:site_name" content="喜欢较真儿的平头哥">
+<meta property="og:site_name" content="漫长岁月">
 <meta property="og:description" content="下面记录通过nginx隐藏ip地址访问二级域名下同一服务器中的不同服务！！！">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.javahdw.top/1551769947507hqvidywj.png">
-<meta property="og:updated_time" content="2019-03-05T07:20:20.610Z">
+<meta property="og:updated_time" content="2019-03-05T07:42:33.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【nginx】配置二级域名访问到不同端口下的服务">
 <meta name="twitter:description" content="下面记录通过nginx隐藏ip地址访问二级域名下同一服务器中的不同服务！！！">
@@ -210,7 +210,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="喜欢较真儿的平头哥" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="漫长岁月" type="application/atom+xml">
 
 
 
@@ -225,7 +225,7 @@
   };
 </script>
 
-  <title>【nginx】配置二级域名访问到不同端口下的服务 | 喜欢较真儿的平头哥</title>
+  <title>【nginx】配置二级域名访问到不同端口下的服务 | 漫长岁月</title>
   
 
 
@@ -311,7 +311,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">喜欢较真儿的平头哥</span>
+        <span class="site-title">漫长岁月</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -482,13 +482,13 @@
     <link itemprop="mainEntityOfPage" href="http://javahdw.top/2019/03/【nginx】配置二级域名访问到不同端口下的服务/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="喜欢较真儿的平头哥">
+      <meta itemprop="name" content="漫长岁月">
       <meta itemprop="description" content="用代码改变世界">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="喜欢较真儿的平头哥">
+      <meta itemprop="name" content="漫长岁月">
     </span>
 
     
@@ -522,7 +522,7 @@
                 
               
 
-              <time title="创建时间：2019-03-05 15:12:00 / 修改时间：15:20:20" itemprop="dateCreated datePublished" datetime="2019-03-05T15:12:00+08:00">2019-03-05</time>
+              <time title="创建时间：2019-03-05 15:12:00 / 修改时间：15:42:33" itemprop="dateCreated datePublished" datetime="2019-03-05T15:12:00+08:00">2019-03-05</time>
             
 
             
@@ -615,7 +615,7 @@
       
         <p><img src="http://images.javahdw.top/1551769947507hqvidywj.png" alt="paste image"></p>
 <p><blockquote class="my_blockquote">下面记录通过nginx隐藏ip地址访问二级域名下同一服务器中的不同服务！！！</blockquote><br><a id="more"></a></p>
-<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>1.一个ip地址，解析出三个二级域名，访问同一服务器中的三个服务【不同端口】<br>2.不暴露端口号实现访问<br>3.已经定义好的域名以及要转发到的服务(ip为服务器真实ip)<br>    a.javahdw.top   访问   ip:8001<br>    b.javahdw.top   访问   ip:8002<br>    c.javahdw.top   访问   ip:8003</p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>1.一个ip地址，解析出三个二级域名，访问同一服务器中的三个服务【不同端口】<br>2.不暴露端口号实现访问<br>3.已经定义好的域名以及要转发到的服务(ip为服务器真实ip)<br>    a.javahdw.top   访问       ip:8001<br>    b.javahdw.top   访问       ip:8002<br>    c.javahdw.top   访问       ip:8003</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    <span class="comment"># nginx监听的端口号</span></span><br><span class="line">    listen 80;  </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 拦截的所有网站url</span></span><br><span class="line">    server_name *.javahdw.top;</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 记录模式匹配定义全局变量</span></span><br><span class="line">    <span class="keyword">if</span> ( <span class="variable">$http_host</span> ~* <span class="string">"^(.*?)\.javahdw\.top"</span> ) &#123;</span><br><span class="line">           <span class="built_in">set</span> <span class="variable">$domain</span> <span class="variable">$1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转发地址配置</span></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        proxy_set_header Host <span class="variable">$http_host</span>;</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> ( <span class="variable">$domain</span> ~* <span class="string">"a"</span> ) &#123;</span><br><span class="line">            proxy_pass http://ip:8001;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ( <span class="variable">$domain</span> ~* <span class="string">"b"</span> ) &#123;</span><br><span class="line">            proxy_pass http://ip:8002;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">		<span class="keyword">if</span> ( <span class="variable">$domain</span> ~* <span class="string">"c"</span> ) &#123;</span><br><span class="line">            proxy_pass http://ip:8003;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        client_max_body_size    100m;</span><br><span class="line">        fastcgi_buffers 8 128k;</span><br><span class="line">        send_timeout 60;</span><br><span class="line">        <span class="comment">#root   html;</span></span><br><span class="line">        <span class="comment">#index  index.html index.htm;</span></span><br><span class="line">        <span class="comment">#try_files $uri $uri/ =404;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 连接时间为半小时</span></span><br><span class="line">        proxy_connect_timeout   18000;   </span><br><span class="line">        proxy_send_timeout      18000;  </span><br><span class="line">        proxy_read_timeout      18000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="重启nginx，开启后台服务访问即可"><a href="#重启nginx，开启后台服务访问即可" class="headerlink" title="重启nginx，开启后台服务访问即可"></a>重启nginx，开启后台服务访问即可</h1>
       
@@ -653,7 +653,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="喜欢较真儿的平头哥 wechat" style="width: 200px; max-width: 100%;">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="漫长岁月 wechat" style="width: 200px; max-width: 100%;">
     <div>微信扫一扫，没事常联系  [请注明博客添加]</div>
 </div>
 
@@ -671,14 +671,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="喜欢较真儿的平头哥 微信支付">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="漫长岁月 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="喜欢较真儿的平头哥 支付宝">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="漫长岁月 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -687,7 +687,7 @@
 
     
           <div id="alihongbao" style="display: inline-block">
-            <img id="alihongbao_qr" src="/images/aliHongBao.PNG" alt="喜欢较真儿的平头哥 支付宝红包">
+            <img id="alihongbao_qr" src="/images/aliHongBao.PNG" alt="漫长岁月 支付宝红包">
             <p>支付宝红包</p>
           </div>
     
@@ -802,9 +802,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="喜欢较真儿的平头哥">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="漫长岁月">
             
-              <p class="site-author-name" itemprop="name">喜欢较真儿的平头哥</p>
+              <p class="site-author-name" itemprop="name">漫长岁月</p>
               <p class="site-description motion-element" itemprop="description">用代码改变世界</p>
           </div>
 
@@ -1078,7 +1078,7 @@
   </span>
 
 
-  <span class="author" itemprop="copyrightHolder">喜欢较真儿的平头哥</span>
+  <span class="author" itemprop="copyrightHolder">漫长岁月</span>
 
   
     <span class="post-meta-divider">|</span>
