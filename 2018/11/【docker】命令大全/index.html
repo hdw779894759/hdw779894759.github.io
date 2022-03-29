@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+<!--顶部加载条，默认为粉红色，修改成绿色-->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB;
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 5px #1E92FB, 0 0 2px #1E92FB;
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;
+        border-left-color: #1E92FB;
+    }
+</style>
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="2TLNxcgKM7">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2f858af0",
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="2TLNxcgKM7">
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.gif?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.gif?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":8,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="记录使用docker以来的所有相关命令，以备后续方便使用">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【docker】命令大全">
+<meta property="og:url" content="http://javahdw.top/2018/11/【docker】命令大全/index.html">
+<meta property="og:site_name" content="漫长岁月">
+<meta property="og:description" content="记录使用docker以来的所有相关命令，以备后续方便使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://images.javahdw.top/1542252156167z36ahh0a.png">
+<meta property="og:image" content="http://images.javahdw.top/1542253797622o9hbrnbd.png">
+<meta property="og:updated_time" content="2022-03-29T03:31:48.217Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【docker】命令大全">
+<meta name="twitter:description" content="记录使用docker以来的所有相关命令，以备后续方便使用">
+<meta name="twitter:image" content="http://images.javahdw.top/1542252156167z36ahh0a.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="漫长岁月" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://javahdw.top/2018/11/【docker】命令大全/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【docker】命令大全 | 漫长岁月</title>
+  
+
+
+
+
+
+
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?9ec42ac9f8a0c9a1630d7bea1eed8d3f";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <!-- 页面点击小红心-->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+
+  <!-- 页面点击文字 -->
+  <script type="text/javascript" src="/js/src/clickword.js"></script>
+
+
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!--github-start
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+    -->
+
+
+
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">漫长岁月</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">漫长岁月</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">11</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">19</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-在路上">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>在路上</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-友链">
+    <a href="/friend/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-child"></i> <br>友链</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-资源工具">
+    <a href="/source&util/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>资源工具</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://javahdw.top/2018/11/【docker】命令大全/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="漫长岁月">
+      <meta itemprop="description" content="用代码改变世界">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漫长岁月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">【docker】命令大全
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+            
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-15 11:18:00" itemprop="dateCreated datePublished" datetime="2018-11-15T11:18:00+08:00">2018-11-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-03-29 11:31:48" itemprop="dateModified" datetime="2022-03-29T11:31:48+08:00">2022-03-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>记录使用docker以来的所有相关命令，以备后续方便使用</blockquote>
+
+<p><img src="http://images.javahdw.top/1542252156167z36ahh0a.png" alt="paste image"></p>
+<a id="more"></a>
+<h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install docker</span><br><span class="line">systemctl start docker </span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>
+<h1 id="参数介绍"><a href="#参数介绍" class="headerlink" title="参数介绍"></a>参数介绍</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">docker [OPTIONS] COMMAND	容器的自足运行时</span><br><span class="line">Options:</span><br><span class="line">      --config string      客户端配置文件的位置 (默认<span class="string">"/Users/hdw/.docker"</span>)</span><br><span class="line">  -D, --debug              </span><br><span class="line">  	启用debug模式</span><br><span class="line">  -H, --host list          </span><br><span class="line">  	要连接的守护程序套接字</span><br><span class="line">  -l, --<span class="built_in">log</span>-level string   </span><br><span class="line">  	设置日志记录级别(<span class="string">"debug"</span>|<span class="string">"info"</span>|<span class="string">"warn"</span>|<span class="string">"error"</span>|<span class="string">"fatal"</span>)</span><br><span class="line">                           (默认 <span class="string">"info"</span>)</span><br><span class="line">      --tls                </span><br><span class="line">      	使用TLS; implied by --tlsverify</span><br><span class="line">      --tlscacert string   </span><br><span class="line">      	信任证书仅由此CA签署(default<span class="string">"/Users/hdw/.docker/ca.pem"</span>)</span><br><span class="line">      --tlscert string     </span><br><span class="line">      	TLS证书文件的路径 (default<span class="string">"/Users/hdw/.docker/cert.pem"</span>)</span><br><span class="line">      --tlskey string      </span><br><span class="line">      	TLS密钥文件的路径 (default<span class="string">"/Users/hdw/.docker/key.pem"</span>)</span><br><span class="line">      --tlsverify          </span><br><span class="line">      	使用TLS并验证远程</span><br><span class="line">  -v, --version            </span><br><span class="line">  	打印版本信息并退出</span><br><span class="line"></span><br><span class="line">Management Commands:						//管理命令</span><br><span class="line">  builder     Manage builds</span><br><span class="line">  checkpoint  Manage checkpoints</span><br><span class="line">  config      Manage Docker configs</span><br><span class="line">  container   Manage containers</span><br><span class="line">  engine      Manage the docker engine</span><br><span class="line">  image       Manage images</span><br><span class="line">  network     Manage networks</span><br><span class="line">  node        Manage Swarm nodes</span><br><span class="line">  plugin      Manage plugins</span><br><span class="line">  secret      Manage Docker secrets</span><br><span class="line">  service     Manage services</span><br><span class="line">  stack       Manage Docker stacks</span><br><span class="line">  swarm       Manage Swarm</span><br><span class="line">  system      Manage Docker</span><br><span class="line">  trust       Manage trust on Docker images</span><br><span class="line">  volume      Manage volumes</span><br><span class="line"></span><br><span class="line">Commands:       //命令</span><br><span class="line">  attach      将本地标准输入，输出和错误流附加到正在运行的容器</span><br><span class="line">  build       从Dockerfile构建映像</span><br><span class="line">  commit      根据容器的更改创建新图像</span><br><span class="line">  cp          在容器和本地文件系统之间复制文件/文件夹</span><br><span class="line">  create      创建一个新容器</span><br><span class="line">  deploy      部署新堆栈或更新现有堆栈</span><br><span class="line">  diff        检查容器文件系统上的文件或目录的更改</span><br><span class="line">  events      从服务器获取实时事件</span><br><span class="line">  <span class="built_in">exec</span>        在正在运行的容器中运行命令</span><br><span class="line">  <span class="built_in">export</span>      将容器的文件系统导出为tar存档</span><br><span class="line">  <span class="built_in">history</span>     显示镜像的历史记录</span><br><span class="line">  images      列出镜像</span><br><span class="line">  import      从tarball导入内容以创建文件系统映像</span><br><span class="line">  info        显示系统范围的信息</span><br><span class="line">  inspect     返回Docker对象的低级信息</span><br><span class="line">  <span class="built_in">kill</span>        杀死一个或多个正在运行的容器</span><br><span class="line">  load        从tar存档或STDIN加载镜像</span><br><span class="line">  login       登录Docker仓库</span><br><span class="line">  <span class="built_in">logout</span>      从Docker仓库注销</span><br><span class="line">  logs        获取容器的日志</span><br><span class="line">  pause       暂停一个或多个容器中的所有进程</span><br><span class="line">  port        列出端口映射或容器的特定映射</span><br><span class="line">  ps          列出容器</span><br><span class="line">  pull        拉取镜像或者仓库从注册中心</span><br><span class="line">  push        向注册中心推送一个镜像或者仓库</span><br><span class="line">  rename      重命名容器</span><br><span class="line">  restart     重启一个或多个容器</span><br><span class="line">  rm          删除一个或多个容器</span><br><span class="line">  rmi         删除一个或多个镜像</span><br><span class="line">  run         在新容器中运行命令</span><br><span class="line">  save        将一个或多个图像保存到tar存档（默认情况下流式传输到STDOUT）</span><br><span class="line">  search      在Docker Hub中搜索镜像</span><br><span class="line">  start       启动一个或多个已停止的容器</span><br><span class="line">  stats       显示容器资源使用情况统计信息的实时流</span><br><span class="line">  stop        停止一个或多个正在运行的容器</span><br><span class="line">  tag         创建一个引用SOURCE_IMAGE的标记TARGET_IMAGE</span><br><span class="line">  top         显示容器的运行进程</span><br><span class="line">  unpause     取消暂停一个或多个容器中的所有进程</span><br><span class="line">  update      更新一个或多个容器的配置</span><br><span class="line">  version     显示Docker版本信息</span><br><span class="line">  <span class="built_in">wait</span>        阻止，直到一个或多个容器停止，然后打印退出代码</span><br></pre></td></tr></table></figure>
+<h1 id="常用命令收集"><a href="#常用命令收集" class="headerlink" title="常用命令收集"></a>常用命令收集</h1><h2 id="有关mysql常用命令"><a href="#有关mysql常用命令" class="headerlink" title="有关mysql常用命令"></a>有关mysql常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run --name hi-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysqladmin -d mysql:latest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-p 3306:3306：将容器的3306端口映射到主机的3306端口 </span><br><span class="line">-e 指定环境变量，其中MYSQL_ROOT_PASSWORD=root即初始化root用户的密码为root </span><br><span class="line">-name 即命名容器的名称为mysql </span><br><span class="line">-d: 后台运行容器，并返回容器ID</span><br></pre></td></tr></table></figure>
+<h2 id="连接docker相关命令"><a href="#连接docker相关命令" class="headerlink" title="连接docker相关命令"></a>连接docker相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker拷贝文件</span></span><br><span class="line">docker cp catalina.properties 33bb05f78861:/usr/<span class="built_in">local</span>/tomcat/conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#docker进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it 6ba01d111e60 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#docker提交容器更改保存镜像</span></span><br><span class="line">docker commit -a=<span class="string">"dawei"</span> -m=<span class="string">"update tomcat's config file of catalina.properties"</span> 33bb05f78861 tomcat:v2</span><br><span class="line"><span class="comment">#-a表示作者	-m表示提交备注</span></span><br></pre></td></tr></table></figure>
+<h2 id="docker容器中使用命令"><a href="#docker容器中使用命令" class="headerlink" title="docker容器中使用命令"></a>docker容器中使用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker容器中安装文件</span></span><br><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment">#docker容器中安装vim编辑器</span></span><br><span class="line">apt-get install vim</span><br><span class="line"></span><br><span class="line"><span class="comment">#退出容器</span></span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h2 id="通过docker安装rabbitmq命令"><a href="#通过docker安装rabbitmq命令" class="headerlink" title="通过docker安装rabbitmq命令"></a>通过docker安装rabbitmq命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management</span><br><span class="line"><span class="comment">#localhost:15672     进入管理界面</span></span><br><span class="line"><span class="comment">#初始用户名密码：都是guest</span></span><br></pre></td></tr></table></figure>
+<h2 id="切换docker镜像加速器"><a href="#切换docker镜像加速器" class="headerlink" title="切换docker镜像加速器"></a>切换docker镜像加速器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑配置文件</span></span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line"><span class="comment"># 添加下面的内容</span></span><br><span class="line"><span class="string">"registry-mirrors"</span>: [<span class="string">"http://ef017c13.m.daocloud.io"</span>]</span><br><span class="line"><span class="comment"># 启动docker</span></span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+<h2 id="通过docker安装zipkin"><a href="#通过docker安装zipkin" class="headerlink" title="通过docker安装zipkin"></a>通过docker安装zipkin</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">docker run -d -p 9411:9411 openzipkin/zipkin</span><br><span class="line"><span class="comment"># 访问</span></span><br><span class="line">http://localhost:9411</span><br></pre></td></tr></table></figure>
+<p><img src="http://images.javahdw.top/1542253797622o9hbrnbd.png" alt="paste image"></p>
+<h2 id="启动容器相关命令"><a href="#启动容器相关命令" class="headerlink" title="启动容器相关命令"></a>启动容器相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker run</span><br><span class="line">-d   后台运行</span><br><span class="line">-P   随机端口映射</span><br><span class="line">-p   指定端口映射，有以下四种格式</span><br><span class="line">-	ip：hostPort:containerPort</span><br><span class="line">-	ip::containerPort</span><br><span class="line">-	hostPort:containerPort</span><br><span class="line">-	containerPort</span><br><span class="line">-network选项：指定网络模式，</span><br><span class="line">-	--network=bridge:默认选项，该选项有以下可选参数</span><br><span class="line">-	--network=host:容器使用宿主主机的网络</span><br><span class="line">-	--network=container:NAME_or_ID:告诉docker让新建的容器使用已有容器的网络配置</span><br><span class="line">-	--network=none:不配置该容器的网络，用户可自定义网络配置。</span><br></pre></td></tr></table></figure>
+<h2 id="docker安装shwodoc并挂载数据目录到宿主机"><a href="#docker安装shwodoc并挂载数据目录到宿主机" class="headerlink" title="docker安装shwodoc并挂载数据目录到宿主机"></a>docker安装shwodoc并挂载数据目录到宿主机</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从国内镜像安装showdoc</span></span><br><span class="line">docker pull registry.docker-cn.com/star7th/showdoc</span><br><span class="line"><span class="comment">#若上面方式安装失败，可尝试从docker国外官方镜像安装</span></span><br><span class="line"><span class="comment"># docker pull star7th/showdoc</span></span><br><span class="line"><span class="comment">#新建存放showdoc数据的目录</span></span><br><span class="line">mkdir showdoc_data</span><br><span class="line">mkdir showdoc_data/html</span><br><span class="line">chmod 777 -R showdoc_data</span><br><span class="line"><span class="comment">#启动showdoc容器。启动完了后别忘记后面还有转移数据的步骤。</span></span><br><span class="line">docker run -d --name showdoc -p 4999:80 -v /root/showdoc_data/html:/root/var/www/html/ registry.docker-cn.com/star7th/showdoc</span><br><span class="line"><span class="comment">#转移数据</span></span><br><span class="line">docker <span class="built_in">exec</span> showdoc \cp -fr /showdoc_data/html/ /root/var/www/</span><br><span class="line"><span class="comment">#[注意，权限问题可能无法挂载，解决方案如下：]</span></span><br><span class="line"><span class="comment">#临时关闭selinux：</span></span><br><span class="line">su -c <span class="string">"setenforce 0"</span></span><br><span class="line"><span class="comment">#再执行上面的语句，完成后再打开selinux</span></span><br><span class="line">su -c <span class="string">"setenforce 1"</span></span><br><span class="line"><span class="comment"># 权限</span></span><br><span class="line">chmod 777 -R /showdoc_data</span><br><span class="line">根据以上命令操作的话，往后showdoc的数据都会存放在 /showdoc_data/html 目录下。</span><br><span class="line"><span class="comment">#你可以打开 http://xxx.com:4999 来访问showdoc (xxx.com为你的服务器域名或者IP)。账户密码是showdoc/123456，登录后你便可以看到右上方的管理后台入口。建议登录后修改密码。</span></span><br><span class="line"><span class="comment"># 打开网站</span></span><br><span class="line">http://localhost:4999/web/<span class="comment">#/</span></span><br></pre></td></tr></table></figure>
+<h2 id="docker安装并启动rancher-server"><a href="#docker安装并启动rancher-server" class="headerlink" title="docker安装并启动rancher-server"></a>docker安装并启动rancher-server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 装docker</span></span><br><span class="line">yum install docker</span><br><span class="line"><span class="comment"># 编辑docker镜像加速器</span></span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line"><span class="string">"registry-mirrors"</span>: [<span class="string">"http://ef017c13.m.daocloud.io"</span>]</span><br><span class="line"><span class="comment">#启动docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="comment">#在docker上安装rancher</span></span><br><span class="line">sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable</span><br><span class="line"><span class="comment">#访问rancher     </span></span><br><span class="line">http://ip:8080</span><br></pre></td></tr></table></figure>
+<blockquote>持续更新中。。。</blockquote>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    <div>
+      
+      <!-- 阅读结束标签 -->
+<div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读😜-------------</div>
+
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="漫长岁月 wechat" style="width: 200px; max-width: 100%;">
+    <div>微信扫一扫，没事常联系  [请注明博客添加]</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持原创，支持开源，感谢打赏，不懈努力。<br><b><font color="red">点击打赏,可领取支付宝红包，不信你试试😏😏😏!</font></b></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="漫长岁月 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="漫长岁月 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+    
+          <div id="alihongbao" style="display: inline-block">
+            <img id="alihongbao_qr" src="/images/aliHongBao.PNG" alt="漫长岁月 支付宝红包">
+            <p>支付宝红包</p>
+          </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/【java内存模型学习之路】java内存区域与内存溢出异常/" rel="next" title="【java内存模型学习之路】java内存区域与内存溢出异常">
+                <i class="fa fa-chevron-left"></i> 【java内存模型学习之路】java内存区域与内存溢出异常
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/【centos-jdk】centos安装jdk相关配置/" rel="prev" title="【centos-jdk】centos安装jdk相关配置">
+                【centos-jdk】centos安装jdk相关配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+   <div id="gitalk-container"></div>
+
+
+
+  
+
+
+        </div>
+        
+          
+  
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="漫长岁月">
+            
+              <p class="site-author-name" itemprop="name">漫长岁月</p>
+              <p class="site-description motion-element" itemprop="description">用代码改变世界</p>
+          </div>
+
+            <!-- 网易云音乐配置 -->
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" autostart="false" src="//music.163.com/outchain/player?type=2&id=417859631&auto=1&height=66">
+          </iframe>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://gitee.com/javahdw" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:hdw_bxlt@163.com" target="_blank" title="E-Mail" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com/id513570562" target="_blank" title="VK Group" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-vk"></i>VK Group</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://localhost:4000/2018/12/【docker学习之路】docker从入门到实战/" title="docker学习之路" target="_blank" rel="external nofollow noopener noreferrer">docker学习之路</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://javahdw.top/about/" title="关于" target="_blank">关于</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://javahdw.top/friend/" title="友链" target="_blank">友链</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装docker"><span class="nav-number">1.</span> <span class="nav-text">安装docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数介绍"><span class="nav-number">2.</span> <span class="nav-text">参数介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用命令收集"><span class="nav-number">3.</span> <span class="nav-text">常用命令收集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有关mysql常用命令"><span class="nav-number">3.1.</span> <span class="nav-text">有关mysql常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接docker相关命令"><span class="nav-number">3.2.</span> <span class="nav-text">连接docker相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker容器中使用命令"><span class="nav-number">3.3.</span> <span class="nav-text">docker容器中使用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过docker安装rabbitmq命令"><span class="nav-number">3.4.</span> <span class="nav-text">通过docker安装rabbitmq命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换docker镜像加速器"><span class="nav-number">3.5.</span> <span class="nav-text">切换docker镜像加速器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过docker安装zipkin"><span class="nav-number">3.6.</span> <span class="nav-text">通过docker安装zipkin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动容器相关命令"><span class="nav-number">3.7.</span> <span class="nav-text">启动容器相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker安装shwodoc并挂载数据目录到宿主机"><span class="nav-number">3.8.</span> <span class="nav-text">docker安装shwodoc并挂载数据目录到宿主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker安装并启动rancher-server"><span class="nav-number">3.9.</span> <span class="nav-text">docker安装并启动rancher-server</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+&copy;
+2018 – 
+  <span itemprop="copyrightYear">2022 - 2023</span>
+
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+
+
+  <span class="author" itemprop="copyrightHolder">漫长岁月</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">17k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">15 分钟</span>
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+  <a href="https://beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">皖ICP备16024050号-1</a>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="热度">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'f43a0192dcbfaf895b6e',
+          clientSecret: '2c3f52c6e678014069e8cfb687599d683a110d32',
+          repo: 'hdw779894759.github.io',
+          owner: 'hdw779894759',
+          admin: ['hdw779894759'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 14591,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

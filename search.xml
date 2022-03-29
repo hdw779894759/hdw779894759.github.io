@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[【钢琴自学】8 - 猫王《love me tender》]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90%E9%92%A2%E7%90%B4%E8%87%AA%E5%AD%A6%E3%80%918-%E7%8C%AB%E7%8E%8B%E3%80%8Alove-me-tender%E3%80%8B%2F</url>
+    <content type="text"><![CDATA[弹错一个和弦，略尴尬]]></content>
+      <categories>
+        <category>钢琴</category>
+      </categories>
+      <tags>
+        <tag>钢琴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【centos-jdk】centos安装jdk相关配置]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90centos-jdk%E3%80%91centos%E5%AE%89%E8%A3%85jdk%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[安装了很多遍jdk发现写在有道云笔记里寻找很麻烦，在这里记录一下centos中安装jdk的过程，通过全文搜索很方便。😝 卸载openjdk1234567rpm -qa | grep jdk# 可能使用的命令rpm -e --nodeps copy-jdk-configs-2.2-3.el7.noarchrpm -e --nodeps java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64rpm -e --nodeps java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64rpm -e --nodeps java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64 去oracle官网下载需要的jdk版本并通过scp复制到服务器12# 提前修改好名称scp -P 22 /Users/hdw/Transform/包名root@192.168.2.***:/root/Transform/包名 配置环境变量12345vim /etc/profile# 添加下面的参数 注意修改路径/usr/java/jdk1.7.67_10export JAVA_HOME=/usr/java/jdk1.7.67_10 export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar export PATH=$PATH:$JAVA_HOME/bin 刷新配置，使配置生效1source /etc/profile 验证是否配置成功12# 重开命令窗口验证java -version]]></content>
+      <categories>
+        <category>centos</category>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【docker】命令大全]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90docker%E3%80%91%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8%2F</url>
+    <content type="text"><![CDATA[记录使用docker以来的所有相关命令，以备后续方便使用 安装docker123yum install dockersystemctl start docker docker info 参数介绍1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283docker [OPTIONS] COMMAND 容器的自足运行时Options: --config string 客户端配置文件的位置 (默认"/Users/hdw/.docker") -D, --debug 启用debug模式 -H, --host list 要连接的守护程序套接字 -l, --log-level string 设置日志记录级别("debug"|"info"|"warn"|"error"|"fatal") (默认 "info") --tls 使用TLS; implied by --tlsverify --tlscacert string 信任证书仅由此CA签署(default"/Users/hdw/.docker/ca.pem") --tlscert string TLS证书文件的路径 (default"/Users/hdw/.docker/cert.pem") --tlskey string TLS密钥文件的路径 (default"/Users/hdw/.docker/key.pem") --tlsverify 使用TLS并验证远程 -v, --version 打印版本信息并退出Management Commands: //管理命令 builder Manage builds checkpoint Manage checkpoints config Manage Docker configs container Manage containers engine Manage the docker engine image Manage images network Manage networks node Manage Swarm nodes plugin Manage plugins secret Manage Docker secrets service Manage services stack Manage Docker stacks swarm Manage Swarm system Manage Docker trust Manage trust on Docker images volume Manage volumesCommands: //命令 attach 将本地标准输入，输出和错误流附加到正在运行的容器 build 从Dockerfile构建映像 commit 根据容器的更改创建新图像 cp 在容器和本地文件系统之间复制文件/文件夹 create 创建一个新容器 deploy 部署新堆栈或更新现有堆栈 diff 检查容器文件系统上的文件或目录的更改 events 从服务器获取实时事件 exec 在正在运行的容器中运行命令 export 将容器的文件系统导出为tar存档 history 显示镜像的历史记录 images 列出镜像 import 从tarball导入内容以创建文件系统映像 info 显示系统范围的信息 inspect 返回Docker对象的低级信息 kill 杀死一个或多个正在运行的容器 load 从tar存档或STDIN加载镜像 login 登录Docker仓库 logout 从Docker仓库注销 logs 获取容器的日志 pause 暂停一个或多个容器中的所有进程 port 列出端口映射或容器的特定映射 ps 列出容器 pull 拉取镜像或者仓库从注册中心 push 向注册中心推送一个镜像或者仓库 rename 重命名容器 restart 重启一个或多个容器 rm 删除一个或多个容器 rmi 删除一个或多个镜像 run 在新容器中运行命令 save 将一个或多个图像保存到tar存档（默认情况下流式传输到STDOUT） search 在Docker Hub中搜索镜像 start 启动一个或多个已停止的容器 stats 显示容器资源使用情况统计信息的实时流 stop 停止一个或多个正在运行的容器 tag 创建一个引用SOURCE_IMAGE的标记TARGET_IMAGE top 显示容器的运行进程 unpause 取消暂停一个或多个容器中的所有进程 update 更新一个或多个容器的配置 version 显示Docker版本信息 wait 阻止，直到一个或多个容器停止，然后打印退出代码 常用命令收集有关mysql常用命令1234docker run --name hi-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysqladmin -d mysql:latestdocker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql 1234-p 3306:3306：将容器的3306端口映射到主机的3306端口 -e 指定环境变量，其中MYSQL_ROOT_PASSWORD=root即初始化root用户的密码为root -name 即命名容器的名称为mysql -d: 后台运行容器，并返回容器ID 连接docker相关命令123456789#docker拷贝文件docker cp catalina.properties 33bb05f78861:/usr/local/tomcat/conf#docker进入容器docker exec -it 6ba01d111e60 /bin/bash#docker提交容器更改保存镜像docker commit -a="dawei" -m="update tomcat's config file of catalina.properties" 33bb05f78861 tomcat:v2#-a表示作者 -m表示提交备注 docker容器中使用命令12345678#docker容器中安装文件apt-get update#docker容器中安装vim编辑器apt-get install vim#退出容器exit 通过docker安装rabbitmq命令123docker run -d --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management#localhost:15672 进入管理界面#初始用户名密码：都是guest 切换docker镜像加速器123456# 编辑配置文件vim /etc/docker/daemon.json# 添加下面的内容"registry-mirrors": ["http://ef017c13.m.daocloud.io"]# 启动dockersystemctl start docker 通过docker安装zipkin1234# 安装docker run -d -p 9411:9411 openzipkin/zipkin# 访问http://localhost:9411 启动容器相关命令12345678910111213docker run-d 后台运行-P 随机端口映射-p 指定端口映射，有以下四种格式- ip：hostPort:containerPort- ip::containerPort- hostPort:containerPort- containerPort-network选项：指定网络模式，- --network=bridge:默认选项，该选项有以下可选参数- --network=host:容器使用宿主主机的网络- --network=container:NAME_or_ID:告诉docker让新建的容器使用已有容器的网络配置- --network=none:不配置该容器的网络，用户可自定义网络配置。 docker安装shwodoc并挂载数据目录到宿主机1234567891011121314151617181920212223#从国内镜像安装showdocdocker pull registry.docker-cn.com/star7th/showdoc#若上面方式安装失败，可尝试从docker国外官方镜像安装# docker pull star7th/showdoc#新建存放showdoc数据的目录mkdir showdoc_datamkdir showdoc_data/htmlchmod 777 -R showdoc_data#启动showdoc容器。启动完了后别忘记后面还有转移数据的步骤。docker run -d --name showdoc -p 4999:80 -v /root/showdoc_data/html:/root/var/www/html/ registry.docker-cn.com/star7th/showdoc#转移数据docker exec showdoc \cp -fr /showdoc_data/html/ /root/var/www/#[注意，权限问题可能无法挂载，解决方案如下：]#临时关闭selinux：su -c "setenforce 0"#再执行上面的语句，完成后再打开selinuxsu -c "setenforce 1"# 权限chmod 777 -R /showdoc_data根据以上命令操作的话，往后showdoc的数据都会存放在 /showdoc_data/html 目录下。#你可以打开 http://xxx.com:4999 来访问showdoc (xxx.com为你的服务器域名或者IP)。账户密码是showdoc/123456，登录后你便可以看到右上方的管理后台入口。建议登录后修改密码。# 打开网站http://localhost:4999/web/#/ docker安装并启动rancher-server1234567891011# 装dockeryum install docker# 编辑docker镜像加速器vim /etc/docker/daemon.json"registry-mirrors": ["http://ef017c13.m.daocloud.io"]#启动dockersystemctl start docker#在docker上安装ranchersudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable#访问rancher http://ip:8080 持续更新中。。。]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【java内存模型学习之路】java内存区域与内存溢出异常]]></title>
+    <url>%2F2018%2F11%2F%E3%80%90java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%2F</url>
+    <content type="text"><![CDATA[节选自《深入理解java虚拟机》第二章 java内存区域与内存溢出异常 对象的创建与内存分配]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>内存模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【zuul】2.0版本下zuul配置的改变]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90zuul%E3%80%912-0%E7%89%88%E6%9C%AC%E4%B8%8Bzuul%E9%85%8D%E7%BD%AE%E7%9A%84%E6%94%B9%E5%8F%98%2F</url>
+    <content type="text"><![CDATA[前言在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。 版本信息 以下这些改变是逐步和持续完善的，该博文不是一次性完成的，只能发现一个记录一个。 /routes节点报404与之前版本的zuul相比，不再直接通过/routes便能查看路由信息了。如何查看修改后的暴露的节点信息，可通过配置包含所有的节点信息暴露出来展示出来。配置如下：1234567management: security: enabled: false endpoints: web: exposure: include: &quot;*&quot; 其中include:”*”表示包含所有可暴露的节点信息，也许是版本升级更加注重安全这一方面，默认关闭掉了。通过该配置即可查看暴露的节点信息了。 效果如下：]]></content>
+      <categories>
+        <category>springcloud</category>
+      </categories>
+      <tags>
+        <tag>zuul</tag>
+        <tag>springcloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【zuul】mock测试zuul接口的限制]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90zuul%E3%80%91mock%E6%B5%8B%E8%AF%95zuul%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%99%90%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[问题在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。]]></content>
+      <categories>
+        <category>springcloud</category>
+      </categories>
+      <tags>
+        <tag>zuul</tag>
+        <tag>mock</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【ELK】ElasticSearch的head插件的使用]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90ELK%E3%80%91ElasticSearch%E7%9A%84head%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[效果 前言为了集中查看elasticsearch收集到的所有数据以及查看各个参数配置情况，当我们不能保证通过kibana连接时，就可以先通过head插件查看elasticsearch的各个参数和系统状态，一步步检查问题所在。 插件准备1git clone https://github.com/mobz/elasticsearch-head.git es配置文件修改12345vim /Users/hdw/root/elasticsearch-5.6.11/config/elasticsearch.yml文件最后添加下面两行信息http.cors.enabled: true # elasticsearch中启用CORShttp.cors.allow-origin: &quot;*&quot; # 允许访问的IP地址段，* 为所有IP都 重启es实例后（省略）启动head插件123#进入head插件目录下运行npm installnpm run start 访问http://localhost:9100/地址栏输入http://localhost:9200/ 到此完成head插件的配置，通过该界面即可看到es收集到的信息是否是自己想要的。 参考文献Elasticsearch中Head插件的使用 https://www.cnblogs.com/aubin/p/8018081.html查看centos中的用户和用户组 https://www.cnblogs.com/apexchu/p/4193117.html]]></content>
+      <categories>
+        <category>服务器</category>
+        <category>elk</category>
+      </categories>
+      <tags>
+        <tag>elk</tag>
+        <tag>elasticsearch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【ELK】mac搭建ELK开发环境]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90ELK%E3%80%91mac%E6%90%AD%E5%BB%BAELK%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[目标 前言 在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。 程序准备elasticsearchwget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.11.tar.gz logstashwget https://artifacts.elastic.co/downloads/logstash/logstash-5.6.11.tar.gz kibana-centos版本wget https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-linux-x86_64.tar.gz kibana-mac版本https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-darwin-x86_64.tar.gz 搭建过程1.logstash的搭建1.1在logstash安装目录下新建conf文件夹，在里面新建配置文件java_log_stash.conf(表示收集的是java程序产生的日志，可随便起名)，内容如下1234567891011121314151617181920212223242526272829303132333435363738394041424344454647input &#123; file &#123; type =&gt; "bxlt-ply" #需要收集的日志文件 path =&gt; ["/Users/hdw/Documents/elk/log4j2/bxlt-ply-*.log"] tags =&gt; ["bxlt-ply", "bxlt-ply-log"] # codec =&gt; multiline &#123; # pattern =&gt; "^%&#123;TIMESTAMP_ISO8601&#125;" negate =&gt; true what =&gt; "previous" &#125; &#125;&#125;filter &#123; grok &#123; match =&gt; &#123; "message" =&gt; "%&#123;TIMESTAMP_ISO8601:date&#125; \[(?&lt;thread_name&gt;.+?)\] (?&lt;log_level&gt;\w+)\s*(?&lt;content&gt;.*)" &#125; &#125; date &#123; match =&gt; ["timestamp", "dd/MMM/YYYY:HH:mm:ss Z"] &#125;&#125;output &#123; #将日志根据类别映射到不同的处理方式中，此处通过type匹配后可直接放到es中 if[type] == "bxlt-ply" &#123; elasticsearch &#123; #embedded =&gt; false #protocol =&gt; "http" hosts =&gt; "localhost:9200" #索引的额配置，将通过这个配置展示到kibana上 index =&gt; "bxlt-ply-%&#123;+YYYY.MM.dd&#125;" &#125; &#125;else if[type] == "其他类型" &#123; elasticsearch &#123; #embedded =&gt; false #protocol =&gt; "http" hosts =&gt; "localhost:9200" index =&gt; "其他类型索引名字-%&#123;+YYYY.MM.dd&#125;" &#125; &#125;else &#123; #做其他处理 &#125; stdout&#123; #输出到标准输出，可以去掉 &#125;&#125; 1.2启动logstash并查看日志是否成功启动12345#以自定义配置文件启动logstashnohup ./bin/logstash -f conf/java_log_stash.conf &amp;#查看启动日志输出是否成功tail -f logs/logstash-plain.log 【Tip】123456#查看logstash配置文件是否正确 -f参数./bin/logstash -f conf/bxlt-file-logstash.conf#查看端口号启动情况及PIDlsof -i:9600#如果需要停止该端口kill掉该Pid即可kill -9 'pid' 启动成功后查看log输出日志如下：说明logstash已经准备要把自己收集到的日志输出给es，只是es还没启动。 2.ElasticSearch的搭建2.1修改配置文件vim config/elasticsearch.yml把network.host字段给反注释掉，把地址改为0.0.0.0（官方并没明确说要去改这配置，默认配置应该就可以了，不过实测的时候发现如果不做这修改，elasticsearch访问不了） 123456789101112# ---------------------------------- Network -----------------------------------## Set the bind address to a specific IP (IPv4 or IPv6):#network.host: 0.0.0.0## Set a custom port for HTTP:##http.port: 9200## For more information, consult the network module documentation.# 2.2后台启动es1nohup ./bin/elasticsearch &amp; 2.3两种方式验证es是否成功启动第一种：本地浏览器访问http://localhost:9200/返回信息如下表示成功12345678910111213&#123; "name" : "kIrDvnk", "cluster_name" : "elasticsearch", "cluster_uuid" : "a5lgu18GRIyJ8M2bYHkHGQ", "version" : &#123; "number" : "5.6.11", "build_hash" : "bc3eef4", "build_date" : "2018-08-16T15:25:17.293Z", "build_snapshot" : false, "lucene_version" : "6.6.1" &#125;, "tagline" : "You Know, for Search"&#125; 第二种：查看es启动日志1234567891011tail -f logs/elasticsearch.log[2018-10-24T16:33:08,638][INFO ][o.e.p.PluginsService ] [kIrDvnk] no plugins loaded[2018-10-24T16:33:10,177][INFO ][o.e.d.DiscoveryModule ] [kIrDvnk] using discovery type [zen][2018-10-24T16:33:10,676][INFO ][o.e.n.Node ] initialized[2018-10-24T16:33:10,677][INFO ][o.e.n.Node ] [kIrDvnk] starting ...[2018-10-24T16:33:10,846][INFO ][o.e.t.TransportService ] [kIrDvnk] publish_address &#123;192.168.2.220:9300&#125;, bound_addresses &#123;[::]:9300&#125;[2018-10-24T16:33:10,855][INFO ][o.e.b.BootstrapChecks ] [kIrDvnk] bound or publishing to a non-loopback address, enforcing bootstrap checks[2018-10-24T16:33:13,909][INFO ][o.e.c.s.ClusterService ] [kIrDvnk] new_master &#123;kIrDvnk&#125;&#123;kIrDvnk8TwGmqYKsjCo-dA&#125;&#123;I_vTr40xR_WWbuUv8uW6lg&#125;&#123;192.168.2.220&#125;&#123;192.168.2.220:9300&#125;, reason: zen-disco-elected-as-master ([0] nodes joined)[, ][2018-10-24T16:33:13,927][INFO ][o.e.h.n.Netty4HttpServerTransport] [kIrDvnk] publish_address &#123;192.168.2.220:9200&#125;, bound_addresses &#123;[::]:9200&#125;[2018-10-24T16:33:13,928][INFO ][o.e.n.Node ] [kIrDvnk] started[2018-10-24T16:33:13,933][INFO ][o.e.g.GatewayService ] [kIrDvnk] recovered [0] indices into cluster_state 输出以上信息表示也启动成功此时es中已经获取到了logstash收集的日志，那么就需要把收集到的日志输出到界面了，下面kibana就该登场了。 3.kibana搭建3.1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可1nohup ./bin/kibana &amp; 3.2验证kibana是否成功启动http://localhost:5601出现这个画面就表示已经配置成功了。 3.3收集es信息展示到kibana上es与kibana之间是通过模式匹配来关联日志数据的，所以下面的内容就是有关于模式匹配的学习了。 下面把关联的内容进行截取展示,大家一看应该就明白了： 当成功匹配后点击下面create完成es与kibana的关联### 3.4打开界面查看该界面展示出来就说明我们已经成功把elk这条路走通了。剩下的就是关于elk内容的具体配置了，关于这部分内容后面的文章再慢慢介绍。elk的搭建过程到此结束，后期涉及到多个服务的时候跟单机版的配置过程雷同，无非就是多开几个服务器端口，之间能够访问即可。参考文献：用ELK搭建简单的日志收集分析系统：https://blog.csdn.net/lzw_2006/article/details/51280058]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>elk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【spring-cloud】客户端微服务注册到Eureka集群上]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90spring-cloud%E3%80%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%88%B0Eureka%E9%9B%86%E7%BE%A4%E4%B8%8A%2F</url>
+    <content type="text"><![CDATA[问题来源 延续上个文章完成了Eureka的集群创建后，需要实现单个微服务注册到Eureka集群上的过程。 该注册过程只需修改default-Zone节点配置即可，配置成多个Eureka Server地址，就可以将其注册到Eureka集群上。 代码演示12345eureka: client: # 注册eureka上的地址 serviceUrl: defaultZone: http://192.168.2.237:8761/eureka,http://192.168.2.237:8762/eureka,http://192.168.2.237:8763/eureka 效果 配置完成后启动项目即可在eureka集群下的每个节点看到该服务的注册信息. 当然，微服务即使只配置Eureka Server集群中的某个节点上，也能正常注册到集群上，因为多个Eureka节点之间的数据会同步。 正常情况下，这种配置与配置多个节点的效果是一样的，不过为了适应某些极端场景，比如注册的Eureka出现问题而又无法及时同步给其他微服务，笔者建议在客户端配置多个Eureka节点 后面会向大家介绍手动扩容微服务的过程，以及后期通过编排工具扩容微服务。文献： SpringCloud与Docker微服务架构实战-周立]]></content>
+      <categories>
+        <category>SpringCloud</category>
+      </categories>
+      <tags>
+        <tag>Eureka client</tag>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【spring-cloud】eureka高可用配置过程]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90spring-cloud%E3%80%91eureka%E9%AB%98%E5%8F%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[问题来源 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。 Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。 配置流程1.添加以下内容到服务器hosts文件1127.0.0.1 peer1 peer2 peer3 2.复制application.yml三份并如图修改名称 3.设置每个节点的内容application-peer1.yml123456789101112131415161718192021# eureka官方默认端口即为8761server: port: 8761eureka: # 设置服务名 instance: hostname: peer1 client: # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册 register-with-eureka: false # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。 fetch-registry: false # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址 service-url: defaultZone: http://peer2:8762/eureka,http://peer3:8763/eureka # 关闭自我保护 server: enable-self-preservation: false eviction-interval-timer-in-ms: 4000 application-peer2.yml123456789101112131415161718192021# eureka官方默认端口即为8761server: port: 8762eureka: # 设置服务名 instance: hostname: peer2 client: # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册 register-with-eureka: false # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。 fetch-registry: false # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址 service-url: defaultZone: http://peer1:8761/eureka,http://peer3:8763/eureka # 关闭自我保护 server: enable-self-preservation: false eviction-interval-timer-in-ms: 4000 application-peer3.yml123456789101112131415161718192021# eureka官方默认端口即为8761server: port: 8763eureka: # 设置服务名 instance: hostname: peer3 client: # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册 register-with-eureka: false # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。 fetch-registry: false # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址 service-url: defaultZone: http://peer2:8762/eureka,http://peer1:8761/eureka # 关闭自我保护 server: enable-self-preservation: false eviction-interval-timer-in-ms: 4000 4.在idea中完成启动配置 【注意：peer2与peer3文件修改雷同】配置完成后启动三个服务。 5.访问Eureka服务验证从而成功完成eureka服务器的高可用 后面的文章会向大家介绍客户端的高可用，包括zuul网关和其他业务服务的配置。]]></content>
+      <categories>
+        <category>SpringCloud</category>
+      </categories>
+      <tags>
+        <tag>SpringCloud</tag>
+        <tag>Eureka</tag>
+        <tag>高可用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【blog】关于网站收录]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90blog%E3%80%91%E5%85%B3%E4%BA%8E%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[待解决的问题由于新建博客，百度搜索和谷歌搜索发现都搜不到本网站，才发现需要配置两个搜索引擎的收录。下面链接主要描述了百度搜索和谷歌搜索对网站的收录过程，跟着教程一步步走。 https://blog.csdn.net/qq_32454537/article/details/79482914]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【mac】edrawMax软件的破解安装]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90mac%E3%80%91edrawMac%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[请根据下面的链接进行安装即可。 注意下载安装包后断网 https://www.zhinin.com/edraw_max-mac.html 【如果出现第三步打不开软件的情况，请执行下面的命令到命令窗即可（破解完之后记得改回来）】1sudo spctl --master-disable]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>edrawMac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【mac】hosts文件常用自定义链接映射]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90mac%E3%80%91hosts%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5%E6%98%A0%E5%B0%84%2F</url>
+    <content type="text"><![CDATA[下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。12345670.0.0.0 account.jetbrains.com #idea激活服务218.11.0.86 gitee.com #git网站加速127.0.0.1 xmind.net #xmind破解127.0.0.1 www.xmind.net #xmind破解151.101.76.249 github.global.ssl.fastly.net #git网站加速192.30.253.112 github.com #git网站加速127.0.0.1 peer1 peer2 peer3 #eureka高可用配置]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>hosts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[gitalk测试3]]></title>
+    <url>%2F2018%2F10%2Fgitalk%E6%B5%8B%E8%AF%953%2F</url>
+    <content type="text"><![CDATA[测试2123 的]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[gitalk测试2]]></title>
+    <url>%2F2018%2F10%2Fgitalk%E6%B5%8B%E8%AF%952%2F</url>
+    <content type="text"><![CDATA[测试test]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[gitalk测试]]></title>
+    <url>%2F2018%2F10%2Fgitalk%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[gitalk 测试]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【next-blog】背景图片设置]]></title>
+    <url>%2F2018%2F10%2F%E3%80%90next-blog%E3%80%91%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[1.找到该路径1themes\next\source\css\ _custom\custom.styl 2.添加如下代码：123456body &#123; background:url(https://source.unsplash.com/random/1600x900); background-repeat: no-repeat; background-attachment:fixed; background-position:50% 50%;&#125; 【注意：保证上面url链接可访问】]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F10%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[timg (1).jpegWelcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start123Create a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[My New Post]]></title>
+    <url>%2F2018%2F10%2FMy-New-Post%2F</url>
+    <content type="text"></content>
+  </entry>
+</search>

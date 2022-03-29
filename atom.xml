@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>漫长岁月</title>
+  
+  <subtitle>漫长岁月</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://javahdw.top/"/>
+  <updated>2022-03-29T03:31:48.218Z</updated>
+  <id>http://javahdw.top/</id>
+  
+  <author>
+    <name>漫长岁月</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【钢琴自学】8 - 猫王《love me tender》</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90%E9%92%A2%E7%90%B4%E8%87%AA%E5%AD%A6%E3%80%918-%E7%8C%AB%E7%8E%8B%E3%80%8Alove-me-tender%E3%80%8B/"/>
+    <id>http://javahdw.top/2018/11/【钢琴自学】8-猫王《love-me-tender》/</id>
+    <published>2018-11-20T06:49:00.000Z</published>
+    <updated>2022-03-29T03:31:48.218Z</updated>
+    
+    <content type="html"><![CDATA[<p><embed src="//player.video.iqiyi.com/23121a0952bbe04de866a7d87b6bb7cd/0/0/w_19s2t7n401.swf-albumId=27027302509-tvId=27027302509-isPurchase=0-cnId=undefined" allowfullscreen="true" quality="high" width="720" height="525" align="center" allowscriptaccess="always" type="application/x-shockwave-flash"></p><blockquote><br>弹错一个和弦，略尴尬<br> </blockquote><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;embed src=&quot;//player.video.iqiyi.com/23121a0952bbe04de866a7d87b6bb7cd/0/0/w_19s2t7n401.swf-albumId=27027302509-tvId=27027302509-isPurchase=0-cnId=undefined&quot; allowfullscreen=&quot;true&quot; quality=&quot;high&quot; width=&quot;720&quot; height=&quot;525&quot; align=&quot;center&quot; allowscriptaccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;br&gt;弹错一个和弦，略尴尬&lt;br&gt; &lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="钢琴" scheme="http://javahdw.top/categories/%E9%92%A2%E7%90%B4/"/>
+    
+    
+      <category term="钢琴" scheme="http://javahdw.top/tags/%E9%92%A2%E7%90%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【centos-jdk】centos安装jdk相关配置</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90centos-jdk%E3%80%91centos%E5%AE%89%E8%A3%85jdk%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
+    <id>http://javahdw.top/2018/11/【centos-jdk】centos安装jdk相关配置/</id>
+    <published>2018-11-20T03:22:00.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>安装了很多遍jdk发现写在有道云笔记里寻找很麻烦，在这里记录一下centos中安装jdk的过程，通过全文搜索很方便。😝</blockquote><p><img src="http://images.javahdw.top/1542695247972q2pcwq4k.png" alt="paste image"></p><a id="more"></a><h1 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep jdk</span><br><span class="line"><span class="comment"># 可能使用的命令</span></span><br><span class="line">rpm -e --nodeps copy-jdk-configs-2.2-3.el7.noarch</span><br><span class="line">rpm -e --nodeps java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line">rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line">rpm -e --nodeps java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line">rpm -e --nodeps java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure><h1 id="去oracle官网下载需要的jdk版本并通过scp复制到服务器"><a href="#去oracle官网下载需要的jdk版本并通过scp复制到服务器" class="headerlink" title="去oracle官网下载需要的jdk版本并通过scp复制到服务器"></a>去oracle官网下载需要的jdk版本并通过scp复制到服务器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提前修改好名称</span></span><br><span class="line">scp  -P 22 /Users/hdw/Transform/包名root@192.168.2.***:/root/Transform/包名</span><br></pre></td></tr></table></figure><h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment"># 添加下面的参数  注意修改路径/usr/java/jdk1.7.67_10</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.7.67_10 </span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/jre/lib/rt.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br></pre></td></tr></table></figure><h1 id="刷新配置，使配置生效"><a href="#刷新配置，使配置生效" class="headerlink" title="刷新配置，使配置生效"></a>刷新配置，使配置生效</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure><h1 id="验证是否配置成功"><a href="#验证是否配置成功" class="headerlink" title="验证是否配置成功"></a>验证是否配置成功</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 重开命令窗口验证</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;安装了很多遍jdk发现写在有道云笔记里寻找很麻烦，在这里记录一下centos中安装jdk的过程，通过全文搜索很方便。😝&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/1542695247972q2pcwq4k.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="centos" scheme="http://javahdw.top/categories/centos/"/>
+    
+      <category term="java" scheme="http://javahdw.top/categories/centos/java/"/>
+    
+    
+      <category term="centos" scheme="http://javahdw.top/tags/centos/"/>
+    
+      <category term="jdk" scheme="http://javahdw.top/tags/jdk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【docker】命令大全</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90docker%E3%80%91%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
+    <id>http://javahdw.top/2018/11/【docker】命令大全/</id>
+    <published>2018-11-15T03:18:00.000Z</published>
+    <updated>2022-03-29T03:31:48.217Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>记录使用docker以来的所有相关命令，以备后续方便使用</blockquote><p><img src="http://images.javahdw.top/1542252156167z36ahh0a.png" alt="paste image"></p><a id="more"></a><h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install docker</span><br><span class="line">systemctl start docker </span><br><span class="line">docker info</span><br></pre></td></tr></table></figure><h1 id="参数介绍"><a href="#参数介绍" class="headerlink" title="参数介绍"></a>参数介绍</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">docker [OPTIONS] COMMAND容器的自足运行时</span><br><span class="line">Options:</span><br><span class="line">      --config string      客户端配置文件的位置 (默认<span class="string">"/Users/hdw/.docker"</span>)</span><br><span class="line">  -D, --debug              </span><br><span class="line">  启用debug模式</span><br><span class="line">  -H, --host list          </span><br><span class="line">  要连接的守护程序套接字</span><br><span class="line">  -l, --<span class="built_in">log</span>-level string   </span><br><span class="line">  设置日志记录级别(<span class="string">"debug"</span>|<span class="string">"info"</span>|<span class="string">"warn"</span>|<span class="string">"error"</span>|<span class="string">"fatal"</span>)</span><br><span class="line">                           (默认 <span class="string">"info"</span>)</span><br><span class="line">      --tls                </span><br><span class="line">      使用TLS; implied by --tlsverify</span><br><span class="line">      --tlscacert string   </span><br><span class="line">      信任证书仅由此CA签署(default<span class="string">"/Users/hdw/.docker/ca.pem"</span>)</span><br><span class="line">      --tlscert string     </span><br><span class="line">      TLS证书文件的路径 (default<span class="string">"/Users/hdw/.docker/cert.pem"</span>)</span><br><span class="line">      --tlskey string      </span><br><span class="line">      TLS密钥文件的路径 (default<span class="string">"/Users/hdw/.docker/key.pem"</span>)</span><br><span class="line">      --tlsverify          </span><br><span class="line">      使用TLS并验证远程</span><br><span class="line">  -v, --version            </span><br><span class="line">  打印版本信息并退出</span><br><span class="line"></span><br><span class="line">Management Commands://管理命令</span><br><span class="line">  builder     Manage builds</span><br><span class="line">  checkpoint  Manage checkpoints</span><br><span class="line">  config      Manage Docker configs</span><br><span class="line">  container   Manage containers</span><br><span class="line">  engine      Manage the docker engine</span><br><span class="line">  image       Manage images</span><br><span class="line">  network     Manage networks</span><br><span class="line">  node        Manage Swarm nodes</span><br><span class="line">  plugin      Manage plugins</span><br><span class="line">  secret      Manage Docker secrets</span><br><span class="line">  service     Manage services</span><br><span class="line">  stack       Manage Docker stacks</span><br><span class="line">  swarm       Manage Swarm</span><br><span class="line">  system      Manage Docker</span><br><span class="line">  trust       Manage trust on Docker images</span><br><span class="line">  volume      Manage volumes</span><br><span class="line"></span><br><span class="line">Commands:       //命令</span><br><span class="line">  attach      将本地标准输入，输出和错误流附加到正在运行的容器</span><br><span class="line">  build       从Dockerfile构建映像</span><br><span class="line">  commit      根据容器的更改创建新图像</span><br><span class="line">  cp          在容器和本地文件系统之间复制文件/文件夹</span><br><span class="line">  create      创建一个新容器</span><br><span class="line">  deploy      部署新堆栈或更新现有堆栈</span><br><span class="line">  diff        检查容器文件系统上的文件或目录的更改</span><br><span class="line">  events      从服务器获取实时事件</span><br><span class="line">  <span class="built_in">exec</span>        在正在运行的容器中运行命令</span><br><span class="line">  <span class="built_in">export</span>      将容器的文件系统导出为tar存档</span><br><span class="line">  <span class="built_in">history</span>     显示镜像的历史记录</span><br><span class="line">  images      列出镜像</span><br><span class="line">  import      从tarball导入内容以创建文件系统映像</span><br><span class="line">  info        显示系统范围的信息</span><br><span class="line">  inspect     返回Docker对象的低级信息</span><br><span class="line">  <span class="built_in">kill</span>        杀死一个或多个正在运行的容器</span><br><span class="line">  load        从tar存档或STDIN加载镜像</span><br><span class="line">  login       登录Docker仓库</span><br><span class="line">  <span class="built_in">logout</span>      从Docker仓库注销</span><br><span class="line">  logs        获取容器的日志</span><br><span class="line">  pause       暂停一个或多个容器中的所有进程</span><br><span class="line">  port        列出端口映射或容器的特定映射</span><br><span class="line">  ps          列出容器</span><br><span class="line">  pull        拉取镜像或者仓库从注册中心</span><br><span class="line">  push        向注册中心推送一个镜像或者仓库</span><br><span class="line">  rename      重命名容器</span><br><span class="line">  restart     重启一个或多个容器</span><br><span class="line">  rm          删除一个或多个容器</span><br><span class="line">  rmi         删除一个或多个镜像</span><br><span class="line">  run         在新容器中运行命令</span><br><span class="line">  save        将一个或多个图像保存到tar存档（默认情况下流式传输到STDOUT）</span><br><span class="line">  search      在Docker Hub中搜索镜像</span><br><span class="line">  start       启动一个或多个已停止的容器</span><br><span class="line">  stats       显示容器资源使用情况统计信息的实时流</span><br><span class="line">  stop        停止一个或多个正在运行的容器</span><br><span class="line">  tag         创建一个引用SOURCE_IMAGE的标记TARGET_IMAGE</span><br><span class="line">  top         显示容器的运行进程</span><br><span class="line">  unpause     取消暂停一个或多个容器中的所有进程</span><br><span class="line">  update      更新一个或多个容器的配置</span><br><span class="line">  version     显示Docker版本信息</span><br><span class="line">  <span class="built_in">wait</span>        阻止，直到一个或多个容器停止，然后打印退出代码</span><br></pre></td></tr></table></figure><h1 id="常用命令收集"><a href="#常用命令收集" class="headerlink" title="常用命令收集"></a>常用命令收集</h1><h2 id="有关mysql常用命令"><a href="#有关mysql常用命令" class="headerlink" title="有关mysql常用命令"></a>有关mysql常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run --name hi-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysqladmin -d mysql:latest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-p 3306:3306：将容器的3306端口映射到主机的3306端口 </span><br><span class="line">-e 指定环境变量，其中MYSQL_ROOT_PASSWORD=root即初始化root用户的密码为root </span><br><span class="line">-name 即命名容器的名称为mysql </span><br><span class="line">-d: 后台运行容器，并返回容器ID</span><br></pre></td></tr></table></figure><h2 id="连接docker相关命令"><a href="#连接docker相关命令" class="headerlink" title="连接docker相关命令"></a>连接docker相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker拷贝文件</span></span><br><span class="line">docker cp catalina.properties 33bb05f78861:/usr/<span class="built_in">local</span>/tomcat/conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#docker进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it 6ba01d111e60 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#docker提交容器更改保存镜像</span></span><br><span class="line">docker commit -a=<span class="string">"dawei"</span> -m=<span class="string">"update tomcat's config file of catalina.properties"</span> 33bb05f78861 tomcat:v2</span><br><span class="line"><span class="comment">#-a表示作者-m表示提交备注</span></span><br></pre></td></tr></table></figure><h2 id="docker容器中使用命令"><a href="#docker容器中使用命令" class="headerlink" title="docker容器中使用命令"></a>docker容器中使用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker容器中安装文件</span></span><br><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment">#docker容器中安装vim编辑器</span></span><br><span class="line">apt-get install vim</span><br><span class="line"></span><br><span class="line"><span class="comment">#退出容器</span></span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure><h2 id="通过docker安装rabbitmq命令"><a href="#通过docker安装rabbitmq命令" class="headerlink" title="通过docker安装rabbitmq命令"></a>通过docker安装rabbitmq命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management</span><br><span class="line"><span class="comment">#localhost:15672     进入管理界面</span></span><br><span class="line"><span class="comment">#初始用户名密码：都是guest</span></span><br></pre></td></tr></table></figure><h2 id="切换docker镜像加速器"><a href="#切换docker镜像加速器" class="headerlink" title="切换docker镜像加速器"></a>切换docker镜像加速器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑配置文件</span></span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line"><span class="comment"># 添加下面的内容</span></span><br><span class="line"><span class="string">"registry-mirrors"</span>: [<span class="string">"http://ef017c13.m.daocloud.io"</span>]</span><br><span class="line"><span class="comment"># 启动docker</span></span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure><h2 id="通过docker安装zipkin"><a href="#通过docker安装zipkin" class="headerlink" title="通过docker安装zipkin"></a>通过docker安装zipkin</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">docker run -d -p 9411:9411 openzipkin/zipkin</span><br><span class="line"><span class="comment"># 访问</span></span><br><span class="line">http://localhost:9411</span><br></pre></td></tr></table></figure><p><img src="http://images.javahdw.top/1542253797622o9hbrnbd.png" alt="paste image"></p><h2 id="启动容器相关命令"><a href="#启动容器相关命令" class="headerlink" title="启动容器相关命令"></a>启动容器相关命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker run</span><br><span class="line">-d   后台运行</span><br><span class="line">-P   随机端口映射</span><br><span class="line">-p   指定端口映射，有以下四种格式</span><br><span class="line">-ip：hostPort:containerPort</span><br><span class="line">-ip::containerPort</span><br><span class="line">-hostPort:containerPort</span><br><span class="line">-containerPort</span><br><span class="line">-network选项：指定网络模式，</span><br><span class="line">---network=bridge:默认选项，该选项有以下可选参数</span><br><span class="line">---network=host:容器使用宿主主机的网络</span><br><span class="line">---network=container:NAME_or_ID:告诉docker让新建的容器使用已有容器的网络配置</span><br><span class="line">---network=none:不配置该容器的网络，用户可自定义网络配置。</span><br></pre></td></tr></table></figure><h2 id="docker安装shwodoc并挂载数据目录到宿主机"><a href="#docker安装shwodoc并挂载数据目录到宿主机" class="headerlink" title="docker安装shwodoc并挂载数据目录到宿主机"></a>docker安装shwodoc并挂载数据目录到宿主机</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从国内镜像安装showdoc</span></span><br><span class="line">docker pull registry.docker-cn.com/star7th/showdoc</span><br><span class="line"><span class="comment">#若上面方式安装失败，可尝试从docker国外官方镜像安装</span></span><br><span class="line"><span class="comment"># docker pull star7th/showdoc</span></span><br><span class="line"><span class="comment">#新建存放showdoc数据的目录</span></span><br><span class="line">mkdir showdoc_data</span><br><span class="line">mkdir showdoc_data/html</span><br><span class="line">chmod 777 -R showdoc_data</span><br><span class="line"><span class="comment">#启动showdoc容器。启动完了后别忘记后面还有转移数据的步骤。</span></span><br><span class="line">docker run -d --name showdoc -p 4999:80 -v /root/showdoc_data/html:/root/var/www/html/ registry.docker-cn.com/star7th/showdoc</span><br><span class="line"><span class="comment">#转移数据</span></span><br><span class="line">docker <span class="built_in">exec</span> showdoc \cp -fr /showdoc_data/html/ /root/var/www/</span><br><span class="line"><span class="comment">#[注意，权限问题可能无法挂载，解决方案如下：]</span></span><br><span class="line"><span class="comment">#临时关闭selinux：</span></span><br><span class="line">su -c <span class="string">"setenforce 0"</span></span><br><span class="line"><span class="comment">#再执行上面的语句，完成后再打开selinux</span></span><br><span class="line">su -c <span class="string">"setenforce 1"</span></span><br><span class="line"><span class="comment"># 权限</span></span><br><span class="line">chmod 777 -R /showdoc_data</span><br><span class="line">根据以上命令操作的话，往后showdoc的数据都会存放在 /showdoc_data/html 目录下。</span><br><span class="line"><span class="comment">#你可以打开 http://xxx.com:4999 来访问showdoc (xxx.com为你的服务器域名或者IP)。账户密码是showdoc/123456，登录后你便可以看到右上方的管理后台入口。建议登录后修改密码。</span></span><br><span class="line"><span class="comment"># 打开网站</span></span><br><span class="line">http://localhost:4999/web/<span class="comment">#/</span></span><br></pre></td></tr></table></figure><h2 id="docker安装并启动rancher-server"><a href="#docker安装并启动rancher-server" class="headerlink" title="docker安装并启动rancher-server"></a>docker安装并启动rancher-server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 装docker</span></span><br><span class="line">yum install docker</span><br><span class="line"><span class="comment"># 编辑docker镜像加速器</span></span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line"><span class="string">"registry-mirrors"</span>: [<span class="string">"http://ef017c13.m.daocloud.io"</span>]</span><br><span class="line"><span class="comment">#启动docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="comment">#在docker上安装rancher</span></span><br><span class="line">sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable</span><br><span class="line"><span class="comment">#访问rancher     </span></span><br><span class="line">http://ip:8080</span><br></pre></td></tr></table></figure><blockquote>持续更新中。。。</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;记录使用docker以来的所有相关命令，以备后续方便使用&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/1542252156167z36ahh0a.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="http://javahdw.top/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="http://javahdw.top/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【java内存模型学习之路】java内存区域与内存溢出异常</title>
+    <link href="http://javahdw.top/2018/11/%E3%80%90java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%91java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/"/>
+    <id>http://javahdw.top/2018/11/【java内存模型学习之路】java内存区域与内存溢出异常/</id>
+    <published>2018-11-12T05:31:00.000Z</published>
+    <updated>2022-03-29T03:31:48.217Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>节选自《深入理解java虚拟机》第二章    java内存区域与内存溢出异常</blockquote><h1 id="对象的创建与内存分配"><a href="#对象的创建与内存分配" class="headerlink" title="对象的创建与内存分配"></a>对象的创建与内存分配</h1><p><img src="http://images.javahdw.top/15420007477343g9pxqam.png" alt="paste image"></p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;节选自《深入理解java虚拟机》第二章    java内存区域与内存溢出异常&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;对象的创建与内存分配&quot;&gt;&lt;a href=&quot;#对象的创建与内存分配&quot; class=&quot;headerlink&quot; title=&quot;对象的创建与内存分配&quot;&gt;&lt;/a&gt;对象的创建与内存分配&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15420007477343g9pxqam.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://javahdw.top/categories/java/"/>
+    
+    
+      <category term="内存模型" scheme="http://javahdw.top/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【zuul】2.0版本下zuul配置的改变</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90zuul%E3%80%912-0%E7%89%88%E6%9C%AC%E4%B8%8Bzuul%E9%85%8D%E7%BD%AE%E7%9A%84%E6%94%B9%E5%8F%98/"/>
+    <id>http://javahdw.top/2018/10/【zuul】2-0版本下zuul配置的改变/</id>
+    <published>2018-10-31T02:05:00.000Z</published>
+    <updated>2022-03-29T03:31:48.218Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。</blockquote><h1 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h1><p><img src="http://images.javahdw.top/15409515734037krkuvsh.png" alt="paste image"></p><a id="more"></a><blockquote>以下这些改变是逐步和持续完善的，该博文不是一次性完成的，只能发现一个记录一个。</blockquote><h1 id="routes节点报404"><a href="#routes节点报404" class="headerlink" title="/routes节点报404"></a>/routes节点报404</h1><p>与之前版本的zuul相比，不再直接通过/routes便能查看路由信息了。如何查看修改后的暴露的节点信息，可通过配置包含所有的节点信息暴露出来展示出来。配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">management:</span><br><span class="line">  security:</span><br><span class="line">    enabled: false</span><br><span class="line">  endpoints:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: &quot;*&quot;</span><br></pre></td></tr></table></figure></p><p>其中include:”*”表示包含所有可暴露的节点信息，也许是版本升级更加注重安全这一方面，默认关闭掉了。通过该配置即可查看暴露的节点信息了。</p><p>效果如下：<br><img src="http://images.javahdw.top/15409520384226f1eyb74.png" alt="paste image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;在Finchley的cloud版本下，其中zuul网关服务在配置上做了一些改变，如果不知道这些改变，在后期维护和测试的过程中会带来不小的影响，下面通过作者持续修改配置多次测试来发现如何应对这些问题。&lt;/blockquote&gt;
+
+
+&lt;h1 id=&quot;版本信息&quot;&gt;&lt;a href=&quot;#版本信息&quot; class=&quot;headerlink&quot; title=&quot;版本信息&quot;&gt;&lt;/a&gt;版本信息&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15409515734037krkuvsh.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="springcloud" scheme="http://javahdw.top/categories/springcloud/"/>
+    
+    
+      <category term="zuul" scheme="http://javahdw.top/tags/zuul/"/>
+    
+      <category term="springcloud" scheme="http://javahdw.top/tags/springcloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【zuul】mock测试zuul接口的限制</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90zuul%E3%80%91mock%E6%B5%8B%E8%AF%95zuul%E6%8E%A5%E5%8F%A3%E7%9A%84%E9%99%90%E5%88%B6/"/>
+    <id>http://javahdw.top/2018/10/【zuul】mock测试zuul接口的限制/</id>
+    <published>2018-10-30T09:45:00.000Z</published>
+    <updated>2022-03-29T03:31:48.218Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><blockquote>在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。</blockquote><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;blockquote&gt;在底层服务模块的测试文件下通过mock测试网关接口的时候发现总是报404，找了很多方案都没解决，后来脑子突然想到了一个问题，那就是上下文环境变量。我在底层服务是没法引入zuul的上下文环境进行测试的。所以，我干脆把test测试文件复制一份到zuul下进行网关接口测试，结果就通了，耽误了好长时间。&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="springcloud" scheme="http://javahdw.top/categories/springcloud/"/>
+    
+    
+      <category term="zuul" scheme="http://javahdw.top/tags/zuul/"/>
+    
+      <category term="mock" scheme="http://javahdw.top/tags/mock/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ELK】ElasticSearch的head插件的使用</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90ELK%E3%80%91ElasticSearch%E7%9A%84head%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://javahdw.top/2018/10/【ELK】ElasticSearch的head插件的使用/</id>
+    <published>2018-10-25T04:23:11.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="http://images.javahdw.top/15404414186646rdu4oby.png" alt="paste image"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>为了集中查看elasticsearch收集到的所有数据以及查看各个参数配置情况，当我们不能保证通过kibana连接时，就可以先通过head插件查看elasticsearch的各个参数和系统状态，一步步检查问题所在。</blockquote><a id="more"></a><h1 id="插件准备"><a href="#插件准备" class="headerlink" title="插件准备"></a>插件准备</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/mobz/elasticsearch-head.git</span><br></pre></td></tr></table></figure><h1 id="es配置文件修改"><a href="#es配置文件修改" class="headerlink" title="es配置文件修改"></a>es配置文件修改</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /Users/hdw/root/elasticsearch-5.6.11/config/elasticsearch.yml</span><br><span class="line"></span><br><span class="line">文件最后添加下面两行信息</span><br><span class="line">http.cors.enabled: true                                     # elasticsearch中启用CORS</span><br><span class="line">http.cors.allow-origin: &quot;*&quot;                                 # 允许访问的IP地址段，* 为所有IP都</span><br></pre></td></tr></table></figure><h1 id="重启es实例后（省略）"><a href="#重启es实例后（省略）" class="headerlink" title="重启es实例后（省略）"></a>重启es实例后（省略）</h1><h1 id="启动head插件"><a href="#启动head插件" class="headerlink" title="启动head插件"></a>启动head插件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#进入head插件目录下运行</span><br><span class="line">npm install</span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure><h1 id="访问http-localhost-9100"><a href="#访问http-localhost-9100" class="headerlink" title="访问http://localhost:9100/"></a>访问<a href="http://localhost:9100/" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:9100/</a></h1><h1 id="地址栏输入http-localhost-9200"><a href="#地址栏输入http-localhost-9200" class="headerlink" title="地址栏输入http://localhost:9200/"></a>地址栏输入<a href="http://localhost:9200/" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:9200/</a></h1><hr><p>到此完成head插件的配置，通过该界面即可看到es收集到的信息是否是自己想要的。</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Elasticsearch中Head插件的使用<br>  <a href="https://www.cnblogs.com/aubin/p/8018081.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/aubin/p/8018081.html</a><br>查看centos中的用户和用户组<br>  <a href="https://www.cnblogs.com/apexchu/p/4193117.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/apexchu/p/4193117.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/15404414186646rdu4oby.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;为了集中查看elasticsearch收集到的所有数据以及查看各个参数配置情况，当我们不能保证通过kibana连接时，就可以先通过head插件查看elasticsearch的各个参数和系统状态，一步步检查问题所在。&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://javahdw.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="elk" scheme="http://javahdw.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/elk/"/>
+    
+    
+      <category term="elk" scheme="http://javahdw.top/tags/elk/"/>
+    
+      <category term="elasticsearch" scheme="http://javahdw.top/tags/elasticsearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ELK】mac搭建ELK开发环境</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90ELK%E3%80%91mac%E6%90%AD%E5%BB%BAELK%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://javahdw.top/2018/10/【ELK】mac搭建ELK开发环境/</id>
+    <published>2018-10-24T07:39:00.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p><img src="http://images.javahdw.top/1540373853201ovcw3iws.png" alt="paste image"><br><img src="http://images.javahdw.top/1540374136064n3mtj7oh.png" alt="paste image"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。</blockquote><a id="more"></a><h1 id="程序准备"><a href="#程序准备" class="headerlink" title="程序准备"></a>程序准备</h1><p>elasticsearch<br>wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.11.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.11.tar.gz</a></p><p>logstash<br>wget <a href="https://artifacts.elastic.co/downloads/logstash/logstash-5.6.11.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/logstash/logstash-5.6.11.tar.gz</a></p><p>kibana-centos版本<br>wget <a href="https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-linux-x86_64.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-linux-x86_64.tar.gz</a></p><p>kibana-mac版本<br><a href="https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-darwin-x86_64.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">https://artifacts.elastic.co/downloads/kibana/kibana-5.6.11-darwin-x86_64.tar.gz</a></p><h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><h2 id="1-logstash的搭建"><a href="#1-logstash的搭建" class="headerlink" title="1.logstash的搭建"></a>1.logstash的搭建</h2><h3 id="1-1在logstash安装目录下新建conf文件夹，在里面新建配置文件java-log-stash-conf-表示收集的是java程序产生的日志，可随便起名-，内容如下"><a href="#1-1在logstash安装目录下新建conf文件夹，在里面新建配置文件java-log-stash-conf-表示收集的是java程序产生的日志，可随便起名-，内容如下" class="headerlink" title="1.1在logstash安装目录下新建conf文件夹，在里面新建配置文件java_log_stash.conf(表示收集的是java程序产生的日志，可随便起名)，内容如下"></a>1.1在logstash安装目录下新建conf文件夹，在里面新建配置文件java_log_stash.conf(表示收集的是java程序产生的日志，可随便起名)，内容如下</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">input</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="string">file</span> <span class="string">&#123;</span></span><br><span class="line">                <span class="string">type</span> <span class="string">=&gt;</span> <span class="string">"bxlt-ply"</span></span><br><span class="line">                <span class="comment">#需要收集的日志文件</span></span><br><span class="line">                <span class="string">path</span> <span class="string">=&gt;</span> <span class="string">["/Users/hdw/Documents/elk/log4j2/bxlt-ply-*.log"]</span></span><br><span class="line">                <span class="string">tags</span> <span class="string">=&gt;</span> <span class="string">["bxlt-ply",</span> <span class="string">"bxlt-ply-log"</span><span class="string">]</span></span><br><span class="line">                <span class="comment">#</span></span><br><span class="line">                <span class="string">codec</span> <span class="string">=&gt;</span> <span class="string">multiline</span> <span class="string">&#123;</span> <span class="comment">#</span></span><br><span class="line">                        <span class="string">pattern</span> <span class="string">=&gt;</span> <span class="string">"^<span class="template-variable">%&#123;TIMESTAMP_ISO8601&#125;</span>"</span></span><br><span class="line">                        <span class="string">negate</span> <span class="string">=&gt;</span> <span class="literal">true</span></span><br><span class="line">                        <span class="string">what</span> <span class="string">=&gt;</span> <span class="string">"previous"</span></span><br><span class="line">                <span class="string">&#125;</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">filter</span> <span class="string">&#123;</span></span><br><span class="line">    <span class="string">grok</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="string">match</span> <span class="string">=&gt;</span> <span class="string">&#123;</span></span><br><span class="line">            <span class="string">"message"</span> <span class="string">=&gt;</span> <span class="string">"<span class="template-variable">%&#123;TIMESTAMP_ISO8601:date&#125;</span> \[(?&lt;thread_name&gt;.+?)\] (?&lt;log_level&gt;\w+)\s*(?&lt;content&gt;.*)"</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">date</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="string">match</span> <span class="string">=&gt;</span> <span class="string">["timestamp",</span> <span class="string">"dd/MMM/YYYY:HH:mm:ss Z"</span><span class="string">]</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">output</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="comment">#将日志根据类别映射到不同的处理方式中，此处通过type匹配后可直接放到es中</span></span><br><span class="line">        <span class="string">if[type]</span> <span class="string">==</span> <span class="string">"bxlt-ply"</span> <span class="string">&#123;</span></span><br><span class="line">            <span class="string">elasticsearch</span> <span class="string">&#123;</span></span><br><span class="line">                    <span class="comment">#embedded =&gt; false</span></span><br><span class="line">                    <span class="comment">#protocol =&gt; "http"</span></span><br><span class="line">                    <span class="string">hosts</span> <span class="string">=&gt;</span> <span class="string">"localhost:9200"</span></span><br><span class="line">                    <span class="comment">#索引的额配置，将通过这个配置展示到kibana上</span></span><br><span class="line">                    <span class="string">index</span> <span class="string">=&gt;</span> <span class="string">"bxlt-ply-<span class="template-variable">%&#123;+YYYY.MM.dd&#125;</span>"</span></span><br><span class="line">            <span class="string">&#125;</span></span><br><span class="line">        <span class="string">&#125;else</span> <span class="string">if[type]</span> <span class="string">==</span> <span class="string">"其他类型"</span> <span class="string">&#123;</span></span><br><span class="line">            <span class="string">elasticsearch</span> <span class="string">&#123;</span></span><br><span class="line">                    <span class="comment">#embedded =&gt; false</span></span><br><span class="line">                    <span class="comment">#protocol =&gt; "http"</span></span><br><span class="line">                    <span class="string">hosts</span> <span class="string">=&gt;</span> <span class="string">"localhost:9200"</span></span><br><span class="line">                    <span class="string">index</span> <span class="string">=&gt;</span> <span class="string">"其他类型索引名字-<span class="template-variable">%&#123;+YYYY.MM.dd&#125;</span>"</span></span><br><span class="line">            <span class="string">&#125;</span></span><br><span class="line">        <span class="string">&#125;else</span> <span class="string">&#123;</span></span><br><span class="line">            <span class="comment">#做其他处理</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">        <span class="string">stdout&#123;</span> <span class="comment">#输出到标准输出，可以去掉</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure><h3 id="1-2启动logstash并查看日志是否成功启动"><a href="#1-2启动logstash并查看日志是否成功启动" class="headerlink" title="1.2启动logstash并查看日志是否成功启动"></a>1.2启动logstash并查看日志是否成功启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#以自定义配置文件启动logstash</span><br><span class="line">nohup ./bin/logstash -f conf/java_log_stash.conf &amp;</span><br><span class="line"></span><br><span class="line">#查看启动日志输出是否成功</span><br><span class="line">tail -f logs/logstash-plain.log</span><br></pre></td></tr></table></figure><hr><p>【Tip】<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看logstash配置文件是否正确 -f参数</span></span><br><span class="line">./bin/logstash -f conf/bxlt-file-logstash.conf</span><br><span class="line"><span class="comment">#查看端口号启动情况及PID</span></span><br><span class="line">lsof -i:9600</span><br><span class="line"><span class="comment">#如果需要停止该端口kill掉该Pid即可</span></span><br><span class="line"><span class="built_in">kill</span> -9 <span class="string">'pid'</span></span><br></pre></td></tr></table></figure></p><hr><p>启动成功后查看log输出日志如下：<br><img src="http://images.javahdw.top/15403688859024bw34nwe.png" alt="paste image"><br>说明logstash已经准备要把自己收集到的日志输出给es，只是es还没启动。</p><h2 id="2-ElasticSearch的搭建"><a href="#2-ElasticSearch的搭建" class="headerlink" title="2.ElasticSearch的搭建"></a>2.ElasticSearch的搭建</h2><h3 id="2-1修改配置文件"><a href="#2-1修改配置文件" class="headerlink" title="2.1修改配置文件"></a>2.1修改配置文件</h3><h4 id="vim-config-elasticsearch-yml"><a href="#vim-config-elasticsearch-yml" class="headerlink" title="vim config/elasticsearch.yml"></a>vim config/elasticsearch.yml</h4><p>把network.host字段给反注释掉，把地址改为0.0.0.0（官方并没明确说要去改这配置，默认配置应该就可以了，不过实测的时候发现如果不做这修改，elasticsearch访问不了）</p> <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------- Network -----------------------------------</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Set the bind address to a specific IP (IPv4 or IPv6):</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="string">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Set a custom port for HTTP:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#http.port: 9200</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># For more information, consult the network module documentation.</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure><h3 id="2-2后台启动es"><a href="#2-2后台启动es" class="headerlink" title="2.2后台启动es"></a>2.2后台启动es</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./bin/elasticsearch &amp;</span><br></pre></td></tr></table></figure><h3 id="2-3两种方式验证es是否成功启动"><a href="#2-3两种方式验证es是否成功启动" class="headerlink" title="2.3两种方式验证es是否成功启动"></a>2.3两种方式验证es是否成功启动</h3><h4 id="第一种：本地浏览器访问http-localhost-9200"><a href="#第一种：本地浏览器访问http-localhost-9200" class="headerlink" title="第一种：本地浏览器访问http://localhost:9200/"></a>第一种：本地浏览器访问<a href="http://localhost:9200/" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:9200/</a></h4><p>返回信息如下表示成功<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"kIrDvnk"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"elasticsearch"</span>,</span><br><span class="line">  <span class="attr">"cluster_uuid"</span> : <span class="string">"a5lgu18GRIyJ8M2bYHkHGQ"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"5.6.11"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"bc3eef4"</span>,</span><br><span class="line">    <span class="attr">"build_date"</span> : <span class="string">"2018-08-16T15:25:17.293Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"6.6.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h4 id="第二种：查看es启动日志"><a href="#第二种：查看es启动日志" class="headerlink" title="第二种：查看es启动日志"></a>第二种：查看es启动日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tail -f logs/elasticsearch.log</span><br><span class="line">[2018-10-24T16:33:08,638][INFO ][o.e.p.PluginsService     ] [kIrDvnk] no plugins loaded</span><br><span class="line">[2018-10-24T16:33:10,177][INFO ][o.e.d.DiscoveryModule    ] [kIrDvnk] using discovery <span class="built_in">type</span> [zen]</span><br><span class="line">[2018-10-24T16:33:10,676][INFO ][o.e.n.Node               ] initialized</span><br><span class="line">[2018-10-24T16:33:10,677][INFO ][o.e.n.Node               ] [kIrDvnk] starting ...</span><br><span class="line">[2018-10-24T16:33:10,846][INFO ][o.e.t.TransportService   ] [kIrDvnk] publish_address &#123;192.168.2.220:9300&#125;, bound_addresses &#123;[::]:9300&#125;</span><br><span class="line">[2018-10-24T16:33:10,855][INFO ][o.e.b.BootstrapChecks    ] [kIrDvnk] bound or publishing to a non-loopback address, enforcing bootstrap checks</span><br><span class="line">[2018-10-24T16:33:13,909][INFO ][o.e.c.s.ClusterService   ] [kIrDvnk] new_master &#123;kIrDvnk&#125;&#123;kIrDvnk8TwGmqYKsjCo-dA&#125;&#123;I_vTr40xR_WWbuUv8uW6lg&#125;&#123;192.168.2.220&#125;&#123;192.168.2.220:9300&#125;, reason: zen-disco-elected-as-master ([0] nodes joined)[, ]</span><br><span class="line">[2018-10-24T16:33:13,927][INFO ][o.e.h.n.Netty4HttpServerTransport] [kIrDvnk] publish_address &#123;192.168.2.220:9200&#125;, bound_addresses &#123;[::]:9200&#125;</span><br><span class="line">[2018-10-24T16:33:13,928][INFO ][o.e.n.Node               ] [kIrDvnk] started</span><br><span class="line">[2018-10-24T16:33:13,933][INFO ][o.e.g.GatewayService     ] [kIrDvnk] recovered [0] indices into cluster_state</span><br></pre></td></tr></table></figure><p>输出以上信息表示也启动成功<br>此时es中已经获取到了logstash收集的日志，那么就需要把收集到的日志输出到界面了，下面kibana就该登场了。</p><h2 id="3-kibana搭建"><a href="#3-kibana搭建" class="headerlink" title="3.kibana搭建"></a>3.kibana搭建</h2><h3 id="3-1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可"><a href="#3-1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可" class="headerlink" title="3.1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可"></a>3.1由于默认kibana访问es的地址就是es的默认配置，所以这一步直接启动kibana即可</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./bin/kibana &amp;</span><br></pre></td></tr></table></figure><h3 id="3-2验证kibana是否成功启动"><a href="#3-2验证kibana是否成功启动" class="headerlink" title="3.2验证kibana是否成功启动"></a>3.2验证kibana是否成功启动</h3><p><a href="http://localhost:5601" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:5601</a><br><img src="http://images.javahdw.top/15403711247333xqguwq4.png" alt="paste image"><br>出现这个画面就表示已经配置成功了。</p><h3 id="3-3收集es信息展示到kibana上"><a href="#3-3收集es信息展示到kibana上" class="headerlink" title="3.3收集es信息展示到kibana上"></a>3.3收集es信息展示到kibana上</h3><blockquote><p>es与kibana之间是通过模式匹配来关联日志数据的，所以下面的内容就是有关于模式匹配的学习了。</p><br></blockquote><br>    下面把关联的内容进行截取展示,大家一看应该就明白了：<br>    <img src="http://images.javahdw.top/1540372390483h9n66ako.png" alt="paste image"><br>    当成功匹配后点击下面create完成es与kibana的关联<br>### 3.4打开界面查看<br><img src="http://images.javahdw.top/15403725515989kt30xsp.png" alt="paste image"><br>该界面展示出来就说明我们已经成功把elk这条路走通了。剩下的就是关于elk内容的具体配置了，关于这部分内容后面的文章再慢慢介绍。<br><br>elk的搭建过程到此结束，后期涉及到多个服务的时候跟单机版的配置过程雷同，无非就是多开几个服务器端口，之间能够访问即可。<br><br><blockquote><br>参考文献：<br>用ELK搭建简单的日志收集分析系统：<a href="https://blog.csdn.net/lzw_2006/article/details/51280058" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/lzw_2006/article/details/51280058</a><br></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://images.javahdw.top/1540373853201ovcw3iws.png&quot; alt=&quot;paste image&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://images.javahdw.top/1540374136064n3mtj7oh.png&quot; alt=&quot;paste image&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;    在后台为微服务的情况下，生产环境必定存在多份日志存储在多个服务器中，那么如何通过一个平台集中查看服务器日志便成为一件十分重要的事情，本文就通过笔者在mac开发环境下搭建一套ELK环境，并配合微服务产生的日志用于输出到kibana平台展示给用户。&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://javahdw.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="elk" scheme="http://javahdw.top/tags/elk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【spring-cloud】客户端微服务注册到Eureka集群上</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90spring-cloud%E3%80%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%88%B0Eureka%E9%9B%86%E7%BE%A4%E4%B8%8A/"/>
+    <id>http://javahdw.top/2018/10/【spring-cloud】客户端微服务注册到Eureka集群上/</id>
+    <published>2018-10-24T01:26:00.000Z</published>
+    <updated>2022-03-29T03:31:48.218Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h1><blockquote><br>    <p>延续上个文章完成了Eureka的集群创建后，需要实现单个微服务注册到Eureka集群上的过程。</p><br>    <p>该注册过程只需修改default-Zone节点配置即可，配置成多个Eureka Server地址，就可以将其注册到Eureka集群上。</p><br></blockquote><h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    # 注册eureka上的地址</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://192.168.2.237:8761/eureka,http://192.168.2.237:8762/eureka,http://192.168.2.237:8763/eureka</span><br></pre></td></tr></table></figure><h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><blockquote><br>    配置完成后启动项目即可在eureka集群下的每个节点看到该服务的注册信息.<br></blockquote><hr><blockquote><br>    当然，微服务即使只配置Eureka Server集群中的某个节点上，也能正常注册到集群上，因为多个Eureka节点之间的数据会同步。<br>    正常情况下，这种配置与配置多个节点的效果是一样的，不过为了适应某些极端场景，比如注册的Eureka出现问题而又无法及时同步给其他微服务，笔者建议在客户端配置多个Eureka节点<br></blockquote><hr><p>后面会向大家介绍手动扩容微服务的过程，以及后期通过编排工具扩容微服务。<br>文献：</p><blockquote><br>    SpringCloud与Docker微服务架构实战-周立<br></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;问题来源&quot;&gt;&lt;a href=&quot;#问题来源&quot; class=&quot;headerlink&quot; title=&quot;问题来源&quot;&gt;&lt;/a&gt;问题来源&lt;/h1&gt;&lt;blockquote&gt;&lt;br&gt;    &lt;p&gt;延续上个文章完成了Eureka的集群创建后，需要实现单个微服务注册到Eureka集群
+      
+    
+    </summary>
+    
+      <category term="SpringCloud" scheme="http://javahdw.top/categories/SpringCloud/"/>
+    
+    
+      <category term="Eureka client" scheme="http://javahdw.top/tags/Eureka-client/"/>
+    
+      <category term="微服务" scheme="http://javahdw.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【spring-cloud】eureka高可用配置过程</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90spring-cloud%E3%80%91eureka%E9%AB%98%E5%8F%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B/"/>
+    <id>http://javahdw.top/2018/10/【spring-cloud】eureka高可用配置过程/</id>
+    <published>2018-10-23T02:55:00.000Z</published>
+    <updated>2022-03-29T03:31:48.217Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><blockquote><br> 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka服务器，获取服务注册列表中的信息并缓存到本地。微服务在消费远程API时总是使用本地缓存中的数据。Eureka服务器发生宕机，也不会影像到服务之间的调用。但如果Eureka宕机时，某些服务也出现了不可用的情况，Eureka客户端中的额缓存如果没有及时更新，就可能会影响到微服务的调用，甚至影响到整个应用系统的高可用性。因此，在生产环境中，通常会部署一个高可用的Eureka服务器集群。<br> Eureka服务器可以用过运行多个实例并相互注册的方式实现高可用部署，Eureka服务实例会彼此增量地同步信息，从而确保所有节点数据一致。事实上，节点之间相互注册是Eureka服务器的默认行为。<br></blockquote><h2 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h2><h4 id="1-添加以下内容到服务器hosts文件"><a href="#1-添加以下内容到服务器hosts文件" class="headerlink" title="1.添加以下内容到服务器hosts文件"></a>1.添加以下内容到服务器hosts文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 peer1 peer2 peer3</span><br></pre></td></tr></table></figure><h4 id="2-复制application-yml三份并如图修改名称"><a href="#2-复制application-yml三份并如图修改名称" class="headerlink" title="2.复制application.yml三份并如图修改名称"></a>2.复制application.yml三份并如图修改名称</h4><p><img src="http://images.javahdw.top/1540263837822mlth1ecv.png" alt="paste image"></p><h4 id="3-设置每个节点的内容"><a href="#3-设置每个节点的内容" class="headerlink" title="3.设置每个节点的内容"></a>3.设置每个节点的内容</h4><p>application-peer1.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认端口即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8761</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer1</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer2:8762/eureka,http://peer3:8763/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p><p>application-peer2.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认端口即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8762</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer2</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer1:8761/eureka,http://peer3:8763/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p><p>application-peer3.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># eureka官方默认端口即为8761</span><br><span class="line">server:</span><br><span class="line">  port: 8763</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  # 设置服务名</span><br><span class="line">  instance:</span><br><span class="line">    hostname: peer3</span><br><span class="line"></span><br><span class="line">  client:</span><br><span class="line">    # 表示是否将自己注册到eureka上，默认为true，对于eureka服务器来说，不需要注册</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    # 表示是否从eureka服务器上获取注册信息，默认为true，单点eureka服务不需要不需要，集群需要。</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    # 设置与eureka交互地址，其他服务查询服务和注册服务都需要用到这个地址</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://peer2:8762/eureka,http://peer1:8761/eureka</span><br><span class="line">  #      关闭自我保护</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: false</span><br><span class="line">    eviction-interval-timer-in-ms: 4000</span><br></pre></td></tr></table></figure></p><h4 id="4-在idea中完成启动配置"><a href="#4-在idea中完成启动配置" class="headerlink" title="4.在idea中完成启动配置"></a>4.在idea中完成启动配置</h4><p><img src="http://images.javahdw.top/15402647023289fmf5lrd.png" alt="paste image"></p><p>【注意：peer2与peer3文件修改雷同】<br>配置完成后启动三个服务。</p><h4 id="5-访问Eureka服务验证"><a href="#5-访问Eureka服务验证" class="headerlink" title="5.访问Eureka服务验证"></a>5.访问Eureka服务验证</h4><p><img src="http://images.javahdw.top/15402648012986mk8lmx6.png" alt="paste image"><br>从而成功完成eureka服务器的高可用</p><hr><p>后面的文章会向大家介绍客户端的高可用，包括zuul网关和其他业务服务的配置。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题来源&quot;&gt;&lt;a href=&quot;#问题来源&quot; class=&quot;headerlink&quot; title=&quot;问题来源&quot;&gt;&lt;/a&gt;问题来源&lt;/h2&gt;&lt;blockquote&gt;&lt;br&gt; 单节点eureka服务并不适合线上生产环境使用，Eureka client会定时连接eureka
+      
+    
+    </summary>
+    
+      <category term="SpringCloud" scheme="http://javahdw.top/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="http://javahdw.top/tags/SpringCloud/"/>
+    
+      <category term="Eureka" scheme="http://javahdw.top/tags/Eureka/"/>
+    
+      <category term="高可用" scheme="http://javahdw.top/tags/%E9%AB%98%E5%8F%AF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【blog】关于网站收录</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90blog%E3%80%91%E5%85%B3%E4%BA%8E%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95/"/>
+    <id>http://javahdw.top/2018/10/【blog】关于网站收录/</id>
+    <published>2018-10-22T09:00:00.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2><blockquote>由于新建博客，百度搜索和谷歌搜索发现都搜不到本网站，才发现需要配置两个搜索引擎的收录。下面链接主要描述了百度搜索和谷歌搜索对网站的收录过程，跟着教程一步步走。</blockquote><p><a href="https://blog.csdn.net/qq_32454537/article/details/79482914" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/qq_32454537/article/details/79482914</a><br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;待解决的问题&quot;&gt;&lt;a href=&quot;#待解决的问题&quot; class=&quot;headerlink&quot; title=&quot;待解决的问题&quot;&gt;&lt;/a&gt;待解决的问题&lt;/h2&gt;&lt;blockquote&gt;由于新建博客，百度搜索和谷歌搜索发现都搜不到本网站，才发现需要配置两个搜索引擎的收录。下面链接主要描述了百度搜索和谷歌搜索对网站的收录过程，跟着教程一步步走。&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_32454537/article/details/79482914&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;https://blog.csdn.net/qq_32454537/article/details/79482914&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="blog" scheme="http://javahdw.top/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【mac】edrawMax软件的破解安装</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90mac%E3%80%91edrawMac%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%AE%89%E8%A3%85/"/>
+    <id>http://javahdw.top/2018/10/【mac】edrawMac软件的破解安装/</id>
+    <published>2018-10-22T03:52:00.000Z</published>
+    <updated>2022-03-29T03:31:48.217Z</updated>
+    
+    <content type="html"><![CDATA[<p>请根据下面的链接进行安装即可。</p><p>注意下载安装包后断网</p><p><a href="https://www.zhinin.com/edraw_max-mac.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.zhinin.com/edraw_max-mac.html</a></p><hr><p>【如果出现第三步打不开软件的情况，请执行下面的命令到命令窗即可（破解完之后记得改回来）】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;请根据下面的链接进行安装即可。&lt;/p&gt;
+&lt;p&gt;注意下载安装包后断网&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.zhinin.com/edraw_max-mac.html&quot; rel=&quot;external nofollow noopener noreferrer&quot; 
+      
+    
+    </summary>
+    
+      <category term="mac" scheme="http://javahdw.top/categories/mac/"/>
+    
+    
+      <category term="mac" scheme="http://javahdw.top/tags/mac/"/>
+    
+      <category term="edrawMac" scheme="http://javahdw.top/tags/edrawMac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【mac】hosts文件常用自定义链接映射</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90mac%E3%80%91hosts%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E6%8E%A5%E6%98%A0%E5%B0%84/"/>
+    <id>http://javahdw.top/2018/10/【mac】hosts文件常用自定义链接映射/</id>
+    <published>2018-10-22T02:41:00.000Z</published>
+    <updated>2022-03-29T03:31:48.217Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。"><a href="#下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。" class="headerlink" title="下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。"></a>下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0 account.jetbrains.com  #idea激活服务</span><br><span class="line">218.11.0.86 gitee.com  #git网站加速</span><br><span class="line">127.0.0.1 xmind.net   #xmind破解</span><br><span class="line">127.0.0.1 www.xmind.net#xmind破解</span><br><span class="line">151.101.76.249 github.global.ssl.fastly.net#git网站加速</span><br><span class="line">192.30.253.112 github.com#git网站加速</span><br><span class="line">127.0.0.1 peer1 peer2 peer3#eureka高可用配置</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。&quot;&gt;&lt;a href=&quot;#下面是自己在使用mac下对hosts文件的一些修改，担心mac出什么问题，自己找又浪费时间，所以放在这里做个防备。&quot; clas
+      
+    
+    </summary>
+    
+      <category term="mac" scheme="http://javahdw.top/categories/mac/"/>
+    
+    
+      <category term="mac" scheme="http://javahdw.top/tags/mac/"/>
+    
+      <category term="hosts" scheme="http://javahdw.top/tags/hosts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitalk测试3</title>
+    <link href="http://javahdw.top/2018/10/gitalk%E6%B5%8B%E8%AF%953/"/>
+    <id>http://javahdw.top/2018/10/gitalk测试3/</id>
+    <published>2018-10-19T04:05:00.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<p>测试2123 的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;测试2123 的&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="gitalk" scheme="http://javahdw.top/tags/gitalk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitalk测试2</title>
+    <link href="http://javahdw.top/2018/10/gitalk%E6%B5%8B%E8%AF%952/"/>
+    <id>http://javahdw.top/2018/10/gitalk测试2/</id>
+    <published>2018-10-19T04:00:00.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<p>测试test</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;测试test&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="gitalk" scheme="http://javahdw.top/tags/gitalk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitalk测试</title>
+    <link href="http://javahdw.top/2018/10/gitalk%E6%B5%8B%E8%AF%95/"/>
+    <id>http://javahdw.top/2018/10/gitalk测试/</id>
+    <published>2018-10-19T03:56:00.000Z</published>
+    <updated>2022-03-29T03:31:48.215Z</updated>
+    
+    <content type="html"><![CDATA[<p>gitalk 测试</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;gitalk 测试&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="gitalk" scheme="http://javahdw.top/tags/gitalk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【next-blog】背景图片设置</title>
+    <link href="http://javahdw.top/2018/10/%E3%80%90next-blog%E3%80%91%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://javahdw.top/2018/10/【next-blog】背景图片设置/</id>
+    <published>2018-10-18T10:01:00.000Z</published>
+    <updated>2022-03-29T03:31:48.217Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-找到该路径"><a href="#1-找到该路径" class="headerlink" title="1.找到该路径"></a>1.找到该路径</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes\next\source\css\ _custom\custom.styl</span><br></pre></td></tr></table></figure><h2 id="2-添加如下代码："><a href="#2-添加如下代码：" class="headerlink" title="2.添加如下代码："></a>2.添加如下代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123;    </span><br><span class="line">    background:url(https://source.unsplash.com/random/1600x900);    </span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>【注意：保证上面url链接可访问】</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-找到该路径&quot;&gt;&lt;a href=&quot;#1-找到该路径&quot; class=&quot;headerlink&quot; title=&quot;1.找到该路径&quot;&gt;&lt;/a&gt;1.找到该路径&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="http://javahdw.top/categories/blog/"/>
+    
+    
+      <category term="blog" scheme="http://javahdw.top/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://javahdw.top/2018/10/hello-world/"/>
+    <id>http://javahdw.top/2018/10/hello-world/</id>
+    <published>2018-10-18T01:50:00.000Z</published>
+    <updated>2022-03-29T03:31:48.216Z</updated>
+    
+    <content type="html"><![CDATA[<p>timg (1).jpeg<img src="http://images.javahdw.top/15398548453235vrpilgk.png" alt="paste image"><br>Welcome to <a href="https://hexo.io/" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" rel="external nofollow noopener noreferrer" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" rel="external nofollow noopener noreferrer" target="_blank">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" rel="external nofollow noopener noreferrer" target="_blank">GitHub</a>.</p><h2 id="Quick-Start123"><a href="#Quick-Start123" class="headerlink" title="Quick Start123"></a>Quick Start123</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" rel="external nofollow noopener noreferrer" target="_blank">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" rel="external nofollow noopener noreferrer" target="_blank">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" rel="external nofollow noopener noreferrer" target="_blank">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" rel="external nofollow noopener noreferrer" target="_blank">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;timg (1).jpeg&lt;img src=&quot;http://images.javahdw.top/15398548453235vrpilgk.png&quot; alt=&quot;paste image&quot;&gt;&lt;br&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; r
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="http://javahdw.top/2018/10/My-New-Post/"/>
+    <id>http://javahdw.top/2018/10/My-New-Post/</id>
+    <published>2018-10-17T12:45:53.000Z</published>
+    <updated>2022-03-29T03:31:48.215Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
